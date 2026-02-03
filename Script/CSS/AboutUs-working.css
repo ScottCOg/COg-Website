@@ -1255,3 +1255,168 @@
     height: 120px !important;
   }
 }
+/* 
+==============================================
+ABOUT US PAGE PATCH - Fix font sizes & spacing
+Add this to the END of AboutUs-working.css
+(after the mobile responsive section)
+==============================================
+*/
+
+@media screen and (max-width: 768px) {
+  
+  /* Fix oversized text throughout the page */
+  p5, .ideaText p5, .validateText p5, .pairText p5,
+  .planText p5, .implementText p5, .empowerText p5, .evalText p5 {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+  }
+  
+  /* Section headings - IDEA, VALIDATE, etc */
+  .ideaText h1, .validateText h1, .pairText h1,
+  .planText h1, .implementText h1, .empowerText h1, .evalText h1,
+  .ideaSection h1, .validateSection h1 {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Concept section overall */
+  .conceptSection {
+    padding: 15px 10px !important;
+  }
+  
+  .conceptSection h1 {
+    font-size: 26px !important;
+    text-align: center !important;
+  }
+  
+  /* Breakdown concepts container */
+  .breakdownConcpets {
+    padding: 10px !important;
+  }
+  
+  /* Each concept row */
+  .ideaRow, .validateRow, .pairRow, .planRow,
+  .implementRow, .empowerRow, .elavRow {
+    padding: 15px 10px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  /* Concept images - keep them reasonable size */
+  .ideaImage, .validateImage, .pairImage, .planImage,
+  .implementImage, .empowerImage, .evalImage {
+    width: 100px !important;
+    height: auto !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Text containers for each concept */
+  .ideaText, .validateText, .pairText, .planText,
+  .implementText, .empowerText, .evalText {
+    padding: 0 10px !important;
+  }
+  
+  /* Bullet points / list items */
+  .ideaText ul, .validateText ul, .pairText ul,
+  .planText ul, .implementText ul, .empowerText ul, .evalText ul {
+    font-size: 14px !important;
+    padding-left: 20px !important;
+    margin: 10px 0 !important;
+  }
+  
+  .ideaText li, .validateText li, .pairText li,
+  .planText li, .implementText li, .empowerText li, .evalText li {
+    font-size: 14px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  /* What We Are section */
+  .whatWeAreTextSection {
+    padding: 15px !important;
+  }
+  
+  .whatWeAreTextSection h1 {
+    font-size: 24px !important;
+  }
+  
+  .whatWeAreTextSection p5 {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Who We Are / Team section */
+  .whoWeAreSection {
+    padding: 20px 15px !important;
+  }
+  
+  .whoWeAreSection h1 {
+    font-size: 26px !important;
+  }
+  
+  /* Team member text */
+  .FounderText h3, .dirOfMarkText h3, .dirAMEText h3 {
+    font-size: 20px !important;
+  }
+  
+  .scottTransitionText, .amandaTransitionText, .catherineTransitionText {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  p3 {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  p5, .ideaText p5, .validateText p5, .pairText p5,
+  .planText p5, .implementText p5, .empowerText p5, .evalText p5 {
+    font-size: 14px !important;
+  }
+  
+  .ideaText h1, .validateText h1, .pairText h1,
+  .planText h1, .implementText h1, .empowerText h1, .evalText h1 {
+    font-size: 18px !important;
+  }
+  
+  .conceptSection h1 {
+    font-size: 22px !important;
+  }
+  
+  .ideaImage, .validateImage, .pairImage, .planImage,
+  .implementImage, .empowerImage, .evalImage {
+    width: 80px !important;
+  }
+  
+  .whatWeAreTextSection h1 {
+    font-size: 20px !important;
+  }
+  
+  .whoWeAreSection h1 {
+    font-size: 22px !important;
+  }
+  
+  .FounderText h3, .dirOfMarkText h3, .dirAMEText h3 {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  
+  p5 {
+    font-size: 13px !important;
+  }
+  
+  .ideaText h1, .validateText h1, .pairText h1,
+  .planText h1, .implementText h1, .empowerText h1, .evalText h1 {
+    font-size: 16px !important;
+  }
+  
+  .ideaImage, .validateImage, .pairImage, .planImage,
+  .implementImage, .empowerImage, .evalImage {
+    width: 70px !important;
+  }
+}
