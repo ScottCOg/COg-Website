@@ -874,3 +874,321 @@
       transform:scale(-1.02);
       background-color: #45bc7a;
     }
+
+
+    /* 
+===============================================
+
+/* ============================================= */
+/* MOBILE RESPONSIVE STYLES - FIXED VERSION     */
+/* ============================================= */
+
+@media screen and (max-width: 768px) {
+  
+  body {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 80px !important;
+  }
+  
+  .Header {
+    height: 70px !important;
+  }
+  
+  /* CRITICAL: Hide desktop navigation buttons */
+  .center-section {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    display: none !important;
+  }
+  
+  .COg-Logo {
+    width: 60px !important;
+  }
+  
+  .toggle {
+    display: flex !important;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .sidebar {
+    top: 70px;
+  }
+  
+  .attTaleLogo {
+    padding: 20px 10px;
+  }
+  
+  .aTTLogo {
+    width: 90% !important;
+    max-width: 400px !important;
+    height: auto !important;
+  }
+  
+  .storymap-section {
+    padding: 15px 10px;
+  }
+  
+  .storymap-container {
+    width: 100% !important;
+    position: relative;
+    padding-bottom: 75%;
+    height: 0 !important;
+    overflow: hidden;
+  }
+  
+  .storymap-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .meetTeamSection {
+    padding: 30px 15px;
+    text-align: center;
+  }
+  
+  .meetTeamSection h1 {
+    font-size: 28px !important;
+  }
+  
+  .teamLogosSection {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px;
+  }
+  
+  .drFergSection,
+  .cutTheMustardSection,
+  .luckyHalfSpeedSection {
+    width: 100% !important;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  .DrFergImageframe,
+  .cutTheMustardImageFrame,
+  .luckyhalfSpeedImageFrame {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 auto 15px;
+  }
+  
+  .drFergSection h1,
+  .cutTheMustardSection h1,
+  .luckyHalfSpeedSection h1 {
+    font-size: 20px !important;
+  }
+  
+  .Donate-Section {
+    padding: 30px 15px;
+    text-align: center;
+  }
+  
+  .Donate-Section h2 {
+    font-size: 24px !important;
+    color: rgba(0,0,0,0.5) !important;
+  }
+  
+  .donate-content {
+    padding: 20px 15px;
+  }
+  
+  .attDonate-Button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .Merch {
+    flex-direction: column !important;
+    padding: 30px 15px;
+  }
+  
+  .merchInfo {
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .merchTextSection h1 {
+    font-size: 24px !important;
+  }
+  
+  .productSection {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px;
+  }
+  
+  .ShirtMerch,
+  .beanieMerch,
+  .soapMerch {
+    width: calc(50% - 10px) !important;
+    max-width: 150px !important;
+  }
+  
+  /* Footer */
+  .footer {
+    width: 95% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: auto !important;
+  }
+  
+  .footer-heading {
+    margin-right: 0 !important;
+    margin-bottom: 25px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footer-heading a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-email-row {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+  
+  #footer-email {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  #footer-email-btn {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  body {
+    padding-top: 70px !important;
+  }
+  
+  .Header {
+    height: 60px !important;
+  }
+  
+  .COg-Logo {
+    width: 50px !important;
+  }
+  
+  .toggle {
+    height: 25px !important;
+    width: 25px !important;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .sidebar {
+    width: 180px;
+    top: 60px;
+  }
+  
+  .sidebar a {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+  
+  h1 {
+    font-size: 22px !important;
+  }
+  
+  h2 {
+    font-size: 20px !important;
+  }
+  
+  .aTTLogo {
+    max-width: 300px !important;
+  }
+  
+  .storymap-container {
+    padding-bottom: 100%;
+  }
+  
+  .DrFergImageframe,
+  .cutTheMustardImageFrame,
+  .luckyhalfSpeedImageFrame {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .drFergSection h1,
+  .cutTheMustardSection h1,
+  .luckyHalfSpeedSection h1 {
+    font-size: 18px !important;
+  }
+  
+  .merchTextSection h1 {
+    font-size: 20px !important;
+  }
+  
+  .ShirtMerch,
+  .beanieMerch,
+  .soapMerch {
+    width: calc(50% - 8px) !important;
+    max-width: 130px !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  
+  body {
+    padding-top: 65px !important;
+  }
+  
+  h1 {
+    font-size: 18px !important;
+  }
+  
+  h2 {
+    font-size: 16px !important;
+  }
+  
+  .COg-Logo {
+    width: 45px !important;
+  }
+  
+  .sidebar {
+    width: 160px;
+  }
+  
+  .sidebar a {
+    font-size: 14px;
+  }
+  
+  .aTTLogo {
+    max-width: 250px !important;
+  }
+  
+  .DrFergImageframe,
+  .cutTheMustardImageFrame,
+  .luckyhalfSpeedImageFrame {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .drFergSection h1,
+  .cutTheMustardSection h1,
+  .luckyHalfSpeedSection h1 {
+    font-size: 16px !important;
+  }
+}

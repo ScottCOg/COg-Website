@@ -576,3 +576,183 @@
       transform:scale(-1.02);
       background-color: #45bc7a;
     }
+
+
+/* ============================================= */
+/* MOBILE RESPONSIVE STYLES - FIXED VERSION     */
+/* ============================================= */
+
+@media screen and (max-width: 768px) {
+  
+  body {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 80px !important;
+  }
+  
+  .Header {
+    height: 70px !important;
+  }
+  
+  /* CRITICAL: Hide desktop navigation buttons */
+  .center-section {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    display: none !important;
+  }
+  
+  .COg-Logo {
+    width: 60px !important;
+  }
+  
+  .toggle {
+    display: flex !important;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .sidebar {
+    top: 70px;
+  }
+  
+  h1 {
+    font-size: 28px !important;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  .attTale,
+  .DiPlanningGameSection {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .projImage-box {
+    width: 90% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    border-width: 10px;
+  }
+  
+  .planningProjectsSection {
+    padding: 20px 10px;
+  }
+  
+  .planningProjectsSection h1 {
+    font-size: 26px !important;
+  }
+  
+  /* Footer */
+  .footer {
+    width: 95% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: auto !important;
+  }
+  
+  .footer-heading {
+    margin-right: 0 !important;
+    margin-bottom: 25px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footer-heading a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-email-row {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+  
+  #footer-email {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  #footer-email-btn {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  body {
+    padding-top: 70px !important;
+  }
+  
+  .Header {
+    height: 60px !important;
+  }
+  
+  .COg-Logo {
+    width: 50px !important;
+  }
+  
+  .toggle {
+    height: 25px !important;
+    width: 25px !important;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .sidebar {
+    width: 180px;
+    top: 60px;
+  }
+  
+  .sidebar a {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+  
+  h1 {
+    font-size: 24px !important;
+  }
+  
+  .projImage-box {
+    width: 95% !important;
+    border-width: 8px;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  
+  body {
+    padding-top: 65px !important;
+  }
+  
+  h1 {
+    font-size: 20px !important;
+  }
+  
+  .COg-Logo {
+    width: 45px !important;
+  }
+  
+  .sidebar {
+    width: 160px;
+  }
+  
+  .sidebar a {
+    font-size: 14px;
+  }
+  
+  .projImage-box {
+    border-width: 6px;
+    border-radius: 20px;
+  }
+}

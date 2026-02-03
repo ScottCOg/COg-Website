@@ -983,3 +983,275 @@
       transform:scale(-1.02);
       background-color: #45bc7a;
     }
+
+/* ============================================= */
+/* MOBILE RESPONSIVE STYLES - FIXED VERSION     */
+/* ============================================= */
+
+/* Tablets and small laptops (768px and below) */
+@media screen and (max-width: 768px) {
+  
+  body {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 80px !important;
+  }
+  
+  .Header {
+    height: 70px !important;
+  }
+  
+  /* CRITICAL: Hide desktop navigation buttons */
+  .center-section {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    display: none !important;
+  }
+  
+  .COg-Logo {
+    width: 60px !important;
+  }
+  
+  .toggle {
+    display: flex !important;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .sidebar {
+    top: 70px;
+  }
+  
+  /* What We Are Section */
+  .whatWeAreTextSection {
+    padding: 20px 15px;
+  }
+  
+  .whatWeAreTextSection p5 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Concept Section */
+  .conceptSection h1 {
+    font-size: 28px !important;
+    text-align: center;
+  }
+  
+  .conceptImage {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* All concept rows - stack vertically */
+  .ideaRow,
+  .validateRow,
+  .pairRow,
+  .planRow,
+  .implementRow,
+  .empowerRow,
+  .elavRow {
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 30px;
+  }
+  
+  .ideaSection,
+  .validateSection,
+  .pairSection,
+  .planSection,
+  .ImplementSection,
+  .empowerSection,
+  .evalSection {
+    margin-bottom: 15px;
+  }
+  
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    width: 150px !important;
+    height: auto !important;
+  }
+  
+  .ideaText,
+  .validateText,
+  .pairText,
+  .planText,
+  .implementText,
+  .empowerText,
+  .evalText {
+    width: 100% !important;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  /* Who We Are Section */
+  .whoWeAreSection h1 {
+    font-size: 28px !important;
+    text-align: center;
+  }
+  
+  .FounderSection,
+  .dirOfMarketingSection,
+  .dirOfAMESection {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  
+  .ScottImageframe,
+  .amandaImageframe,
+  .catherineImageframe {
+    width: 200px !important;
+    height: 200px !important;
+    margin-bottom: 20px;
+  }
+  
+  .FounderText,
+  .dirOfMarkText,
+  .dirAMEText {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+  
+  .scottTransitionText,
+  .amandaTransitionText,
+  .catherineTransitionText {
+    opacity: 1 !important;
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  /* Footer */
+  .footer {
+    width: 95% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: auto !important;
+  }
+  
+  .footer-heading {
+    margin-right: 0 !important;
+    margin-bottom: 25px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footer-heading a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-email-row {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+  
+  #footer-email {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  #footer-email-btn {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 25px;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media screen and (max-width: 480px) {
+  
+  body {
+    padding-top: 70px !important;
+  }
+  
+  .Header {
+    height: 60px !important;
+  }
+  
+  .COg-Logo {
+    width: 50px !important;
+  }
+  
+  .toggle {
+    height: 25px !important;
+    width: 25px !important;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .sidebar {
+    width: 180px;
+    top: 60px;
+  }
+  
+  .sidebar a {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+  
+  h1 {
+    font-size: 24px !important;
+  }
+  
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    width: 120px !important;
+  }
+  
+  .ScottImageframe,
+  .amandaImageframe,
+  .catherineImageframe {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+/* Extra small devices (360px and below) */
+@media screen and (max-width: 360px) {
+  
+  body {
+    padding-top: 65px !important;
+  }
+  
+  h1 {
+    font-size: 20px !important;
+  }
+  
+  .COg-Logo {
+    width: 45px !important;
+  }
+  
+  .sidebar {
+    width: 160px;
+  }
+  
+  .sidebar a {
+    font-size: 14px;
+  }
+  
+  .ScottImageframe,
+  .amandaImageframe,
+  .catherineImageframe {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}
