@@ -1,19 +1,45 @@
 /* 
-Document: COg. Home page CSS - MOBILE OPTIMIZED
-Author: Scott Polley (Optimized by Andy Albertsberg - Double-A Solutions)
-Version: V2 - Mobile Responsive
-Date: 2025
+===============================================
+COg. Home Page CSS - MOBILE OPTIMIZED
+===============================================
+Author: Scott Polley 
+Mobile Optimization: Andy Albertsberg - Double-A Solutions
+Version: FINAL - Clean Build
+Date: February 2026
+
+DESIGN GUIDE COMPLIANCE:
+- Colors: Red #D61834, Blue #29abe2, Green #45bc7a, Yellow #FFF568
+- Font: Arial, Helvetica, sans-serif
+- Text: rgba(0, 0, 0, 0.50)
+- Header: 100px height, white, fixed
+- Footer: Black background, whitesmoke text
+- Sidebar: Slides from right with blur backdrop
+===============================================
 */
 
 /* ============================================
-   BASE STYLES (Desktop First)
+   RESET & BASE STYLES
    ============================================ */
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+/* ============================================
+   HEADER - Per Design Guide
+   ============================================ */
 
 .Header {
   height: 100px;
@@ -42,6 +68,10 @@ html, body {
   width: 100px;
 }
 
+/* ============================================
+   DESKTOP NAVIGATION BUTTONS
+   ============================================ */
+
 .center-section {
   background-color: white;
   flex: 1;
@@ -49,9 +79,10 @@ html, body {
   justify-content: end;
 }
 
+/* CREATE Button - Red underline */
 .create-button {
   position: relative;
-  background-color:white;
+  background-color: white;
   color: rgba(0, 0, 0, 0.50);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -67,11 +98,11 @@ html, body {
 .create-button::after {
   content: '';
   position: absolute;
-  width:110px;
+  width: 110px;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
-  background: red;
+  background: #D61834;
   transform: scale(0, 1);
 }
 
@@ -91,6 +122,7 @@ html, body {
   font-size: 15px;
 }
 
+/* VOLUNTEER Button - Green underline */
 .volunteer-button {
   position: relative;
   background-color: white;
@@ -109,9 +141,9 @@ html, body {
 .volunteer-button::after {
   content: '';
   position: absolute;
-  width:100%;
+  width: 100%;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
   background: #45bc7a;
   transform: scale(0, 1);
@@ -133,6 +165,7 @@ html, body {
   font-size: 15px;
 }
 
+/* DONATE Button - Blue underline */
 .donate-button {
   position: relative;
   background-color: white;
@@ -149,11 +182,11 @@ html, body {
 }
 
 .donate-button::after {
-  content:'';
+  content: '';
   position: absolute;
-  width:100%;
+  width: 100%;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
   background: #29abe2;
   transform: scale(0, 1);
@@ -175,6 +208,11 @@ html, body {
   font-size: 15px;
 }
 
+/* ============================================
+   HAMBURGER MENU & SIDEBAR
+   Per Design Guide: Slides from right with blur
+   ============================================ */
+
 .right-section {
   background-color: white;
   width: 75px;
@@ -182,28 +220,35 @@ html, body {
   justify-content: center;
 }
 
+/* Hide the checkbox */
 input[type="checkbox"] {
   display: none;
 }
 
+/* Hamburger Toggle Button */
 .toggle {
   position: absolute;
   height: 30px;
   width: 30px;
-  top: 20px;
+  top: 35px;
   right: 20px;
-  z-index: 1;
+  z-index: 1001;
   cursor: pointer;
   border-radius: 2px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.toggle .common{
+/* Hamburger Lines */
+.toggle .common {
   position: absolute;
   height: 2px;
   width: 20px;
-  background-color: red;
+  background-color: #D61834;
   border-radius: 50px;
   transition: 0.3s ease;
 }
@@ -211,21 +256,22 @@ input[type="checkbox"] {
 .toggle .top_line {
   top: 30%;
   left: 50%;
-  transform: translate(-50%,-50%)
+  transform: translate(-50%, -50%);
 }
 
 .toggle .mid_line {
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%)
+  transform: translate(-50%, -50%);
 }
 
 .toggle .bot_line {
   top: 70%;
   left: 50%;
-  transform: translate(-50%,-50%)
+  transform: translate(-50%, -50%);
 }
 
+/* X Animation when checked */
 input:checked ~ .toggle .top_line {
   left: 2px;
   top: 14px;
@@ -244,38 +290,43 @@ input:checked ~ .toggle .mid_line {
   opacity: 0;
 }
 
-.sidebar{
-  position:fixed;
-  top: 35;
+/* Sidebar - Hidden off-screen by default */
+.sidebar {
+  position: fixed;
+  top: 100px;
   right: 0;
   height: 100vh;
   width: 200px;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  transition: .3s ease;
-  transform: translatex(250px);
+  transition: 0.3s ease;
+  transform: translateX(250px);
 }
 
-input:checked ~ .sidebar{
-  transform: translatex(0px);
+/* Sidebar slides in when checkbox is checked */
+input:checked ~ .sidebar {
+  transform: translateX(0px);
   opacity: 1;
 }
 
-.sidebar li{
+/* Sidebar List Items */
+.sidebar li {
   height: 50px;
   list-style: none;
   padding-top: 30px;
 }
 
-.sidebar a{
+/* Sidebar Links - Yellow underline on hover per Design Guide */
+.sidebar a {
   position: relative;
-  background-color: none;
+  background-color: transparent;
   color: rgba(0, 0, 0, 0.50);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -287,19 +338,19 @@ input:checked ~ .sidebar{
   margin: 0 30px;
   cursor: pointer;
   text-decoration: none;
+  display: flex;
   align-items: center;
-  align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .sidebar a::after {
-  content:'';
+  content: '';
   position: absolute;
-  width:100%;
+  width: 100%;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
-  background: #fff568;
+  background: #FFF568;
   transform: scale(0, 1);
 }
 
@@ -315,12 +366,12 @@ input:checked ~ .sidebar{
 }
 
 .sidebar a:active {
-  background-color: none;
+  background-color: transparent;
   font-size: 15px;
 }
 
 /* ============================================
-   TYPOGRAPHY
+   TYPOGRAPHY - Per Design Guide
    ============================================ */
 
 h1 {
@@ -356,14 +407,6 @@ h2 {
 /* ============================================
    MAIN CONTENT
    ============================================ */
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  background-color: whitesmoke;
-}
 
 main {
   flex: 1;
@@ -428,7 +471,7 @@ main {
 .projImage-box:hover {
   border-color: #45bc7a;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.50);
-  transform:scale(1.02);
+  transform: scale(1.02);
 }
 
 .attTale {
@@ -438,7 +481,8 @@ main {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - Per Design Guide
+   Black background, whitesmoke text
    ============================================ */
 
 .footer-container {
@@ -462,104 +506,76 @@ main {
 
 .footer-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: whitesmoke;
-  margin-bottom: 1rem;
 }
 
 .footer-heading {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin-right: 4rem;
-  margin-bottom: 2rem;
 }
 
 .footer-heading a {
-  color: white;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
+  color: white;
+  padding: 0.5rem 0;
 }
 
 .footer-heading a:hover {
-  color: red;
-  transition: 0.3s ease-out;
+  color: #D61834;
 }
 
 .footer-email-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 15px;
-  padding: 20px;
 }
 
 .footer-email-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
 }
 
-#footer-email{
-  width: 250px;
-  height: 50px;
-  border-radius: 100px;
-  outline: none;
+#footer-email {
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
   border: none;
-  padding-left: 0.5rem;
-  font-size: 0.6rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#footer-email::placeholder {
-  color: red;
-  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  font-size: 16px;
 }
 
 #footer-email-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: red;
-  outline: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
   border: none;
+  background-color: #D61834;
   color: whitesmoke;
-  font-size: 0.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  margin-left: -30px;
 }
 
 #footer-email-btn:hover {
-  cursor: pointer;
-  background-color: #29abe2;
-  transition: all 0.4s ease-out;
-}
-
-#footer-email-btn:active {
-  transform:scale(-1.02);
   background-color: #45bc7a;
 }
 
 /* ============================================
-   MOBILE RESPONSIVE - MEDIA QUERIES
+   MOBILE RESPONSIVE - 768px (Tablets)
    ============================================ */
 
-/* Tablet and below (768px) */
 @media screen and (max-width: 768px) {
   
-  /* Hide desktop navigation buttons on mobile */
+  /* Hide desktop navigation buttons */
   .center-section {
-    display: none;
+    display: none !important;
   }
   
   /* Adjust header for mobile */
@@ -577,9 +593,21 @@ main {
     width: 60px;
   }
   
+  /* Hamburger toggle position for mobile header */
+  .toggle {
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Sidebar position below mobile header */
+  .sidebar {
+    top: 70px;
+  }
+  
   /* Adjust main content spacing */
   main {
     margin-top: 80px;
+    padding: 0 15px;
   }
   
   /* Typography adjustments */
@@ -626,328 +654,9 @@ main {
   
   .footer-heading {
     margin-right: 0;
-    margin-bottom: 2rem;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .footer-email-form {
-    width: 100%;
-    padding: 20px 10px;
-  }
-  
-  .footer-email-row {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  #footer-email {
-    width: 90%;
-    max-width: 300px;
-  }
-}
-
-/* Mobile phones (480px and below) */
-@media screen and (max-width: 480px) {
-  
-  h1 {
-    font-size: 24px;
-    line-height: 1.3;
-  }
-  
-  .mission-description {
-    font-size: 16px;
-  }
-  
-  .Header {
-    height: 60px;
-  }
-  
-  .COg-Logo {
-    width: 50px;
-  }
-  
-  main {
-    margin-top: 70px;
-  }
-  
-  .toggle {
-    height: 25px;
-    width: 25px;
-    top: 15px;
-    right: 15px;
-  }
-  
-  .sidebar {
-    width: 180px;
-  }
-  
-  .sidebar a {
-    font-size: 16px;
-    margin: 0 15px;
-  }
-  
-  .projImage-box {
-    width: 95%;
-    border-width: 8px;
-    border-radius: 25px;
-  }
-  
-  h2 {
-    font-size: 20px;
-  }
-  
-  .footer-heading a {
-    font-size: 14px;
-  }
-  
-  #footer-email {
-    width: 85%;
-    height: 45px;
-  }
-  
-  #footer-email-btn {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-/* Extra small devices (360px and below) */
-@media screen and (max-width: 360px) {
-  
-  h1 {
-    font-size: 20px;
-  }
-  
-  .mission-description {
-    font-size: 14px;
-  }
-  
-  .COg-Logo {
-    width: 45px;
-  }
-  
-  .sidebar {
-    width: 160px;
-  }
-  
-  .sidebar a {
-    font-size: 14px;
-  }
-}
-
-
-/* 
-===============================================
-COg Creations - About Us Page Mobile CSS
-Add this to the END of AboutUs-working.css
-===============================================
-*/
-
-/* ============================================= */
-/* MOBILE RESPONSIVE STYLES                      */
-/* ============================================= */
-
-/* Tablets and small laptops (768px and below) */
-@media screen and (max-width: 768px) {
-  
-  /* Remove problematic body styles - add this to body selector or override */
-  body {
-    height: auto !important;
-    min-height: 100vh;
-    padding-top: 80px !important;
-  }
-  
-  /* Header adjustments */
-  .Header {
-    height: 70px;
-  }
-  
-  /* Hide desktop navigation buttons */
-  .center-section {
-    display: none;
-  }
-  
-  /* Logo scaling */
-  .COg-Logo {
-    width: 60px;
-  }
-  
-  /* Hamburger menu positioning */
-  .toggle {
-    top: 20px;
-    right: 20px;
-  }
-  
-  /* Sidebar adjustments */
-  .sidebar {
-    top: 70px;
-  }
-  
-  /* Main content area */
-  main {
-    margin-top: 20px;
-    padding: 0 15px;
-  }
-  
-  /* What We Are Section */
-  .whatWeAreTextSection {
-    padding: 20px 15px;
-  }
-  
-  .whatWeAreTextSection p5 {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  /* Concept Section */
-  .conceptSection {
-    padding: 20px 10px;
-  }
-  
-  .conceptSection h1 {
-    font-size: 28px;
-    text-align: center;
-  }
-  
-  .conceptImage {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Breakdown Concepts - Stack vertically */
-  .breakdownConcpets {
-    padding: 10px;
-  }
-  
-  /* All concept rows - stack vertically */
-  .ideaRow,
-  .validateRow,
-  .pairRow,
-  .planRow,
-  .implementRow,
-  .empowerRow,
-  .elavRow {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 15px;
-  }
-  
-  /* All concept images */
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
-    width: 80%;
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 15px;
-  }
-  
-  /* All concept text sections */
-  .ideaText,
-  .validateText,
-  .pairText,
-  .planText,
-  .implementText,
-  .empowerText,
-  .evalText {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .ideaText p5,
-  .validateText p5,
-  .pairText p5,
-  .planText p5,
-  .implementText p5,
-  .empowerText p5,
-  .evalText p5 {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  /* Who We Are / Meet the Crew Section */
-  .whoWeAreSection {
-    padding: 20px 15px;
-  }
-  
-  .whoWeAreSection h1 {
-    font-size: 28px;
-    text-align: center;
-  }
-  
-  /* Team member sections - stack vertically */
-  .FounderSection,
-  .dirOfMarketingSection,
-  .dirOfAMESection {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-    padding: 20px 10px;
-  }
-  
-  /* Team member images */
-  .ScottImageframe,
-  .amandaImageframe,
-  .catherineImageframe {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-  
-  .scottgImage,
-  .scottHoverImage,
-  .amandaImage,
-  .amandaHoverImage,
-  .catherineImage,
-  .catherineHoverImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Team member text */
-  .FounderText,
-  .dirOfMarkText,
-  .dirAMEText {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .FounderText h3,
-  .dirOfMarkText h3,
-  .dirAMEText h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .scottTransitionText,
-  .amandaTransitionText,
-  .catherineTransitionText {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  
-  /* Footer stacking */
-  .footer {
-    width: 95%;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 15px;
-  }
-  
-  .footer-heading {
-    margin-right: 0;
     margin-bottom: 25px;
     text-align: center;
+    align-items: center;
     width: 100%;
   }
   
@@ -977,19 +686,32 @@ Add this to the END of AboutUs-working.css
   #footer-email {
     width: 100%;
     max-width: 300px;
+    height: 50px;
+    border-radius: 25px;
   }
   
   #footer-email-btn {
     width: 100%;
     max-width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 0;
   }
 }
 
-/* Mobile phones (480px and below) */
+/* ============================================
+   MOBILE RESPONSIVE - 480px (Phones)
+   ============================================ */
+
 @media screen and (max-width: 480px) {
   
-  body {
-    padding-top: 70px !important;
+  h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  
+  .mission-description {
+    font-size: 16px;
   }
   
   .Header {
@@ -1000,11 +722,19 @@ Add this to the END of AboutUs-working.css
     width: 50px;
   }
   
+  main {
+    margin-top: 70px;
+  }
+  
   .toggle {
     height: 25px;
     width: 25px;
-    top: 15px;
+    top: 17px;
     right: 15px;
+  }
+  
+  .toggle .common {
+    width: 16px;
   }
   
   .sidebar {
@@ -1017,51 +747,16 @@ Add this to the END of AboutUs-working.css
     margin: 0 15px;
   }
   
-  /* Typography scaling */
-  h1 {
-    font-size: 24px !important;
-    line-height: 1.3;
+  .projImage-box {
+    width: 95%;
+    border-width: 8px;
+    border-radius: 25px;
   }
   
   h2 {
     font-size: 20px;
   }
   
-  h3 {
-    font-size: 18px;
-  }
-  
-  .whatWeAreTextSection p5 {
-    font-size: 16px;
-  }
-  
-  /* Concept images smaller on phones */
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
-    width: 60%;
-    max-width: 150px;
-  }
-  
-  /* Team member images smaller */
-  .ScottImageframe,
-  .amandaImageframe,
-  .catherineImageframe {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .scottTransitionText,
-  .amandaTransitionText,
-  .catherineTransitionText {
-    font-size: 14px;
-  }
-  
-  /* Footer adjustments */
   .footer-heading a {
     font-size: 14px;
   }
@@ -1075,18 +770,17 @@ Add this to the END of AboutUs-working.css
   }
 }
 
-/* Extra small devices (360px and below) */
+/* ============================================
+   MOBILE RESPONSIVE - 360px (Small Phones)
+   ============================================ */
+
 @media screen and (max-width: 360px) {
   
-  body {
-    padding-top: 65px !important;
-  }
-  
   h1 {
-    font-size: 20px !important;
+    font-size: 20px;
   }
   
-  .whatWeAreTextSection p5 {
+  .mission-description {
     font-size: 14px;
   }
   
@@ -1100,117 +794,5 @@ Add this to the END of AboutUs-working.css
   
   .sidebar a {
     font-size: 14px;
-  }
-  
-  /* Even smaller images */
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
-    width: 50%;
-    max-width: 120px;
-  }
-  
-  .ScottImageframe,
-  .amandaImageframe,
-  .catherineImageframe {
-    width: 120px;
-    height: 120px;
-  }
-}
-/* 
-==============================================
-HOMEPAGE PATCH - Fix horizontal scroll
-Add this to the END of COgSiteWorkingOrigional.css
-==============================================
-*/
-
-/* Prevent horizontal overflow */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
-
-@media screen and (max-width: 768px) {
-  
-  /* Prevent any element from causing horizontal scroll */
-  * {
-    max-width: 100vw;
-    box-sizing: border-box;
-  }
-  
-  body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    position: relative;
-  }
-  
-  .Header {
-    width: 100% !important;
-    max-width: 100vw !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-  
-  main {
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    padding: 0 10px !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Process icons row - prevent overflow */
-  .processIcons,
-  .process-icons,
-  .iconRow {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 5px !important;
-  }
-  
-  .processIcons img,
-  .process-icons img {
-    width: 40px !important;
-    height: auto !important;
-  }
-  
-  /* Featured projects image */
-  .projImage-box,
-  .featured-project img {
-    width: 90% !important;
-    max-width: 350px !important;
-    height: auto !important;
-  }
-  
-  /* Footer */
-  .footer-container {
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  .footer {
-    width: 95% !important;
-    max-width: 100% !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  
-  .processIcons img,
-  .process-icons img {
-    width: 35px !important;
-  }
-  
-  .projImage-box {
-    width: 95% !important;
-    max-width: 300px !important;
   }
 }
