@@ -1,25 +1,37 @@
 /* 
 ===============================================
-COg. A Typhoid Tale Page CSS - MOBILE OPTIMIZED
+COg. A Typhoid Tale Page CSS - MOBILE OPTIMIZED V4
 ===============================================
 Author: Scott Polley 
 Mobile Optimization: Andy Albertsberg - Double-A Solutions
-Version: V3 - Complete Mobile Fixes
+Version: V4 - Complete Mobile Fixes with Nav Buttons
 Date: February 2026
 
 DESIGN GUIDE COMPLIANCE:
 - Colors: Red #D61834, Blue #29abe2, Green #45bc7a, Yellow #FFF568
 - Font: Arial, Helvetica, sans-serif
-- Text: rgba(0, 0, 0, 0.50)
 ===============================================
 */
+
+/* ===== GLOBAL - PREVENT HORIZONTAL SCROLL ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  max-width: 100vw;
 }
 
 .Header {
@@ -53,7 +65,8 @@ html, body {
   background-color: white;
   flex: 1;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .create-button {
@@ -321,7 +334,7 @@ input:checked ~ .sidebar {
   font-size: 20px;
   border: none;
   height: 36px;
-  width: 110px;
+  width: auto;
   border-radius: 5px;
   padding: 0 10px;
   margin: 0 30px;
@@ -414,8 +427,6 @@ body {
   margin: 0;
   justify-content: flex-start;
   background-color: whitesmoke;
-  overflow-x: hidden;
-  max-width: 100vw;
 }
 
 .main-content {
@@ -918,20 +929,19 @@ body {
    MOBILE RESPONSIVE STYLES
    ============================================= */
 
-/* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
   
   /* ===== PREVENT HORIZONTAL SCROLL ===== */
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+    width: 100%;
   }
   
   body {
     height: auto !important;
     min-height: 100vh;
     padding-top: 80px !important;
-    overflow-x: hidden !important;
   }
   
   * {
@@ -942,32 +952,67 @@ body {
   /* Header adjustments */
   .Header {
     height: 70px;
+    padding: 0 5px;
   }
   
-  /* Hide desktop navigation buttons */
-  .center-section {
-    display: none !important;
+  .left-section {
+    width: auto;
+    margin-left: 5px;
+    flex-shrink: 0;
   }
   
-  /* Logo scaling */
   .COg-Logo {
-    width: 60px;
+    width: 50px;
   }
   
-  /* Hamburger menu positioning */
+  /* ===== SHOW NAV BUTTONS ON MOBILE ===== */
+  .center-section {
+    display: flex !important;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 0 5px;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 10px;
+    height: 28px;
+    width: auto;
+    min-width: 50px;
+    padding: 0 6px;
+    margin: 0 2px;
+    border-radius: 3px;
+  }
+  
+  .create-button::after,
+  .volunteer-button::after,
+  .donate-button::after {
+    display: none;
+  }
+  
+  .right-section {
+    width: 50px;
+    flex-shrink: 0;
+  }
+  
   .toggle {
     top: 20px;
-    right: 20px;
+    right: 10px;
+    height: 28px;
+    width: 28px;
   }
   
-  /* Sidebar adjustments */
   .sidebar {
     top: 70px;
-    width: 220px;
+    width: 200px;
   }
   
   .sidebar a {
     white-space: nowrap;
+    font-size: 18px;
   }
   
   .sidebar p2 {
@@ -978,7 +1023,7 @@ body {
   /* Main content area */
   main, .main-content {
     margin-top: 20px;
-    padding: 0 15px;
+    padding: 0 10px;
     max-width: 100vw;
     overflow-x: hidden;
   }
@@ -993,7 +1038,7 @@ body {
   
   .aTTLogo {
     width: 90%;
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
   }
   
@@ -1005,20 +1050,18 @@ body {
     overflow: hidden;
   }
   
+  .storymap-section h1 {
+    font-size: 24px;
+  }
+  
   .storymap-container {
     width: 95%;
     max-width: 100%;
-    position: relative;
-    padding-bottom: 75%;
-    height: 0;
-    overflow: hidden;
+    height: 400px;
     margin: 0 auto;
   }
   
   .storymap-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border: none;
@@ -1026,7 +1069,7 @@ body {
   
   /* Meet the Team Section */
   .meetTeamSection {
-    padding: 30px 15px;
+    padding: 30px 10px;
     text-align: center;
     width: 100%;
     max-width: 100vw;
@@ -1034,12 +1077,12 @@ body {
   }
   
   .meetTeamSection h1 {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 15px;
   }
   
   .meetTeamSection p1 {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
   }
   
@@ -1053,29 +1096,29 @@ body {
     width: 100%;
   }
   
-  /* Individual team member sections - PROPER SPACING */
+  /* Individual team member sections */
   .drFergSection,
   .cutTheMustardSection,
   .luckyHalfSpeedSection {
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     text-align: center;
-    padding: 20px 15px;
+    padding: 20px 10px;
     margin-bottom: 20px;
   }
   
   /* ===== LUCKY HALFSPEED - NO OVERLAP ===== */
   .luckyHalfSpeedSection {
-    margin-bottom: 60px;
-    padding-bottom: 30px;
+    margin-bottom: 80px;
+    padding-bottom: 40px;
   }
   
   /* Team member images */
   .DrFergImageframe,
   .cutTheMustardImageFrame,
   .luckyhalfSpeedImageFrame {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto 15px;
     overflow: hidden;
     border-radius: 50%;
@@ -1093,7 +1136,7 @@ body {
   .drFergSection h1,
   .cutTheMustardSection h1,
   .luckyHalfSpeedSection h1 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
   
@@ -1101,7 +1144,7 @@ body {
   .DrFergText p3,
   .cutTheMustardText p3,
   .luckyHalfSpeedText p3 {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
   }
   
@@ -1118,21 +1161,21 @@ body {
   }
   
   .Donate-Section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 15px;
   }
   
   /* ===== DONATE CONTENT - TEXT CONTAINED IN BOX ===== */
   .donate-content {
     flex-direction: column;
-    padding: 20px 15px;
+    padding: 15px 10px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
   
   .donate-content p3 {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: whitesmoke;
     word-wrap: break-word;
@@ -1150,20 +1193,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 40px;
-    font-size: 18px;
-    margin-top: 20px;
-    min-width: 200px;
-    max-width: 280px;
-    height: 60px;
-    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    margin-top: 15px;
+    min-width: 180px;
+    max-width: 250px;
+    height: 50px;
+    border-radius: 25px;
     text-decoration: none;
   }
   
-  /* Merch Section - Stack vertically */
+  /* Merch Section */
   .Merch {
     flex-direction: column;
-    padding: 30px 15px;
+    padding: 30px 10px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
@@ -1179,12 +1222,12 @@ body {
   }
   
   .merchTextSection h1 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 15px;
   }
   
   .merchTextSection p1 {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .LilgImage {
@@ -1192,7 +1235,7 @@ body {
   }
   
   .Lilg {
-    width: 80px;
+    width: 70px;
     height: auto;
   }
   
@@ -1202,59 +1245,52 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
   }
   
   .ShirtMerch,
   .beanieMerch,
-  .soapMerch {
+  .soapMerch,
+  .shirtMerch {
     width: calc(50% - 10px);
-    max-width: 150px;
-  }
-  
-  .shirtMerch,
-  .beanieMerch,
-  .soapMerch {
-    width: 100%;
+    max-width: 140px;
     height: auto;
-    border-radius: 10px;
   }
   
-  /* ===== TWO-COLUMN FOOTER FOR MOBILE (matches homepage) ===== */
+  /* ===== TWO-COLUMN FOOTER (matches homepage) ===== */
   .footer {
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px 15px;
+    gap: 15px;
+    padding: 20px 10px;
   }
   
   .footer-heading {
     margin-right: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: left;
     align-items: flex-start;
   }
   
   .footer-heading h2 {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
   }
   
   .footer-heading a {
-    font-size: 14px;
-    min-height: 40px;
-    padding: 0.3rem 0;
+    font-size: 13px;
+    min-height: 36px;
+    padding: 0.25rem 0;
   }
   
-  /* Newsletter spans both columns */
   .footer-email-form {
     grid-column: 1 / -1;
     width: 100%;
     padding: 15px 0;
   }
   
-  /* Circular newsletter button next to input */
   .footer-email-row {
     flex-direction: row;
     width: 100%;
@@ -1263,20 +1299,20 @@ body {
   }
   
   #footer-email {
-    width: 200px;
-    max-width: 60%;
-    height: 45px;
-    border-radius: 23px 0 0 23px;
-    padding-left: 15px;
-    font-size: 13px;
+    width: 180px;
+    max-width: 55%;
+    height: 42px;
+    border-radius: 21px 0 0 21px;
+    padding-left: 12px;
+    font-size: 12px;
   }
   
   #footer-email-btn {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    margin-left: -22px;
-    font-size: 10px;
+    margin-left: -21px;
+    font-size: 9px;
   }
 }
 
@@ -1292,18 +1328,28 @@ body {
   }
   
   .COg-Logo {
-    width: 50px;
+    width: 40px;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 8px;
+    height: 24px;
+    min-width: 40px;
+    padding: 0 4px;
+    margin: 0 1px;
   }
   
   .toggle {
-    height: 25px;
-    width: 25px;
-    top: 15px;
-    right: 15px;
+    height: 24px;
+    width: 24px;
+    top: 18px;
+    right: 8px;
   }
   
   .sidebar {
-    width: 200px;
+    width: 180px;
     top: 60px;
   }
   
@@ -1316,29 +1362,25 @@ body {
     font-size: 16px;
   }
   
-  /* Typography scaling */
   h1 {
-    font-size: 22px !important;
+    font-size: 20px !important;
     line-height: 1.3;
   }
   
   h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
   
-  /* ATT Logo smaller */
   .aTTLogo {
-    max-width: 300px;
+    max-width: 280px;
   }
   
-  /* StoryMap taller on phones */
   .storymap-container {
-    padding-bottom: 100%;
+    height: 350px;
   }
   
-  /* Team section adjustments */
   .meetTeamSection h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
   
   .DrFergImageframe,
@@ -1351,128 +1393,30 @@ body {
   .drFergSection h1,
   .cutTheMustardSection h1,
   .luckyHalfSpeedSection h1 {
+    font-size: 16px;
+  }
+  
+  .Donate-Section h2 {
     font-size: 18px;
   }
   
-  /* Donate section */
-  .Donate-Section h2 {
-    font-size: 20px;
-  }
-  
   .donate-content p3 {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .attDonate-Button {
-    padding: 12px 30px;
-    font-size: 16px;
-    height: 50px;
+    padding: 12px 25px;
+    font-size: 14px;
+    height: 45px;
   }
   
-  /* Merch section */
   .merchTextSection h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
   
-  .ShirtMerch,
-  .beanieMerch,
-  .soapMerch {
-    width: calc(50% - 8px);
-    max-width: 130px;
-  }
-  
-  /* Footer adjustments */
   .footer {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 15px 10px;
-  }
-  
-  .footer-heading h2 {
-    font-size: 16px;
-  }
-  
-  .footer-heading a {
-    font-size: 13px;
-    min-height: 36px;
-  }
-  
-  #footer-email {
-    width: 170px;
-    height: 40px;
-  }
-  
-  #footer-email-btn {
-    width: 40px;
-    height: 40px;
-    margin-left: -20px;
-  }
-}
-
-/* Extra small devices (360px and below) */
-@media screen and (max-width: 360px) {
-  
-  body {
-    padding-top: 65px !important;
-  }
-  
-  h1 {
-    font-size: 18px !important;
-  }
-  
-  h2 {
-    font-size: 16px;
-  }
-  
-  .COg-Logo {
-    width: 45px;
-  }
-  
-  .sidebar {
-    width: 180px;
-  }
-  
-  .sidebar a {
-    font-size: 14px;
-  }
-  
-  .sidebar p2 {
-    font-size: 14px;
-  }
-  
-  .aTTLogo {
-    max-width: 250px;
-  }
-  
-  .DrFergImageframe,
-  .cutTheMustardImageFrame,
-  .luckyhalfSpeedImageFrame {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .drFergSection h1,
-  .cutTheMustardSection h1,
-  .luckyHalfSpeedSection h1 {
-    font-size: 16px;
-  }
-  
-  .Lilg {
-    width: 60px;
-  }
-  
-  .ShirtMerch,
-  .beanieMerch,
-  .soapMerch {
-    width: 100%;
-    max-width: 120px;
-  }
-  
-  /* Footer adjustments */
-  .footer {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 10px 8px;
+    gap: 12px;
+    padding: 15px 8px;
   }
   
   .footer-heading h2 {
@@ -1487,13 +1431,116 @@ body {
   #footer-email {
     width: 150px;
     height: 38px;
-    font-size: 12px;
+    font-size: 11px;
   }
   
   #footer-email-btn {
     width: 38px;
     height: 38px;
     margin-left: -19px;
-    font-size: 9px;
+  }
+}
+
+/* Extra small devices (360px and below) */
+@media screen and (max-width: 360px) {
+  
+  body {
+    padding-top: 65px !important;
+  }
+  
+  .Header {
+    height: 55px;
+  }
+  
+  .COg-Logo {
+    width: 35px;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 7px;
+    height: 22px;
+    min-width: 35px;
+    padding: 0 3px;
+  }
+  
+  .toggle {
+    height: 22px;
+    width: 22px;
+    top: 16px;
+  }
+  
+  h1 {
+    font-size: 16px !important;
+  }
+  
+  h2 {
+    font-size: 14px;
+  }
+  
+  .sidebar {
+    width: 160px;
+    top: 55px;
+  }
+  
+  .sidebar a {
+    font-size: 14px;
+  }
+  
+  .sidebar p2 {
+    font-size: 14px;
+  }
+  
+  .aTTLogo {
+    max-width: 230px;
+  }
+  
+  .storymap-container {
+    height: 300px;
+  }
+  
+  .DrFergImageframe,
+  .cutTheMustardImageFrame,
+  .luckyhalfSpeedImageFrame {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .drFergSection h1,
+  .cutTheMustardSection h1,
+  .luckyHalfSpeedSection h1 {
+    font-size: 14px;
+  }
+  
+  .Lilg {
+    width: 50px;
+  }
+  
+  .footer {
+    gap: 10px;
+    padding: 12px 6px;
+  }
+  
+  .footer-heading h2 {
+    font-size: 12px;
+  }
+  
+  .footer-heading a {
+    font-size: 11px;
+    min-height: 28px;
+  }
+  
+  #footer-email {
+    width: 130px;
+    height: 34px;
+    font-size: 10px;
+  }
+  
+  #footer-email-btn {
+    width: 34px;
+    height: 34px;
+    margin-left: -17px;
+    font-size: 8px;
   }
 }
