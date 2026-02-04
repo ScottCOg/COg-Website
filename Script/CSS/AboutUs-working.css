@@ -1,484 +1,485 @@
-  html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .Header {
-    height: 100px;
-    border-style: solid;
-    border-width: .5px;
-    background-color: white;
-    border-color: grey;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 1000;
-  }
+/* 
+===============================================
+COg. About Us Page CSS - MOBILE OPTIMIZED
+===============================================
+Author: Scott Polley 
+Mobile Optimization: Andy Albertsberg - Double-A Solutions
+Version: V3 - Complete Mobile Fixes
+Date: February 2026
 
-   .left-section {
-     background-color: white;
-     width: 200px;
-     margin-left: 10px;
-     display: felx;
+DESIGN GUIDE COMPLIANCE:
+- Colors: Red #D61834, Blue #29abe2, Green #45bc7a, Yellow #FFF568
+- Font: Arial, Helvetica, sans-serif
+- Text: rgba(0, 0, 0, 0.50)
+===============================================
+*/
 
-    }
-
-    .COg-Logo {
-     width: 100px;
-    }
-
-    .center-section {
-     background-color: white;
-     flex: 1;
-     display: flex;
-     justify-content: end;
-
-    }
-
-    .create-button {
-     position: relative;
-     background-color:white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 100px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-
-    }
-
-    .create-button::after {
-     content: '';
-     position: absolute;
-     width:110px;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: red;
-     transform: scale(0, 1);
-
-    }
-
-   .create-button:hover {
-      color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-   }
-   .create-button:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-
-   }
-
-    .create-button:active {
-     background-color: none;
-     font-size: 15px;
-    }
-
-
-    .volunteer-button {
-     position: relative;
-     background-color: white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 155px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-
-    }
-
-    .volunteer-button::after {
-     content: '';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #45bc7a;
-     transform: scale(0, 1);
-
-    }
-
-    .volunteer-button:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
-
-    .volunteer-button:hover::after {
-      transform: scale(1, 1);
-      transition: transform 0.5s ease;
-    }
-
-    .volunteer-button:active {
-     background-color: none;
-     font-size: 15px;
-    }
-
-
-    .donate-button {
-     position: relative;
-     background-color: white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 110px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-    }
-
-    .donate-button::after {
-     content:'';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #29abe2;
-     transform: scale(0, 1);
-
-    }
-
-    .donate-button:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
-
-    .donate-button:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-   }
-
-    .donate-button:active {
-     background-color: none;
-     font-size: 15px;
-   }
-
-    .right-section {
-     background-color: white;
-     width: 75px;
-     display: flex;
-     justify-content: center;
-
-    }
-
-    .Taco-Menu {
-     position: relative;
-     width: 25px;
-     height:25px;
-     overflow: hidden;
-     cursor: pointer;
-    }
-    
-    .Taco-Menu img {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      object-fit: cover;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .Taco-Menu img.transition {
-     opacity: 1;
-     z-index: 2;
-    }
-
-    .Taco-Menu:hover img.transition {
-      opacity: 0;
-    }
-
-    .slide{
-      height: 100%;
-      width: 180px;
-      position: absolute;
-      background-color: #fff;
-      transition: 0.5s ease;
-    }
-    input[type="checkbox"] {
-      display: none;
-    }
-
-
-    .toggle {
-      position: absolute;
-      height: 30px;
-      width: 30px;
-      top: 20px;
-      right: 20px;
-      z-index: 1;
-      cursor: pointer;
-      border-radius: 2px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-    }
-    .toggle .common{
-      position: absolute;
-      height: 2px;
-      width: 20px;
-      background-color: red;
-      border-radius: 50px;
-      transition: 0.3s ease;
-
-    }
-    .toggle .top_line {
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    .toggle .mid_line {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    .toggle .bot_line {
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    input:checked ~ .toggle .top_line {
-      left: 2px;
-      top: 14px;
-      width: 25px;
-      transform: rotate(45deg) translate(2px, 1px);
-    }
-
-    input:checked ~ .toggle .bot_line {
-      left: 2px;
-      top: 14px;
-      width: 25px;
-      transform: rotate(-45deg) translate(2px, -1px);
-    }
-    input:checked ~ .toggle .mid_line {
-      opacity: 0;
-    }
-
-    .sidebar{
-      position:fixed;
-      top: 35;
-      right: 0;
-      height: 100vh;
-      width: 200px;
-      z-index: 999;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      transition: .3s ease;
-      transform: translatex(250px);
-  
-    }
-
-      input:checked ~ .sidebar{
-      transform: translatex(0px);
-      opacity: 1;
-      }
-
-    .sidebar li{
-      height: 50px;
-      list-style: none;
-      padding-top: 30px;
-    }
-
-    .sidebar a{
-     position: relative;
-     background-color: none;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 110px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-     text-decoration: none;
-     align-items: center;
-     align-content: center;
-     justify-content: center;
-    }
-
-    .sidebar a::after {
-     content:'';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #fff568;
-     transform: scale(0, 1);
-
-    }
-
-    .sidebar a:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
-
-    .sidebar a:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-   }
-
-    .sidebar a:active {
-     background-color: none;
-     font-size: 15px;
-   }
-
-
-    /* text*/
-
-    h1 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 50px;
-      color:  rgba(0, 0, 0, 0.50);
-
-    }
-    h2 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 50px;
-      color: whitesmoke;
-    }
-
-    h3 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color: rgba(0, 0, 0, 0.50);
-    }
-
-
-    P1 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    P2 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    p3{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      text-align: justify;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    p4{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      text-align: justify;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    p5{
-      display: flex;
-      text-align: justify;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    /* Start of the Body*/
-
-    body {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      flex-wrap: nowrap;
-      min-height: 100vh;
-      margin: 0;
-      justify-content: flex-start;
-      background-color: whitesmoke;
-    
-    }
-    .main-content {
-      flex: 1;
-    }
-
-/* Start of the What we are Section*/
-    .whatWeAreTextSection {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 1000px;
-      margin: 80px auto; 
-      padding: 20px;
-      line-height: 1.6;
-      
-    }
-
-/* Start of the Concept Section*/
-    .conceptSection{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 5px;
-      
-    }
-    .conceptSection h1 {
-      margin:10px 0 5px 10px;
-    }
-
-    .conceptImage {
-      display: flex;
-      flex-grow: 1;
-      width: 100%;
-      max-width: 1000px;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      margin-bottom: 20px;
-    }
-/* Start of the Concept Breakdown Section*/
-
-.breakdownConcpets {
-  display: flex;
-  flex-direction: column; /* stack rows vertically */
-  align-items: center;
-  gap: 100px; /* space between rows */
-  margin-top: 40px;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-/* Each row (Idea, Validate, Pair, etc.) */
+.Header {
+  height: 100px;
+  border-style: solid;
+  border-width: .5px;
+  background-color: white;
+  border-color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.left-section {
+  background-color: white;
+  width: 200px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.COg-Logo {
+  width: 100px;
+}
+
+.center-section {
+  background-color: white;
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.create-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 100px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.create-button::after {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #D61834;
+  transform: scale(0, 1);
+}
+
+.create-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.create-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.create-button:active {
+  background-color: none;
+  font-size: 15px;
+}
+
+.volunteer-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 155px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.volunteer-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #45bc7a;
+  transform: scale(0, 1);
+}
+
+.volunteer-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.volunteer-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.volunteer-button:active {
+  background-color: none;
+  font-size: 15px;
+}
+
+.donate-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 110px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.donate-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #29abe2;
+  transform: scale(0, 1);
+}
+
+.donate-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.donate-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.donate-button:active {
+  background-color: none;
+  font-size: 15px;
+}
+
+.right-section {
+  background-color: white;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+}
+
+.Taco-Menu {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Taco-Menu img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.Taco-Menu img.transition {
+  opacity: 1;
+  z-index: 2;
+}
+
+.Taco-Menu:hover img.transition {
+  opacity: 0;
+}
+
+.slide {
+  height: 100%;
+  width: 180px;
+  position: absolute;
+  background-color: #fff;
+  transition: 0.5s ease;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.toggle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 35px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+}
+
+.toggle .common {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #D61834;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.toggle .top_line {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .mid_line {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .bot_line {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input:checked ~ .toggle .top_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg) translate(2px, 1px);
+}
+
+input:checked ~ .toggle .bot_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg) translate(2px, -1px);
+}
+
+input:checked ~ .toggle .mid_line {
+  opacity: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: .3s ease;
+  transform: translateX(250px);
+}
+
+input:checked ~ .sidebar {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.sidebar li {
+  height: 50px;
+  list-style: none;
+  padding-top: 30px;
+}
+
+.sidebar a {
+  position: relative;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 110px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.sidebar a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #FFF568;
+  transform: scale(0, 1);
+}
+
+.sidebar a:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sidebar a:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.sidebar a:active {
+  background-color: transparent;
+  font-size: 15px;
+}
+
+.sidebar p2 {
+  white-space: nowrap;
+}
+
+/* Typography */
+h1 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+h2 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: whitesmoke;
+}
+
+h3 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+P1 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+P2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+p3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+p4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+p5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+/* Body */
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  margin: 0;
+  justify-content: flex-start;
+  background-color: whitesmoke;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* What We Are Section */
+.whatWeAreTextSection {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 800px;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* Concept Section */
+.conceptSection {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.conceptImage {
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Breakdown Concepts */
+.breakdownConcpets {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
 .ideaRow,
 .validateRow,
 .pairRow,
@@ -487,24 +488,11 @@
 .empowerRow,
 .elavRow {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 30px;
-  width: 80%;
-  max-width: 1200px;
-}
-
-/* Each image should take about half width */
-.ideaSection,
-.validateSection,
-.pairSection,
-.planSection,
-.ImplementSection,
-.empowerSection,
-.evalSection {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 40px;
+  padding: 20px;
 }
 
 .ideaImage,
@@ -514,12 +502,11 @@
 .implementImage,
 .empowerImage,
 .evalImage {
-  width: 100%;
-  max-width: 400px;
+  width: 150px;
   height: auto;
+  flex-shrink: 0;
 }
 
-/* Text area beside each image */
 .ideaText,
 .validateText,
 .pairText,
@@ -527,70 +514,27 @@
 .implementText,
 .empowerText,
 .evalText {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
+  max-width: 600px;
+  line-height: 1.5;
 }
 
-/* Responsive behavior: stack vertically on small screens */
-@media (max-width: 800px) {
-  .ideaRow,
-  .validateRow,
-  .pairRow,
-  .planRow,
-  .implementRow,
-  .empowerRow,
-  .elavRow {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .ideaSection,
-  .validateSection,
-  .pairSection,
-  .planSection,
-  .ImplementSection,
-  .empowerSection,
-  .evalSection,
-  .ideaText,
-  .validateText,
-  .pairText,
-  .planText,
-  .implementText,
-  .empowerText,
-  .evalText {
-    width: 100%;
-  }
-
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
-    max-width: 300px;
-  }
+/* Who We Are Section */
+.whoWeAreSection {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
+.teamLogosSection {
+  display: flex;
+  flex-direction: row;
+}
 
-
-  /* Start of Meet the Team Section*/
-    .meetTeamSection{
-      display:flex;
-      flex-direction: column;
-      gap: 50px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-      justify-content: center; 
-      align-items: center;
-    }
-
-    .teamLogosSection{
-      display: flex;
-      flex-direction: row;
-    }
- /* Start of Scott Section*/
+/* Scott Section */
 .FounderSection {
   display: flex;
   align-items: flex-start;
@@ -608,8 +552,7 @@
   border: 3px solid black;
   flex-shrink: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-  transition: box-shadow 0.4s ease, transform 0.4s ease; /* smooth animation */
-  
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .scottgImage,
@@ -622,35 +565,31 @@
   left: 0;
   transition: opacity 0.5s ease;
   cursor: pointer;
-  
 }
 
 .scottHoverImage {
-  opacity: 0; /* hidden initially */
+  opacity: 0;
 }
 
 .ScottImageframe:hover {
-  box-shadow: 0 0 25px 5px #45bc7a; /* green glow */
-  transform: scale(1.02); /* optional: gentle zoom on hover */
+  box-shadow: 0 0 25px 5px #45bc7a;
+  transform: scale(1.02);
 }
 
 .ScottImageframe:hover .scottHoverImage {
-  opacity: 1; /* fade in secondary image */
-
+  opacity: 1;
 }
 
 .ScottImageframe:hover .scottgImage {
-  opacity: 0; /* fade out primary image */
- 
+  opacity: 0;
 }
 
 .FounderText {
-  max-width: 600px; /* limits the width of the entire text block */
+  max-width: 600px;
   text-align: justify;
   margin-left: 40px;
 }
 
-/* Hover text outside the image */
 .scottTransitionText {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -659,32 +598,13 @@
   max-width: 400px;
   line-height: 1.5;
   min-height: 100px;
-
 }
 
 .ScottImageframe:hover ~ .FounderText .scottTransitionText {
-  opacity: 1; /* show text on hover of the image */
+  opacity: 1;
 }
 
-/* Optional responsive */
-@media (max-width: 768px) {
-  .FounderSection {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .ScottImageframe {
-    width: 200px;
-  }
-
-  .scottTransitionText {
-    max-width: 90%;
-    text-align: center;
-  }
-}
-
- /* Start of Amanda Section*/
+/* Amanda Section */
 .dirOfMarketingSection {
   display: flex;
   align-items: flex-start;
@@ -702,8 +622,7 @@
   border: 3px solid black;
   flex-shrink: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-  transition: box-shadow 0.4s ease, transform 0.4s ease; /* smooth animation */
-  
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .amandaImage,
@@ -716,36 +635,31 @@
   left: 0;
   transition: opacity 0.5s ease;
   cursor: pointer;
-  
 }
 
 .amandaHoverImage {
-  opacity: 0; /* hidden initially */
+  opacity: 0;
 }
 
 .amandaImageframe:hover {
-  box-shadow: 0 0 25px 5px red; /* red glow */
-  transform: scale(1.02); /* gentle zoom on hover */
+  box-shadow: 0 0 25px 5px #D61834;
+  transform: scale(1.02);
 }
 
 .amandaImageframe:hover .amandaHoverImage {
-  opacity: 1; /* fade in secondary image */
-
+  opacity: 1;
 }
 
 .amandaImageframe:hover .amandaImage {
-  opacity: 0; /* fade out primary image */
- 
+  opacity: 0;
 }
 
 .dirOfMarkText {
-  max-width: 600px; /* limits the width of the entire text block */
+  max-width: 600px;
   text-align: justify;
   margin-left: 40px;
 }
 
-
-/* Hover text outside the image */
 .amandaTransitionText {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -757,23 +671,10 @@
 }
 
 .amandaImageframe:hover ~ .dirOfMarkText .amandaTransitionText {
-  opacity: 1; /* show text on hover of the image */
+  opacity: 1;
 }
 
-/* Optional responsive */
-@media (max-width: 768px) {
-  .dirOfMarketingSection {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .amandaImageframe {
-    width: 200px;
-  }
-}
-
- /* Start of Catherine Section*/
+/* Catherine Section */
 .dirOfAMESection {
   display: flex;
   align-items: flex-start;
@@ -791,8 +692,7 @@
   border: 3px solid black;
   flex-shrink: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-  transition: box-shadow 0.4s ease, transform 0.4s ease; /* smooth animation */
-  
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .catherineImage,
@@ -805,34 +705,31 @@
   left: 0;
   transition: opacity 0.5s ease;
   cursor: pointer;
-  
 }
 
 .catherineHoverImage {
-  opacity: 0; /* hidden initially */
+  opacity: 0;
 }
 
 .catherineImageframe:hover {
-  box-shadow: 0 0 25px 5px #29abe2; /* blue glow */
-  transform: scale(1.02); /* gentle zoom on hover */
+  box-shadow: 0 0 25px 5px #29abe2;
+  transform: scale(1.02);
 }
 
 .catherineImageframe:hover .catherineHoverImage {
-  opacity: 1; /* fade in secondary image */
-
+  opacity: 1;
 }
 
 .catherineImageframe:hover .catherineImage {
-  opacity: 0; /* fade out primary image */
- 
+  opacity: 0;
 }
+
 .dirAMEText {
-  max-width: 600px; /* limits the width of the entire text block */
+  max-width: 600px;
   text-align: justify;
   margin-left: 40px;
 }
 
-/* Hover text outside the image */
 .catherineTransitionText {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -844,192 +741,188 @@
 }
 
 .catherineImageframe:hover ~ .dirAMEText .catherineTransitionText {
-  opacity: 1; /* show text on hover of the image */
+  opacity: 1;
 }
 
-/* Optional responsive */
-@media (max-width: 768px) {
-  .dirOfAMESection {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .catherineImageframe {
-    width: 200px;
-  }
+/* Footer */
+.footer-container {
+  width: 100%;
+  display: flex;
+  background-color: black;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-top: auto;
 }
 
+.footer {
+  width: 80%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 
+.footer-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: whitesmoke;
+}
 
-/* Start of Footer*/
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}
 
-    .footer-container {
-      width: 100%;
-      top: auto;
-      background-color: black;
-      padding: 0.5rem 0 1rem 0;
-      flex-shrink: 0;
-      margin-top: auto;
- 
-    }
+.footer-heading p1 {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
 
-    .footer {
-      width: 100%;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
+.footer-heading a {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
 
-    }
+.footer-heading a:hover {
+  color: #D61834;
+  transition: 0.3s ease-out;
+}
 
-    .footer-title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color: whitesmoke;
-      margin-bottom: 1rem;
-      
-    }
+.footer-email-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  padding: 20px;
+}
 
-    .footer-heading {
-      display: flex;
-      flex-direction: column;
-      margin-right: 4rem;
-      margin-bottom: 4rem;
+.footer-email-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
 
-    }
+#footer-email {
+  width: 250px;
+  height: 50px;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    .footer-heading p1 {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-    }
+#footer-email::placeholder {
+  color: #D61834;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    .footer-heading a {
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      align-items: center;
-      align-content: center;
-    }
+#footer-email-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #D61834;
+  outline: none;
+  border: none;
+  color: whitesmoke;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -25px;
+}
 
-    .footer-heading a:hover {
-      color: red;
-      transition: 0.3s ease-out;
+#footer-email-btn:hover {
+  cursor: pointer;
+  background-color: #29abe2;
+  transition: all 0.4s ease-out;
+}
 
-    }
+#footer-email-btn:active {
+  transform: scale(0.95);
+  background-color: #45bc7a;
+}
 
-    .footer-email-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 15px;
-      padding: 40px;
-     
-    }
-
-    .footer-email-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-
-    }
-
-    #footer-email{
-      width: 250px;
-      height: 50px;
-      border-radius: 100px;
-      outline: none;
-      border: none;
-      padding-left: 0.5rem;
-      font-size: 0.6rem;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-
-    }
-
-    #footer-email::placeholder {
-      color: red;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #footer-email-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: red;
-      outline: none;
-      border: none;
-      color: whitesmoke;
-      font-size: 0.6rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    #footer-email-btn:hover {
-      cursor: pointer;
-      background-color: #29abe2;
-      transition: all 0.4s ease-out;
-    }
-
-    #footer-email-btn:active {
-      transform:scale(-1.02);
-      background-color: #45bc7a;
-    }
-
-/* ============================================= */
-/* MOBILE RESPONSIVE STYLES - FIXED VERSION     */
-/* ============================================= */
+/* =============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================= */
 
 /* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
   
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
   body {
     height: auto !important;
-    min-height: 100vh !important;
+    min-height: 100vh;
     padding-top: 80px !important;
   }
   
+  /* Header adjustments */
   .Header {
-    height: 70px !important;
+    height: 70px;
   }
   
-  /* CRITICAL: Hide desktop navigation buttons */
+  /* Hide desktop navigation buttons */
   .center-section {
     display: none !important;
-    visibility: hidden !important;
   }
   
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    display: none !important;
-  }
-  
+  /* Logo scaling */
   .COg-Logo {
-    width: 60px !important;
+    width: 60px;
   }
   
+  /* Hamburger menu positioning */
   .toggle {
-    display: flex !important;
     top: 20px;
     right: 20px;
   }
   
+  /* Sidebar adjustments */
   .sidebar {
     top: 70px;
+    width: 220px;
   }
   
-  /* What We Are Section */
+  .sidebar a {
+    white-space: nowrap;
+  }
+  
+  .sidebar p2 {
+    white-space: nowrap;
+    font-size: 18px;
+  }
+  
+  /* Main content area - CLOSER TO HEADER */
+  main {
+    margin-top: 10px;
+    padding: 0 15px;
+  }
+  
+  /* What We Are Section - CLOSER TO HEADER */
   .whatWeAreTextSection {
-    padding: 20px 15px;
+    padding: 10px 15px;
+    margin-top: 0;
   }
   
   .whatWeAreTextSection p5 {
@@ -1038,15 +931,24 @@
   }
   
   /* Concept Section */
+  .conceptSection {
+    padding: 20px 10px;
+  }
+  
   .conceptSection h1 {
-    font-size: 28px !important;
+    font-size: 28px;
     text-align: center;
   }
   
   .conceptImage {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Breakdown Concepts - Stack vertically */
+  .breakdownConcpets {
+    padding: 10px;
   }
   
   /* All concept rows - stack vertically */
@@ -1057,21 +959,13 @@
   .implementRow,
   .empowerRow,
   .elavRow {
-    flex-direction: column !important;
-    align-items: center !important;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 30px;
+    padding: 15px;
   }
   
-  .ideaSection,
-  .validateSection,
-  .pairSection,
-  .planSection,
-  .ImplementSection,
-  .empowerSection,
-  .evalSection {
-    margin-bottom: 15px;
-  }
-  
+  /* All concept images - DOUBLED SIZE */
   .ideaImage,
   .validateImage,
   .pairImage,
@@ -1079,10 +973,13 @@
   .implementImage,
   .empowerImage,
   .evalImage {
-    width: 150px !important;
-    height: auto !important;
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
   }
   
+  /* All concept text sections - CENTERED */
   .ideaText,
   .validateText,
   .pairText,
@@ -1090,84 +987,148 @@
   .implementText,
   .empowerText,
   .evalText {
-    width: 100% !important;
+    width: 100%;
     text-align: center;
-    padding: 0 15px;
+    padding: 10px;
   }
   
-  /* Who We Are Section */
+  .ideaText p5,
+  .validateText p5,
+  .pairText p5,
+  .planText p5,
+  .implementText p5,
+  .empowerText p5,
+  .evalText p5 {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  /* Who We Are / Meet the Crew Section */
+  .whoWeAreSection {
+    padding: 20px 15px;
+  }
+  
   .whoWeAreSection h1 {
-    font-size: 28px !important;
+    font-size: 28px;
     text-align: center;
   }
   
+  /* Team member sections - stack vertically, CENTERED */
   .FounderSection,
   .dirOfMarketingSection,
   .dirOfAMESection {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px 10px;
   }
   
+  /* Team member images */
   .ScottImageframe,
   .amandaImageframe,
   .catherineImageframe {
-    width: 200px !important;
-    height: 200px !important;
+    width: 200px;
+    height: 200px;
     margin-bottom: 20px;
   }
   
+  .scottgImage,
+  .scottHoverImage,
+  .amandaImage,
+  .amandaHoverImage,
+  .catherineImage,
+  .catherineHoverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Team member text - CENTERED (consistent alignment) */
   .FounderText,
   .dirOfMarkText,
   .dirAMEText {
-    margin-left: 0 !important;
+    width: 100%;
     text-align: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+  
+  .FounderText h3,
+  .dirOfMarkText h3,
+  .dirAMEText h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    justify-content: center;
   }
   
   .scottTransitionText,
   .amandaTransitionText,
   .catherineTransitionText {
-    opacity: 1 !important;
+    font-size: 15px;
+    line-height: 1.6;
     text-align: center;
+    opacity: 1;
     max-width: 100%;
   }
   
-  /* Footer */
+  /* ===== TWO-COLUMN FOOTER FOR MOBILE (matches homepage) ===== */
   .footer {
-    width: 95% !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    height: auto !important;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 15px;
   }
   
   .footer-heading {
-    margin-right: 0 !important;
-    margin-bottom: 25px;
-    text-align: center;
-    align-items: center;
+    margin-right: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .footer-heading h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
   }
   
   .footer-heading a {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+    font-size: 14px;
+    min-height: 40px;
+    padding: 0.3rem 0;
+  }
+  
+  /* Newsletter spans both columns */
+  .footer-email-form {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 15px 0;
+  }
+  
+  /* Circular newsletter button next to input */
+  .footer-email-row {
+    flex-direction: row;
+    width: 100%;
+    gap: 0;
     justify-content: center;
   }
   
-  .footer-email-row {
-    flex-direction: column !important;
-    gap: 10px;
-  }
-  
   #footer-email {
-    width: 100%;
-    max-width: 280px;
+    width: 200px;
+    max-width: 60%;
+    height: 45px;
+    border-radius: 23px 0 0 23px;
+    padding-left: 15px;
+    font-size: 13px;
   }
   
   #footer-email-btn {
-    width: 100%;
-    max-width: 280px;
-    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: -22px;
+    font-size: 10px;
   }
 }
 
@@ -1179,22 +1140,22 @@
   }
   
   .Header {
-    height: 60px !important;
+    height: 60px;
   }
   
   .COg-Logo {
-    width: 50px !important;
+    width: 50px;
   }
   
   .toggle {
-    height: 25px !important;
-    width: 25px !important;
+    height: 25px;
+    width: 25px;
     top: 15px;
     right: 15px;
   }
   
   .sidebar {
-    width: 180px;
+    width: 200px;
     top: 60px;
   }
   
@@ -1203,10 +1164,29 @@
     margin: 0 15px;
   }
   
-  h1 {
-    font-size: 24px !important;
+  .sidebar p2 {
+    font-size: 16px;
   }
   
+  /* Typography scaling */
+  h1 {
+    font-size: 24px !important;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  .whatWeAreTextSection p5 {
+    font-size: 16px;
+  }
+  
+  /* Concept images - still doubled from original */
   .ideaImage,
   .validateImage,
   .pairImage,
@@ -1214,14 +1194,49 @@
   .implementImage,
   .empowerImage,
   .evalImage {
-    width: 120px !important;
+    width: 180px;
+    max-width: 180px;
   }
   
+  /* Team member images */
   .ScottImageframe,
   .amandaImageframe,
   .catherineImageframe {
-    width: 150px !important;
-    height: 150px !important;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .scottTransitionText,
+  .amandaTransitionText,
+  .catherineTransitionText {
+    font-size: 14px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+  
+  .footer-heading h2 {
+    font-size: 16px;
+  }
+  
+  .footer-heading a {
+    font-size: 13px;
+    min-height: 36px;
+  }
+  
+  #footer-email {
+    width: 170px;
+    height: 40px;
+  }
+  
+  #footer-email-btn {
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
   }
 }
 
@@ -1236,187 +1251,71 @@
     font-size: 20px !important;
   }
   
+  .whatWeAreTextSection p5 {
+    font-size: 14px;
+  }
+  
   .COg-Logo {
-    width: 45px !important;
+    width: 45px;
   }
   
   .sidebar {
-    width: 160px;
+    width: 180px;
   }
   
   .sidebar a {
     font-size: 14px;
   }
   
+  .sidebar p2 {
+    font-size: 14px;
+  }
+  
+  /* Concept images */
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    width: 150px;
+    max-width: 150px;
+  }
+  
   .ScottImageframe,
   .amandaImageframe,
   .catherineImageframe {
-    width: 120px !important;
-    height: 120px !important;
-  }
-}
-/* 
-==============================================
-ABOUT US PAGE PATCH - Fix font sizes & spacing
-Add this to the END of AboutUs-working.css
-(after the mobile responsive section)
-==============================================
-*/
-
-@media screen and (max-width: 768px) {
-  
-  /* Fix oversized text throughout the page */
-  p5, .ideaText p5, .validateText p5, .pairText p5,
-  .planText p5, .implementText p5, .empowerText p5, .evalText p5 {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    text-align: left !important;
+    width: 120px;
+    height: 120px;
   }
   
-  /* Section headings - IDEA, VALIDATE, etc */
-  .ideaText h1, .validateText h1, .pairText h1,
-  .planText h1, .implementText h1, .empowerText h1, .evalText h1,
-  .ideaSection h1, .validateSection h1 {
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
+  /* Footer adjustments */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px 8px;
   }
   
-  /* Concept section overall */
-  .conceptSection {
-    padding: 15px 10px !important;
+  .footer-heading h2 {
+    font-size: 14px;
   }
   
-  .conceptSection h1 {
-    font-size: 26px !important;
-    text-align: center !important;
+  .footer-heading a {
+    font-size: 12px;
+    min-height: 32px;
   }
   
-  /* Breakdown concepts container */
-  .breakdownConcpets {
-    padding: 10px !important;
+  #footer-email {
+    width: 150px;
+    height: 38px;
+    font-size: 12px;
   }
   
-  /* Each concept row */
-  .ideaRow, .validateRow, .pairRow, .planRow,
-  .implementRow, .empowerRow, .elavRow {
-    padding: 15px 10px !important;
-    margin-bottom: 20px !important;
-  }
-  
-  /* Concept images - keep them reasonable size */
-  .ideaImage, .validateImage, .pairImage, .planImage,
-  .implementImage, .empowerImage, .evalImage {
-    width: 100px !important;
-    height: auto !important;
-    margin-bottom: 10px !important;
-  }
-  
-  /* Text containers for each concept */
-  .ideaText, .validateText, .pairText, .planText,
-  .implementText, .empowerText, .evalText {
-    padding: 0 10px !important;
-  }
-  
-  /* Bullet points / list items */
-  .ideaText ul, .validateText ul, .pairText ul,
-  .planText ul, .implementText ul, .empowerText ul, .evalText ul {
-    font-size: 14px !important;
-    padding-left: 20px !important;
-    margin: 10px 0 !important;
-  }
-  
-  .ideaText li, .validateText li, .pairText li,
-  .planText li, .implementText li, .empowerText li, .evalText li {
-    font-size: 14px !important;
-    margin-bottom: 5px !important;
-  }
-  
-  /* What We Are section */
-  .whatWeAreTextSection {
-    padding: 15px !important;
-  }
-  
-  .whatWeAreTextSection h1 {
-    font-size: 24px !important;
-  }
-  
-  .whatWeAreTextSection p5 {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-  }
-  
-  /* Who We Are / Team section */
-  .whoWeAreSection {
-    padding: 20px 15px !important;
-  }
-  
-  .whoWeAreSection h1 {
-    font-size: 26px !important;
-  }
-  
-  /* Team member text */
-  .FounderText h3, .dirOfMarkText h3, .dirAMEText h3 {
-    font-size: 20px !important;
-  }
-  
-  .scottTransitionText, .amandaTransitionText, .catherineTransitionText {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-  }
-  
-  p3 {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  
-  p5, .ideaText p5, .validateText p5, .pairText p5,
-  .planText p5, .implementText p5, .empowerText p5, .evalText p5 {
-    font-size: 14px !important;
-  }
-  
-  .ideaText h1, .validateText h1, .pairText h1,
-  .planText h1, .implementText h1, .empowerText h1, .evalText h1 {
-    font-size: 18px !important;
-  }
-  
-  .conceptSection h1 {
-    font-size: 22px !important;
-  }
-  
-  .ideaImage, .validateImage, .pairImage, .planImage,
-  .implementImage, .empowerImage, .evalImage {
-    width: 80px !important;
-  }
-  
-  .whatWeAreTextSection h1 {
-    font-size: 20px !important;
-  }
-  
-  .whoWeAreSection h1 {
-    font-size: 22px !important;
-  }
-  
-  .FounderText h3, .dirOfMarkText h3, .dirAMEText h3 {
-    font-size: 18px !important;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  
-  p5 {
-    font-size: 13px !important;
-  }
-  
-  .ideaText h1, .validateText h1, .pairText h1,
-  .planText h1, .implementText h1, .empowerText h1, .evalText h1 {
-    font-size: 16px !important;
-  }
-  
-  .ideaImage, .validateImage, .pairImage, .planImage,
-  .implementImage, .empowerImage, .evalImage {
-    width: 70px !important;
+  #footer-email-btn {
+    width: 38px;
+    height: 38px;
+    margin-left: -19px;
+    font-size: 9px;
   }
 }

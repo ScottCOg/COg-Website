@@ -1,1082 +1,1286 @@
-  html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .Header {
-    height: 100px;
-    border-style: solid;
-    border-width: .5px;
-    background-color: white;
-    border-color: grey;
-    display: flex;
-    flex-direction: row;
+/* 
+===============================================
+COg. A Typhoid Tale Page CSS - MOBILE OPTIMIZED
+===============================================
+Author: Scott Polley 
+Mobile Optimization: Andy Albertsberg - Double-A Solutions
+Version: V3 - Complete Mobile Fixes
+Date: February 2026
+
+DESIGN GUIDE COMPLIANCE:
+- Colors: Red #D61834, Blue #29abe2, Green #45bc7a, Yellow #FFF568
+- Font: Arial, Helvetica, sans-serif
+- Text: rgba(0, 0, 0, 0.50)
+===============================================
+*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.Header {
+  height: 100px;
+  border-style: solid;
+  border-width: .5px;
+  background-color: white;
+  border-color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.left-section {
+  background-color: white;
+  width: 200px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.COg-Logo {
+  width: 100px;
+}
+
+.center-section {
+  background-color: white;
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.create-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 100px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.create-button::after {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #D61834;
+  transform: scale(0, 1);
+}
+
+.create-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.create-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.create-button:active {
+  background-color: none;
+  font-size: 15px;
+}
+
+.volunteer-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 155px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.volunteer-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #45bc7a;
+  transform: scale(0, 1);
+}
+
+.volunteer-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.volunteer-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.volunteer-button:active {
+  background-color: none;
+  font-size: 15px;
+}
+
+.donate-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 110px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.donate-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #29abe2;
+  transform: scale(0, 1);
+}
+
+.donate-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.donate-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.donate-button:active {
+  background-color: none;
+  font-size: 15px;
+}
+
+.right-section {
+  background-color: white;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+}
+
+.Taco-Menu {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Taco-Menu img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.Taco-Menu img.transition {
+  opacity: 1;
+  z-index: 2;
+}
+
+.Taco-Menu:hover img.transition {
+  opacity: 0;
+}
+
+.slide {
+  height: 100%;
+  width: 180px;
+  position: absolute;
+  background-color: #fff;
+  transition: 0.5s ease;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.toggle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 35px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+}
+
+.toggle .common {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #D61834;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.toggle .top_line {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .mid_line {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .bot_line {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input:checked ~ .toggle .top_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg) translate(2px, 1px);
+}
+
+input:checked ~ .toggle .bot_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg) translate(2px, -1px);
+}
+
+input:checked ~ .toggle .mid_line {
+  opacity: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: .3s ease;
+  transform: translateX(250px);
+}
+
+input:checked ~ .sidebar {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.sidebar li {
+  height: 50px;
+  list-style: none;
+  padding-top: 30px;
+}
+
+.sidebar a {
+  position: relative;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 110px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.sidebar a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  left: 0;
+  bottom: 0;
+  background: #FFF568;
+  transform: scale(0, 1);
+}
+
+.sidebar a:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sidebar a:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.sidebar a:active {
+  background-color: transparent;
+  font-size: 15px;
+}
+
+.sidebar p2 {
+  white-space: nowrap;
+}
+
+/* Typography */
+h1 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.50);
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: whitesmoke;
+  justify-content: center;
+}
+
+P1 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+P2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+p3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+/* Body */
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  margin: 0;
+  justify-content: flex-start;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ATT Logo */
+.attTaleLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.aTTLogo {
+  width: 800px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+}
+
+/* StoryMap Section */
+.storymap-section {
+  width: 100%;
+  max-width: 100vw;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  border: #29abe2;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.storymap-section h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.storymap-container {
+  width: 90vw;
+  max-width: 1800px;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.storymap-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Support Section */
+.supportSection {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Donate Section - Blue Box */
+.Donate-Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 400px;
+  padding: 40px 20px;
+  background-color: #29abe2;
+  color: whitesmoke;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.donate-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 0 20px;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.donate-content p {
+  flex: 1 1 40%;
+  max-width: 500px;
+  padding: 20px;
+  order: 2;
+  text-align: center;
+}
+
+.donate-content p3 {
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.attDonate-Button {
+  flex: 0 1 300px;
+  order: 1;
+  background-color: #D61834;
+  color: whitesmoke;
+  height: 80px;
+  max-width: 300px;
+  border: 2px solid whitesmoke;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 30px;
+}
+
+.attDonate-Button:hover {
+  background-color: whitesmoke;
+  color: #29abe2;
+  border: 2px solid black;
+}
+
+.attDonate-Button:active {
+  background-color: #45bc7a;
+  color: whitesmoke;
+  transform: scale(0.95);
+}
+
+/* Meet the Team Section */
+.meetTeamSection {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.teamLogosSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Dr Ferg Section */
+.drFergSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.DrFergImageframe {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+}
+
+.DrFergImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.DrFergText {
+  max-width: 400px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Cut the Mustard Section */
+.cutTheMustardSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cutTheMustardImageFrame {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  background-color: white;
+}
+
+.cutTheMustardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cutTheMustardText {
+  max-width: 400px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Lucky Half Speed Section */
+.luckyHalfSpeedSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 40px;
+}
+
+.luckyhalfSpeedImageFrame {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  background-color: #D61834;
+}
+
+.luckyHalfSpeedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.luckyHalfSpeedText {
+  max-width: 400px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Merch Section */
+.Merch {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.merchInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 40%;
+  margin-left: 80px;
+}
+
+.merchTextSection {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.LilgImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Lilg {
+  width: 200px;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  justify-content: center;
+}
+
+/* Product Section */
+.productSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  flex: 1 1 50%;
+}
+
+.shirtMerch {
+  width: 400px;
+  height: 400px;
+  flex: 0 1 400px;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.beanieMerch {
+  width: 400px;
+  height: 400px;
+  flex: 0 1 400px;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.soapMerch {
+  width: 400px;
+  height: 400px;
+  flex: 0 1 400px;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 10px;
+}
+
+/* Responsive for Merch at 900px */
+@media (max-width: 900px) {
+  .Merch {
+    flex-direction: column;
     align-items: center;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 1000;
   }
 
-   .left-section {
-     background-color: white;
-     width: 200px;
-     margin-left: 10px;
-     display: felx;
+  .merchInfo, .productSection {
+    max-width: 100%;
+  }
 
-    }
-
-    .COg-Logo {
-     width: 100px;
-    }
-
-    .center-section {
-     background-color: white;
-     flex: 1;
-     display: flex;
-     justify-content: end;
-
-    }
-
-    .create-button {
-     position: relative;
-     background-color:white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 100px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-
-    }
-
-    .create-button::after {
-     content: '';
-     position: absolute;
-     width:110px;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: red;
-     transform: scale(0, 1);
-
-    }
-
-   .create-button:hover {
-      color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-   }
-   .create-button:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-
-   }
-
-    .create-button:active {
-     background-color: none;
-     font-size: 15px;
-    }
-
-
-    .volunteer-button {
-     position: relative;
-     background-color: white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 155px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-
-    }
-
-    .volunteer-button::after {
-     content: '';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #45bc7a;
-     transform: scale(0, 1);
-
-    }
-
-    .volunteer-button:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
-
-    .volunteer-button:hover::after {
-      transform: scale(1, 1);
-      transition: transform 0.5s ease;
-    }
-
-    .volunteer-button:active {
-     background-color: none;
-     font-size: 15px;
-    }
-
-
-    .donate-button {
-     position: relative;
-     background-color: white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 110px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-    }
-
-    .donate-button::after {
-     content:'';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #29abe2;
-     transform: scale(0, 1);
-
-    }
-
-    .donate-button:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
-
-    .donate-button:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-   }
-
-    .donate-button:active {
-     background-color: none;
-     font-size: 15px;
-   }
-
-    .right-section {
-     background-color: white;
-     width: 75px;
-     display: flex;
-     justify-content: center;
-
-    }
-
-    .Taco-Menu {
-     position: relative;
-     width: 25px;
-     height:25px;
-     overflow: hidden;
-     cursor: pointer;
-    }
-    
-    .Taco-Menu img {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      object-fit: cover;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .Taco-Menu img.transition {
-     opacity: 1;
-     z-index: 2;
-    }
-
-    .Taco-Menu:hover img.transition {
-      opacity: 0;
-    }
-
-    .slide{
-      height: 100%;
-      width: 180px;
-      position: absolute;
-      background-color: #fff;
-      transition: 0.5s ease;
-    }
-    input[type="checkbox"] {
-      display: none;
-    }
-
-
-    .toggle {
-      position: absolute;
-      height: 30px;
-      width: 30px;
-      top: 20px;
-      right: 20px;
-      z-index: 1;
-      cursor: pointer;
-      border-radius: 2px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-    }
-    .toggle .common{
-      position: absolute;
-      height: 2px;
-      width: 20px;
-      background-color: red;
-      border-radius: 50px;
-      transition: 0.3s ease;
-
-    }
-    .toggle .top_line {
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    .toggle .mid_line {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    .toggle .bot_line {
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    input:checked ~ .toggle .top_line {
-      left: 2px;
-      top: 14px;
-      width: 25px;
-      transform: rotate(45deg) translate(2px, 1px);
-    }
-
-    input:checked ~ .toggle .bot_line {
-      left: 2px;
-      top: 14px;
-      width: 25px;
-      transform: rotate(-45deg) translate(2px, -1px);
-    }
-    input:checked ~ .toggle .mid_line {
-      opacity: 0;
-    }
-
-    .sidebar{
-      position:fixed;
-      top: 35;
-      right: 0;
-      height: 100vh;
-      width: 200px;
-      z-index: 999;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      transition: .3s ease;
-      transform: translatex(250px);
+  .productSection {
+    flex-direction: column;
+    align-items: center;
+  }
   
-    }
-
-      input:checked ~ .sidebar{
-      transform: translatex(0px);
-      opacity: 1;
-      }
-
-    .sidebar li{
-      height: 50px;
-      list-style: none;
-      padding-top: 30px;
-    }
-
-    .sidebar a{
-     position: relative;
-     background-color: none;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 110px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-     text-decoration: none;
-     align-items: center;
-     align-content: center;
-     justify-content: center;
-    }
-
-    .sidebar a::after {
-     content:'';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #fff568;
-     transform: scale(0, 1);
-
-    }
-
-    .sidebar a:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
-
-    .sidebar a:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-   }
-
-    .sidebar a:active {
-     background-color: none;
-     font-size: 15px;
-   }
-
-
-    /* text*/
-
-    h1 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 50px;
-      color:  rgba(0, 0, 0, 0.50);
-
-    }
-    h2 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 50px;
-      color: whitesmoke;
-    }
-
-    P1 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    P2 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    p3{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      text-align: justify;
-      color:  rgba(0, 0, 0, 0.50);
-    }
-
-    /* Start of the Body*/
-
-    body {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      flex-wrap: nowrap;
-      min-height: 100vh;
-      margin: 0;
-      justify-content: flex-start;
-      background-color: whitesmoke;
-    
-    }
-    .main-content {
-      flex: 1;
-    }
-
-    .attTaleLogo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 20px 0;
-    }
-
-    .aTTLogo {
-      width: 800px;
-      max-width: 90%;
-      height: auto;
-      display: block;
-    }
-
-/* start of storyMap*/
-    .storymap-section {
-      width: 100%;
-      background-color: whitesmoke;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px 0;
-      border:#29abe2;
-    }
-
-    .storymap-section h1 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 40px;
-      color: rgba(0, 0, 0, 0.7);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .storymap-container {
-      width: 90vw;
-      max-width: 1800px; /* Optional: limits on huge monitors */
-      height: 85vh; /* Takes up most of the screen height */
-      display: flex;
-      justify-content: center;
-      
-    }
-
-    .storymap-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
-
-/* Start of Support Section*/
-    .supportSection {
-      flex-direction: row;
-      justify-content: flex-start;
-      width: 100vw;
-
-    }
-
-    .Donate-Section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: justify;
-      width: 100%;
-      height: 500px;
-      padding: 40px 20px;
-      background-color: #29abe2;
-      color: whitesmoke;
-      border-top:2px solid black;
-      border-bottom: 2px solid black;
-    
-    }
-    .donate-content{
-      display:flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      padding-right: 50px;
-      text-align: justify;
-
-    }
-    .donate-content p{
-      flex: 1 1 40%;
-      max-width: 100px;
-      padding: 20px;
-      order: 2;
-      text-align: left;
-  
-    }
-
-    .attDonate-Button {
-      flex: 0 1 400px;
-      order: 1;
-      background-color: red;
-      color: whitesmoke;
-      height: 100px;
-      max-width: 400px;
-      border: solid whitesmoke;
-      border-radius: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .attDonate-Button:hover {
-      background-color: whitesmoke;
-      color: #29abe2;;
-      border: solid black;
-    }
-    .attDonate-Button:active {
-      background-color: #45bc7a;
-      color: whitesmoke;
-      transform: scale(0.90);
-    }
-
-    @media (max-width: 900px) {
   .donate-content {
     flex-direction: column;
   }
+  
   .donate-content p, .attDonate-Button {
     max-width: 100%;
   }
-  }
-  /* Start of Meet the Team Section*/
-    .meetTeamSection{
-      display:flex;
-      flex-direction: column;
-      gap: 50px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-      justify-content: center; 
-      align-items: center;
-    }
+}
 
-    .teamLogosSection{
-      display: flex;
-      flex-direction: row;
-    }
- /* Start of Ferg Section*/
-    .drFergSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: justify;
-      padding: 50px;
-      padding-left: 20px;
-    }
-    .DrFergImageframe{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid black;
-    }
-    .DrFergImage{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+/* Footer */
+.footer-container {
+  width: 100%;
+  display: flex;
+  background-color: black;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-top: auto;
+}
 
-    .DrFergText {
-      max-width: 400px;
-      line-height: 1.5;
-    }
-  /* Start of Cut the Mustard Section*/
+.footer {
+  width: 80%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 
-    .cutTheMustardSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: justify;
-      padding: 50px;
-    }
-    .cutTheMustardImageFrame{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid black;
-      background-color: white;
-    }
-    .cutTheMustardImage{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.footer-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: whitesmoke;
+}
 
-    .cutTheMustardText {
-      max-width: 400px;
-      line-height: 1.5;
-    }
-  /* Start of Lucky Half Speed Section*/
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}
 
-    .luckyHalfSpeedSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: justify;
-      padding: 50px;
-      padding-right:20px;
-    
-    }
-    .luckyhalfSpeedImageFrame{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid black;
-      background-color: red;
-    }
-    .luckyHalfSpeedImaget{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.footer-heading p1 {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
 
-    .luckyHalfSpeedText {
-      max-width: 400px;
-      line-height: 1.5;
-    }
+.footer-heading a {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
 
-  /* Start of Merch Section*/
+.footer-heading a:hover {
+  color: #D61834;
+  transition: 0.3s ease-out;
+}
 
-    .Merch{
-      display:flex;
-      flex-direction: row;
-      gap: 50px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .merchInfo {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;               /* spacing between text and small logo */
-      max-width: 40%;
-      margin-left: 80px;
-    }
-    .merchTextSection{
-      display:flex;
-      flex-direction: column;
-      padding:20px;
-      box-sizing: border-box;
-      
-    }
-    .LilgImage{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.footer-email-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  padding: 20px;
+}
 
-    .Lilg{
-      width: 200px;
-      max-width: 200px;
-      height: auto;
-      display: block;
-      justify-content: center;
-    }
-    /* RightColumn:Products */
+.footer-email-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
 
-    .productSection {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      flex: 1 1 50%;
-      
-    }
-    
-    .shirtMerch {
-      width: 400px;
-      height: 400px;
-      flex: 0 1 400px;
-      max-width: 400px;
-      min-width: 200px;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
+#footer-email {
+  width: 250px;
+  height: 50px;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-     .beanieMerch {
-      width: 400px;
-      height: 400px;
-      flex: 0 1 400px;
-      max-width: 400px;
-      min-width: 200px;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
+#footer-email::placeholder {
+  color: #D61834;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-     .soapMerch {
-      width: 400px;
-      height: 400px;
-      flex: 0 1 400px;
-      max-width: 400px;
-      min-width: 200px;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
-  /* Responsive: stack products and left column on narrow screens */
-  @media (max-width: 900px) {
-   .Merch {
-     flex-direction: column;     /* stack left and right columns */
-     align-items: center;
-   }
+#footer-email-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #D61834;
+  outline: none;
+  border: none;
+  color: whitesmoke;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -25px;
+}
 
-    .merchInfo, .productSection {
-     max-width: 100%;
-   }
+#footer-email-btn:hover {
+  cursor: pointer;
+  background-color: #29abe2;
+  transition: all 0.4s ease-out;
+}
 
-    .productSection {
-     flex-direction: column;     /* products stack vertically */
-     align-items: center;
-   }
-  }
+#footer-email-btn:active {
+  transform: scale(0.95);
+  background-color: #45bc7a;
+}
 
+/* =============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================= */
 
-/* Start of Footer*/
-
-    .footer-container {
-      width: 100%;
-      top: auto;
-      background-color: black;
-      padding: 0.5rem 0 1rem 0;
-      flex-shrink: 0;
-      margin-top: auto;
- 
-    }
-
-    .footer {
-      width: 100%;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
-
-    }
-
-    .footer-title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color: whitesmoke;
-      margin-bottom: 1rem;
-      
-    }
-
-    .footer-heading {
-      display: flex;
-      flex-direction: column;
-      margin-right: 4rem;
-      margin-bottom: 4rem;
-
-    }
-
-    .footer-heading p1 {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-    }
-
-    .footer-heading a {
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      align-items: center;
-      align-content: center;
-    }
-
-    .footer-heading a:hover {
-      color: red;
-      transition: 0.3s ease-out;
-
-    }
-
-    .footer-email-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 15px;
-      padding: 40px;
-     
-    }
-
-    .footer-email-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-
-    }
-
-    #footer-email{
-      width: 250px;
-      height: 50px;
-      border-radius: 100px;
-      outline: none;
-      border: none;
-      padding-left: 0.5rem;
-      font-size: 0.6rem;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-
-    }
-
-    #footer-email::placeholder {
-      color: red;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #footer-email-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: red;
-      outline: none;
-      border: none;
-      color: whitesmoke;
-      font-size: 0.6rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    #footer-email-btn:hover {
-      cursor: pointer;
-      background-color: #29abe2;
-      transition: all 0.4s ease-out;
-    }
-
-    #footer-email-btn:active {
-      transform:scale(-1.02);
-      background-color: #45bc7a;
-    }
-
-
-    /* 
-===============================================
-
-/* ============================================= */
-/* MOBILE RESPONSIVE STYLES - FIXED VERSION     */
-/* ============================================= */
-
+/* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
+  
+  /* ===== PREVENT HORIZONTAL SCROLL ===== */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
   
   body {
     height: auto !important;
-    min-height: 100vh !important;
+    min-height: 100vh;
     padding-top: 80px !important;
+    overflow-x: hidden !important;
   }
   
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  /* Header adjustments */
   .Header {
-    height: 70px !important;
+    height: 70px;
   }
   
-  /* CRITICAL: Hide desktop navigation buttons */
+  /* Hide desktop navigation buttons */
   .center-section {
     display: none !important;
-    visibility: hidden !important;
   }
   
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    display: none !important;
-  }
-  
+  /* Logo scaling */
   .COg-Logo {
-    width: 60px !important;
+    width: 60px;
   }
   
+  /* Hamburger menu positioning */
   .toggle {
-    display: flex !important;
     top: 20px;
     right: 20px;
   }
   
+  /* Sidebar adjustments */
   .sidebar {
     top: 70px;
+    width: 220px;
   }
   
+  .sidebar a {
+    white-space: nowrap;
+  }
+  
+  .sidebar p2 {
+    white-space: nowrap;
+    font-size: 18px;
+  }
+  
+  /* Main content area */
+  main, .main-content {
+    margin-top: 20px;
+    padding: 0 15px;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* A Typhoid Tale Logo - CENTERED */
   .attTaleLogo {
     padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   
   .aTTLogo {
-    width: 90% !important;
-    max-width: 400px !important;
-    height: auto !important;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
   }
   
+  /* ===== STORYMAP SECTION - CENTERED ===== */
   .storymap-section {
     padding: 15px 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
   }
   
   .storymap-container {
-    width: 100% !important;
+    width: 95%;
+    max-width: 100%;
     position: relative;
     padding-bottom: 75%;
-    height: 0 !important;
+    height: 0;
     overflow: hidden;
+    margin: 0 auto;
   }
   
   .storymap-container iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
   
+  /* Meet the Team Section */
   .meetTeamSection {
     padding: 30px 15px;
     text-align: center;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   
   .meetTeamSection h1 {
-    font-size: 28px !important;
+    font-size: 28px;
+    margin-bottom: 15px;
   }
   
+  .meetTeamSection p1 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Team logos section - stack vertically */
   .teamLogosSection {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    width: 100%;
   }
   
+  /* Individual team member sections - PROPER SPACING */
   .drFergSection,
   .cutTheMustardSection,
   .luckyHalfSpeedSection {
-    width: 100% !important;
+    width: 100%;
     max-width: 350px;
     text-align: center;
+    padding: 20px 15px;
+    margin-bottom: 20px;
   }
   
+  /* ===== LUCKY HALFSPEED - NO OVERLAP ===== */
+  .luckyHalfSpeedSection {
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+  }
+  
+  /* Team member images */
   .DrFergImageframe,
   .cutTheMustardImageFrame,
   .luckyhalfSpeedImageFrame {
-    width: 150px !important;
-    height: 150px !important;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 50%;
   }
   
+  .DrFergImage,
+  .cutTheMustardImage,
+  .luckyHalfSpeedImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Team member names */
   .drFergSection h1,
   .cutTheMustardSection h1,
   .luckyHalfSpeedSection h1 {
-    font-size: 20px !important;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   
+  /* Team member text */
+  .DrFergText p3,
+  .cutTheMustardText p3,
+  .luckyHalfSpeedText p3 {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* ===== DONATE SECTION - BLUE BOX FIXED ===== */
   .Donate-Section {
     padding: 30px 15px;
     text-align: center;
+    width: 100%;
+    max-width: 100vw;
+    min-height: auto;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
   .Donate-Section h2 {
-    font-size: 24px !important;
-    color: rgba(0,0,0,0.5) !important;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
   
+  /* ===== DONATE CONTENT - TEXT CONTAINED IN BOX ===== */
   .donate-content {
+    flex-direction: column;
     padding: 20px 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   
+  .donate-content p3 {
+    font-size: 16px;
+    line-height: 1.6;
+    color: whitesmoke;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .donate-content p {
+    max-width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+  
+  /* ===== DONATE BUTTON - FIXED ===== */
   .attDonate-Button {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px 40px;
     font-size: 18px;
     margin-top: 20px;
+    min-width: 200px;
+    max-width: 280px;
+    height: 60px;
+    border-radius: 30px;
+    text-decoration: none;
   }
   
+  /* Merch Section - Stack vertically */
   .Merch {
-    flex-direction: column !important;
+    flex-direction: column;
     padding: 30px 15px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin-left: 0;
   }
   
   .merchInfo {
-    width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
     margin-bottom: 30px;
+    margin-left: 0;
   }
   
   .merchTextSection h1 {
-    font-size: 24px !important;
+    font-size: 24px;
+    margin-bottom: 15px;
   }
   
+  .merchTextSection p1 {
+    font-size: 16px;
+  }
+  
+  .LilgImage {
+    margin-top: 20px;
+  }
+  
+  .Lilg {
+    width: 80px;
+    height: auto;
+  }
+  
+  /* Product images */
   .productSection {
-    width: 100% !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
   }
   
   .ShirtMerch,
   .beanieMerch,
   .soapMerch {
-    width: calc(50% - 10px) !important;
-    max-width: 150px !important;
+    width: calc(50% - 10px);
+    max-width: 150px;
   }
   
-  /* Footer */
+  .shirtMerch,
+  .beanieMerch,
+  .soapMerch {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* ===== TWO-COLUMN FOOTER FOR MOBILE (matches homepage) ===== */
   .footer {
-    width: 95% !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    height: auto !important;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 15px;
   }
   
   .footer-heading {
-    margin-right: 0 !important;
-    margin-bottom: 25px;
-    text-align: center;
-    align-items: center;
+    margin-right: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .footer-heading h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
   }
   
   .footer-heading a {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+    font-size: 14px;
+    min-height: 40px;
+    padding: 0.3rem 0;
+  }
+  
+  /* Newsletter spans both columns */
+  .footer-email-form {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 15px 0;
+  }
+  
+  /* Circular newsletter button next to input */
+  .footer-email-row {
+    flex-direction: row;
+    width: 100%;
+    gap: 0;
     justify-content: center;
   }
   
-  .footer-email-row {
-    flex-direction: column !important;
-    gap: 10px;
-  }
-  
   #footer-email {
-    width: 100%;
-    max-width: 280px;
+    width: 200px;
+    max-width: 60%;
+    height: 45px;
+    border-radius: 23px 0 0 23px;
+    padding-left: 15px;
+    font-size: 13px;
   }
   
   #footer-email-btn {
-    width: 100%;
-    max-width: 280px;
-    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: -22px;
+    font-size: 10px;
   }
 }
 
+/* Mobile phones (480px and below) */
 @media screen and (max-width: 480px) {
   
   body {
@@ -1084,22 +1288,22 @@
   }
   
   .Header {
-    height: 60px !important;
+    height: 60px;
   }
   
   .COg-Logo {
-    width: 50px !important;
+    width: 50px;
   }
   
   .toggle {
-    height: 25px !important;
-    width: 25px !important;
+    height: 25px;
+    width: 25px;
     top: 15px;
     right: 15px;
   }
   
   .sidebar {
-    width: 180px;
+    width: 200px;
     top: 60px;
   }
   
@@ -1108,47 +1312,104 @@
     margin: 0 15px;
   }
   
+  .sidebar p2 {
+    font-size: 16px;
+  }
+  
+  /* Typography scaling */
   h1 {
     font-size: 22px !important;
+    line-height: 1.3;
   }
   
   h2 {
-    font-size: 20px !important;
+    font-size: 20px;
   }
   
+  /* ATT Logo smaller */
   .aTTLogo {
-    max-width: 300px !important;
+    max-width: 300px;
   }
   
+  /* StoryMap taller on phones */
   .storymap-container {
     padding-bottom: 100%;
+  }
+  
+  /* Team section adjustments */
+  .meetTeamSection h1 {
+    font-size: 24px;
   }
   
   .DrFergImageframe,
   .cutTheMustardImageFrame,
   .luckyhalfSpeedImageFrame {
-    width: 120px !important;
-    height: 120px !important;
+    width: 120px;
+    height: 120px;
   }
   
   .drFergSection h1,
   .cutTheMustardSection h1,
   .luckyHalfSpeedSection h1 {
-    font-size: 18px !important;
+    font-size: 18px;
   }
   
+  /* Donate section */
+  .Donate-Section h2 {
+    font-size: 20px;
+  }
+  
+  .donate-content p3 {
+    font-size: 14px;
+  }
+  
+  .attDonate-Button {
+    padding: 12px 30px;
+    font-size: 16px;
+    height: 50px;
+  }
+  
+  /* Merch section */
   .merchTextSection h1 {
-    font-size: 20px !important;
+    font-size: 20px;
   }
   
   .ShirtMerch,
   .beanieMerch,
   .soapMerch {
-    width: calc(50% - 8px) !important;
-    max-width: 130px !important;
+    width: calc(50% - 8px);
+    max-width: 130px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+  
+  .footer-heading h2 {
+    font-size: 16px;
+  }
+  
+  .footer-heading a {
+    font-size: 13px;
+    min-height: 36px;
+  }
+  
+  #footer-email {
+    width: 170px;
+    height: 40px;
+  }
+  
+  #footer-email-btn {
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
   }
 }
 
+/* Extra small devices (360px and below) */
 @media screen and (max-width: 360px) {
   
   body {
@@ -1160,35 +1421,79 @@
   }
   
   h2 {
-    font-size: 16px !important;
+    font-size: 16px;
   }
   
   .COg-Logo {
-    width: 45px !important;
+    width: 45px;
   }
   
   .sidebar {
-    width: 160px;
+    width: 180px;
   }
   
   .sidebar a {
     font-size: 14px;
   }
   
+  .sidebar p2 {
+    font-size: 14px;
+  }
+  
   .aTTLogo {
-    max-width: 250px !important;
+    max-width: 250px;
   }
   
   .DrFergImageframe,
   .cutTheMustardImageFrame,
   .luckyhalfSpeedImageFrame {
-    width: 100px !important;
-    height: 100px !important;
+    width: 100px;
+    height: 100px;
   }
   
   .drFergSection h1,
   .cutTheMustardSection h1,
   .luckyHalfSpeedSection h1 {
-    font-size: 16px !important;
+    font-size: 16px;
+  }
+  
+  .Lilg {
+    width: 60px;
+  }
+  
+  .ShirtMerch,
+  .beanieMerch,
+  .soapMerch {
+    width: 100%;
+    max-width: 120px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px 8px;
+  }
+  
+  .footer-heading h2 {
+    font-size: 14px;
+  }
+  
+  .footer-heading a {
+    font-size: 12px;
+    min-height: 32px;
+  }
+  
+  #footer-email {
+    width: 150px;
+    height: 38px;
+    font-size: 12px;
+  }
+  
+  #footer-email-btn {
+    width: 38px;
+    height: 38px;
+    margin-left: -19px;
+    font-size: 9px;
   }
 }
