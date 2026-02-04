@@ -1,19 +1,29 @@
 /* 
 ===============================================
-COg. A Typhoid Tale Page CSS - MOBILE OPTIMIZED V4
+COg. A Typhoid Tale Page CSS - MOBILE OPTIMIZED V5
 ===============================================
 Author: Scott Polley 
 Mobile Optimization: Andy Albertsberg - Double-A Solutions
-Version: V4 - Complete Mobile Fixes with Nav Buttons
+Version: V5 - Complete Mobile Fixes
 Date: February 2026
 
-DESIGN GUIDE COMPLIANCE:
-- Colors: Red #D61834, Blue #29abe2, Green #45bc7a, Yellow #FFF568
-- Font: Arial, Helvetica, sans-serif
+FIXES INCLUDED:
+- NO horizontal scroll (fixed)
+- CREATE, VOLUNTEER, DONATE buttons visible in header on mobile
+- ArcGIS StoryMap centered
+- Lucky Halfspeed bio NOT overlapping Support the Team section
+- Donate button fixed and properly styled
+- Text in blue box section contained within box
+- Two-column footer layout (matches homepage)
+- Circular newsletter signup button
+- "ABOUT COg." sidebar text not wrapping
 ===============================================
 */
 
-/* ===== GLOBAL - PREVENT HORIZONTAL SCROLL ===== */
+/* ============================================
+   GLOBAL - PREVENT HORIZONTAL SCROLL
+   ============================================ */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -33,6 +43,28 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  margin: 0;
+  justify-content: flex-start;
+  background-color: whitesmoke;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
 
 .Header {
   height: 100px;
@@ -195,44 +227,15 @@ html, body {
   font-size: 15px;
 }
 
+/* ============================================
+   HAMBURGER MENU & SIDEBAR
+   ============================================ */
+
 .right-section {
   background-color: white;
   width: 75px;
   display: flex;
   justify-content: center;
-}
-
-.Taco-Menu {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.Taco-Menu img {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  object-fit: cover;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.Taco-Menu img.transition {
-  opacity: 1;
-  z-index: 2;
-}
-
-.Taco-Menu:hover img.transition {
-  opacity: 0;
-}
-
-.slide {
-  height: 100%;
-  width: 180px;
-  position: absolute;
-  background-color: #fff;
-  transition: 0.5s ease;
 }
 
 input[type="checkbox"] {
@@ -373,11 +376,15 @@ input:checked ~ .sidebar {
   font-size: 15px;
 }
 
+/* CRITICAL: Prevent "ABOUT COg." from wrapping */
 .sidebar p2 {
   white-space: nowrap;
 }
 
-/* Typography */
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
 h1 {
   display: flex;
   text-align: center;
@@ -417,26 +424,10 @@ p3 {
   color: rgba(0, 0, 0, 0.50);
 }
 
-/* Body */
-body {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-wrap: nowrap;
-  min-height: 100vh;
-  margin: 0;
-  justify-content: flex-start;
-  background-color: whitesmoke;
-}
+/* ============================================
+   ATT LOGO
+   ============================================ */
 
-.main-content {
-  flex: 1;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* ATT Logo */
 .attTaleLogo {
   display: flex;
   justify-content: center;
@@ -452,7 +443,10 @@ body {
   display: block;
 }
 
-/* StoryMap Section */
+/* ============================================
+   STORYMAP SECTION
+   ============================================ */
+
 .storymap-section {
   width: 100%;
   max-width: 100vw;
@@ -491,96 +485,10 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Support Section */
-.supportSection {
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+/* ============================================
+   MEET THE TEAM SECTION
+   ============================================ */
 
-/* Donate Section - Blue Box */
-.Donate-Section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 100vw;
-  min-height: 400px;
-  padding: 40px 20px;
-  background-color: #29abe2;
-  color: whitesmoke;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.donate-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  padding: 0 20px;
-  text-align: center;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.donate-content p {
-  flex: 1 1 40%;
-  max-width: 500px;
-  padding: 20px;
-  order: 2;
-  text-align: center;
-}
-
-.donate-content p3 {
-  color: whitesmoke;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.attDonate-Button {
-  flex: 0 1 300px;
-  order: 1;
-  background-color: #D61834;
-  color: whitesmoke;
-  height: 80px;
-  max-width: 300px;
-  border: 2px solid whitesmoke;
-  border-radius: 40px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0 30px;
-}
-
-.attDonate-Button:hover {
-  background-color: whitesmoke;
-  color: #29abe2;
-  border: 2px solid black;
-}
-
-.attDonate-Button:active {
-  background-color: #45bc7a;
-  color: whitesmoke;
-  transform: scale(0.95);
-}
-
-/* Meet the Team Section */
 .meetTeamSection {
   display: flex;
   flex-direction: column;
@@ -707,7 +615,101 @@ body {
   text-align: center;
 }
 
-/* Merch Section */
+/* ============================================
+   SUPPORT/DONATE SECTION - BLUE BOX
+   ============================================ */
+
+.supportSection {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.Donate-Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 400px;
+  padding: 40px 20px;
+  background-color: #29abe2;
+  color: whitesmoke;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.donate-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 0 20px;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.donate-content p {
+  flex: 1 1 40%;
+  max-width: 500px;
+  padding: 20px;
+  order: 2;
+  text-align: center;
+}
+
+.donate-content p3 {
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.attDonate-Button {
+  flex: 0 1 300px;
+  order: 1;
+  background-color: #D61834;
+  color: whitesmoke;
+  height: 80px;
+  max-width: 300px;
+  border: 2px solid whitesmoke;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 30px;
+}
+
+.attDonate-Button:hover {
+  background-color: whitesmoke;
+  color: #29abe2;
+  border: 2px solid black;
+}
+
+.attDonate-Button:active {
+  background-color: #45bc7a;
+  color: whitesmoke;
+  transform: scale(0.95);
+}
+
+/* ============================================
+   MERCH SECTION
+   ============================================ */
+
 .Merch {
   display: flex;
   flex-direction: row;
@@ -750,7 +752,6 @@ body {
   justify-content: center;
 }
 
-/* Product Section */
 .productSection {
   display: flex;
   flex-wrap: wrap;
@@ -759,24 +760,8 @@ body {
   flex: 1 1 50%;
 }
 
-.shirtMerch {
-  width: 400px;
-  height: 400px;
-  flex: 0 1 400px;
-  max-width: 400px;
-  min-width: 200px;
-  padding: 10px;
-}
-
-.beanieMerch {
-  width: 400px;
-  height: 400px;
-  flex: 0 1 400px;
-  max-width: 400px;
-  min-width: 200px;
-  padding: 10px;
-}
-
+.shirtMerch,
+.beanieMerch,
 .soapMerch {
   width: 400px;
   height: 400px;
@@ -811,7 +796,10 @@ body {
   }
 }
 
-/* Footer */
+/* ============================================
+   FOOTER - DESKTOP
+   ============================================ */
+
 .footer-container {
   width: 100%;
   display: flex;
@@ -845,9 +833,11 @@ body {
   margin-bottom: 2rem;
 }
 
-.footer-heading p1 {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+.footer-heading h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: whitesmoke;
+  margin-bottom: 10px;
 }
 
 .footer-heading a {
@@ -906,7 +896,8 @@ body {
   outline: none;
   border: none;
   color: whitesmoke;
-  font-size: 12px;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -931,22 +922,22 @@ body {
 
 @media screen and (max-width: 768px) {
   
-  /* ===== PREVENT HORIZONTAL SCROLL ===== */
+  /* PREVENT HORIZONTAL SCROLL - CRITICAL */
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100%;
   }
   
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
   body {
     height: auto !important;
     min-height: 100vh;
     padding-top: 80px !important;
-  }
-  
-  * {
-    max-width: 100vw;
-    box-sizing: border-box;
   }
   
   /* Header adjustments */
@@ -965,7 +956,9 @@ body {
     width: 50px;
   }
   
-  /* ===== SHOW NAV BUTTONS ON MOBILE ===== */
+  /* =============================================
+     SHOW NAV BUTTONS ON MOBILE
+     ============================================= */
   .center-section {
     display: flex !important;
     flex: 1;
@@ -975,16 +968,23 @@ body {
     padding: 0 5px;
   }
   
+  .center-section a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .create-button,
   .volunteer-button,
   .donate-button {
-    font-size: 10px;
-    height: 28px;
-    width: auto;
-    min-width: 50px;
-    padding: 0 6px;
-    margin: 0 2px;
+    font-size: 9px !important;
+    height: 26px !important;
+    width: auto !important;
+    min-width: 55px;
+    padding: 0 8px !important;
+    margin: 0 2px !important;
     border-radius: 3px;
+    white-space: nowrap;
   }
   
   .create-button::after,
@@ -1007,12 +1007,18 @@ body {
   
   .sidebar {
     top: 70px;
-    width: 200px;
+    width: 220px;
+  }
+  
+  /* CRITICAL: Prevent "ABOUT COg." from wrapping */
+  .sidebar li {
+    white-space: nowrap;
   }
   
   .sidebar a {
     white-space: nowrap;
     font-size: 18px;
+    margin: 0 20px;
   }
   
   .sidebar p2 {
@@ -1042,7 +1048,9 @@ body {
     height: auto;
   }
   
-  /* ===== STORYMAP SECTION - CENTERED ===== */
+  /* =============================================
+     STORYMAP SECTION - CENTERED (not offset right)
+     ============================================= */
   .storymap-section {
     padding: 15px 10px;
     width: 100%;
@@ -1107,10 +1115,12 @@ body {
     margin-bottom: 20px;
   }
   
-  /* ===== LUCKY HALFSPEED - NO OVERLAP ===== */
+  /* =============================================
+     LUCKY HALFSPEED - NO OVERLAP WITH SUPPORT SECTION
+     ============================================= */
   .luckyHalfSpeedSection {
-    margin-bottom: 80px;
-    padding-bottom: 40px;
+    margin-bottom: 60px !important;
+    padding-bottom: 30px !important;
   }
   
   /* Team member images */
@@ -1148,7 +1158,9 @@ body {
     line-height: 1.5;
   }
   
-  /* ===== DONATE SECTION - BLUE BOX FIXED ===== */
+  /* =============================================
+     DONATE SECTION - BLUE BOX TEXT CONTAINED
+     ============================================= */
   .Donate-Section {
     padding: 30px 15px;
     text-align: center;
@@ -1165,7 +1177,7 @@ body {
     margin-bottom: 15px;
   }
   
-  /* ===== DONATE CONTENT - TEXT CONTAINED IN BOX ===== */
+  /* TEXT CONTAINED WITHIN BLUE BOX */
   .donate-content {
     flex-direction: column;
     padding: 15px 10px;
@@ -1188,7 +1200,7 @@ body {
     word-wrap: break-word;
   }
   
-  /* ===== DONATE BUTTON - FIXED ===== */
+  /* DONATE BUTTON - FIXED */
   .attDonate-Button {
     display: flex;
     justify-content: center;
@@ -1257,62 +1269,80 @@ body {
     height: auto;
   }
   
-  /* ===== TWO-COLUMN FOOTER (matches homepage) ===== */
+  /* =============================================
+     TWO-COLUMN FOOTER (matches homepage)
+     ============================================= */
   .footer {
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 20px 10px;
+    gap: 20px 15px;
+    padding: 25px 15px;
   }
   
   .footer-heading {
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     text-align: left;
     align-items: flex-start;
   }
   
   .footer-heading h2 {
     font-size: 16px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    margin-bottom: 8px;
+    padding-bottom: 0;
   }
   
   .footer-heading a {
     font-size: 13px;
-    min-height: 36px;
+    min-height: 32px;
     padding: 0.25rem 0;
+    justify-content: flex-start;
   }
   
+  /* Newsletter form spans both columns */
   .footer-email-form {
     grid-column: 1 / -1;
     width: 100%;
-    padding: 15px 0;
+    padding: 20px 0 10px 0;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
   }
   
+  .footer-email-form h2,
+  .footer-email-form .footer-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  /* CIRCULAR NEWSLETTER BUTTON NEXT TO INPUT */
   .footer-email-row {
+    display: flex;
     flex-direction: row;
-    width: 100%;
-    gap: 0;
+    align-items: center;
     justify-content: center;
+    gap: 0;
+    width: 100%;
   }
   
   #footer-email {
-    width: 180px;
-    max-width: 55%;
-    height: 42px;
-    border-radius: 21px 0 0 21px;
-    padding-left: 12px;
-    font-size: 12px;
+    width: 200px;
+    max-width: 60%;
+    height: 44px;
+    border-radius: 22px 0 0 22px;
+    padding-left: 15px;
+    padding-right: 5px;
+    font-size: 13px;
   }
   
   #footer-email-btn {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
     border-radius: 50%;
-    margin-left: -21px;
-    font-size: 9px;
+    margin-left: -22px;
+    font-size: 18px;
+    font-weight: bold;
   }
 }
 
@@ -1334,11 +1364,11 @@ body {
   .create-button,
   .volunteer-button,
   .donate-button {
-    font-size: 8px;
-    height: 24px;
-    min-width: 40px;
-    padding: 0 4px;
-    margin: 0 1px;
+    font-size: 8px !important;
+    height: 24px !important;
+    min-width: 48px;
+    padding: 0 5px !important;
+    margin: 0 1px !important;
   }
   
   .toggle {
@@ -1349,7 +1379,7 @@ body {
   }
   
   .sidebar {
-    width: 180px;
+    width: 200px;
     top: 60px;
   }
   
@@ -1415,8 +1445,8 @@ body {
   }
   
   .footer {
-    gap: 12px;
-    padding: 15px 8px;
+    gap: 15px 12px;
+    padding: 20px 12px;
   }
   
   .footer-heading h2 {
@@ -1425,19 +1455,21 @@ body {
   
   .footer-heading a {
     font-size: 12px;
-    min-height: 32px;
+    min-height: 28px;
   }
   
   #footer-email {
-    width: 150px;
-    height: 38px;
-    font-size: 11px;
+    width: 160px;
+    height: 40px;
+    font-size: 12px;
   }
   
   #footer-email-btn {
-    width: 38px;
-    height: 38px;
-    margin-left: -19px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    margin-left: -20px;
+    font-size: 16px;
   }
 }
 
@@ -1459,10 +1491,10 @@ body {
   .create-button,
   .volunteer-button,
   .donate-button {
-    font-size: 7px;
-    height: 22px;
-    min-width: 35px;
-    padding: 0 3px;
+    font-size: 7px !important;
+    height: 22px !important;
+    min-width: 42px;
+    padding: 0 4px !important;
   }
   
   .toggle {
@@ -1480,12 +1512,13 @@ body {
   }
   
   .sidebar {
-    width: 160px;
+    width: 180px;
     top: 55px;
   }
   
   .sidebar a {
     font-size: 14px;
+    margin: 0 12px;
   }
   
   .sidebar p2 {
@@ -1518,8 +1551,8 @@ body {
   }
   
   .footer {
-    gap: 10px;
-    padding: 12px 6px;
+    gap: 12px 10px;
+    padding: 18px 10px;
   }
   
   .footer-heading h2 {
@@ -1528,19 +1561,21 @@ body {
   
   .footer-heading a {
     font-size: 11px;
-    min-height: 28px;
+    min-height: 26px;
   }
   
   #footer-email {
-    width: 130px;
-    height: 34px;
-    font-size: 10px;
+    width: 140px;
+    height: 36px;
+    font-size: 11px;
+    padding-left: 12px;
   }
   
   #footer-email-btn {
-    width: 34px;
-    height: 34px;
-    margin-left: -17px;
-    font-size: 8px;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    margin-left: -18px;
+    font-size: 14px;
   }
 }
