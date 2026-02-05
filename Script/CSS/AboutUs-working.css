@@ -1,480 +1,484 @@
-/* 
-===============================================
-COg. About Us Page CSS - MOBILE OPTIMIZED V5
-===============================================
-Author: Scott Polley 
-Mobile Optimization: Andy Albertsberg - Double-A Solutions
-Version: V5 - Complete Mobile Fixes
-Date: February 2026
+  html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Header {
+    height: 100px;
+    border-style: solid;
+    border-width: .5px;
+    background-color: white;
+    border-color: grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1000;
+  }
 
-FIXES INCLUDED:
-- CREATE, VOLUNTEER, DONATE buttons visible in header on mobile
-- First paragraph closer to header
-- Individual concept images doubled in size
-- Title and bio text alignment consistent (centered)
-- Two-column footer layout (matches homepage)
-- Circular newsletter signup button
-- "ABOUT COg." sidebar text not wrapping
-===============================================
-*/
+   .left-section {
+     background-color: white;
+     width: 200px;
+     margin-left: 10px;
+     display: felx;
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  max-width: 100vw;
-}
+    }
 
-body {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-wrap: nowrap;
-  min-height: 100vh;
-  margin: 0;
-  justify-content: flex-start;
-  background-color: whitesmoke;
-}
+    .COg-Logo {
+     width: 100px;
+    }
 
-.main-content {
-  flex: 1;
-}
+    .center-section {
+     background-color: white;
+     flex: 1;
+     display: flex;
+     justify-content: end;
 
-/* ============================================
-   HEADER
-   ============================================ */
+    }
 
-.Header {
-  height: 100px;
-  border-style: solid;
-  border-width: .5px;
-  background-color: white;
-  border-color: grey;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 1000;
-}
+    .create-button {
+     position: relative;
+     background-color:white;
+     color: rgba(0, 0, 0, 0.50);
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     border: none;
+     height: 36px;
+     width: 100px;
+     border-radius: 5px;
+     padding: 0 10px;
+     margin: 0 30px;
+     cursor: pointer;
 
-.left-section {
-  background-color: white;
-  width: 200px;
-  margin-left: 10px;
-  display: flex;
-}
+    }
 
-.COg-Logo {
-  width: 100px;
-}
+    .create-button::after {
+     content: '';
+     position: absolute;
+     width:110px;
+     height: 0.175rem;
+     left:0;
+     bottom: 0;
+     background: red;
+     transform: scale(0, 1);
 
-.center-section {
-  background-color: white;
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+    }
 
-.create-button {
-  position: relative;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.50);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  border: none;
-  height: 36px;
-  width: 100px;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin: 0 30px;
-  cursor: pointer;
-}
+   .create-button:hover {
+      color: rgba(0, 0, 0, 0.97);
+     font-size: 22px;
+     font-weight: bold;
+    
+   }
+   .create-button:hover::after {
+     transform: scale(1, 1);
+     transition: transform 0.5s ease;
 
-.create-button::after {
-  content: '';
-  position: absolute;
-  width: 110px;
-  height: 0.175rem;
-  left: 0;
-  bottom: 0;
-  background: #D61834;
-  transform: scale(0, 1);
-}
+   }
 
-.create-button:hover {
-  color: rgba(0, 0, 0, 0.97);
-  font-size: 22px;
-  font-weight: bold;
-}
+    .create-button:active {
+     background-color: none;
+     font-size: 15px;
+    }
 
-.create-button:hover::after {
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
 
-.create-button:active {
-  background-color: none;
-  font-size: 15px;
-}
+    .volunteer-button {
+     position: relative;
+     background-color: white;
+     color: rgba(0, 0, 0, 0.50);
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     border: none;
+     height: 36px;
+     width: 155px;
+     border-radius: 5px;
+     padding: 0 10px;
+     margin: 0 30px;
+     cursor: pointer;
 
-.volunteer-button {
-  position: relative;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.50);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  border: none;
-  height: 36px;
-  width: 155px;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin: 0 30px;
-  cursor: pointer;
-}
+    }
 
-.volunteer-button::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.175rem;
-  left: 0;
-  bottom: 0;
-  background: #45bc7a;
-  transform: scale(0, 1);
-}
+    .volunteer-button::after {
+     content: '';
+     position: absolute;
+     width:100%;
+     height: 0.175rem;
+     left:0;
+     bottom: 0;
+     background: #45bc7a;
+     transform: scale(0, 1);
 
-.volunteer-button:hover {
-  color: rgba(0, 0, 0, 0.97);
-  font-size: 22px;
-  font-weight: bold;
-}
+    }
 
-.volunteer-button:hover::after {
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
+    .volunteer-button:hover {
+     color: rgba(0, 0, 0, 0.97);
+     font-size: 22px;
+     font-weight: bold;
+    
+    }
 
-.volunteer-button:active {
-  background-color: none;
-  font-size: 15px;
-}
+    .volunteer-button:hover::after {
+      transform: scale(1, 1);
+      transition: transform 0.5s ease;
+    }
 
-.donate-button {
-  position: relative;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.50);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  border: none;
-  height: 36px;
-  width: 110px;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin: 0 30px;
-  cursor: pointer;
-}
+    .volunteer-button:active {
+     background-color: none;
+     font-size: 15px;
+    }
 
-.donate-button::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.175rem;
-  left: 0;
-  bottom: 0;
-  background: #29abe2;
-  transform: scale(0, 1);
-}
 
-.donate-button:hover {
-  color: rgba(0, 0, 0, 0.97);
-  font-size: 22px;
-  font-weight: bold;
-}
+    .donate-button {
+     position: relative;
+     background-color: white;
+     color: rgba(0, 0, 0, 0.50);
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     border: none;
+     height: 36px;
+     width: 110px;
+     border-radius: 5px;
+     padding: 0 10px;
+     margin: 0 30px;
+     cursor: pointer;
+    }
 
-.donate-button:hover::after {
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
+    .donate-button::after {
+     content:'';
+     position: absolute;
+     width:100%;
+     height: 0.175rem;
+     left:0;
+     bottom: 0;
+     background: #29abe2;
+     transform: scale(0, 1);
 
-.donate-button:active {
-  background-color: none;
-  font-size: 15px;
-}
+    }
 
-/* ============================================
-   HAMBURGER MENU & SIDEBAR
-   ============================================ */
+    .donate-button:hover {
+     color: rgba(0, 0, 0, 0.97);
+     font-size: 22px;
+     font-weight: bold;
+    
+    }
 
-.right-section {
-  background-color: white;
-  width: 75px;
-  display: flex;
-  justify-content: center;
-}
+    .donate-button:hover::after {
+     transform: scale(1, 1);
+     transition: transform 0.5s ease;
+   }
 
-input[type="checkbox"] {
-  display: none;
-}
+    .donate-button:active {
+     background-color: none;
+     font-size: 15px;
+   }
 
-.toggle {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  top: 35px;
-  right: 20px;
-  z-index: 1001;
-  cursor: pointer;
-  border-radius: 2px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-}
+    .right-section {
+     background-color: white;
+     width: 75px;
+     display: flex;
+     justify-content: center;
 
-.toggle .common {
-  position: absolute;
-  height: 2px;
-  width: 20px;
-  background-color: #D61834;
-  border-radius: 50px;
-  transition: 0.3s ease;
-}
+    }
 
-.toggle .top_line {
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .Taco-Menu {
+     position: relative;
+     width: 25px;
+     height:25px;
+     overflow: hidden;
+     cursor: pointer;
+    }
+    
+    .Taco-Menu img {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+    }
 
-.toggle .mid_line {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .Taco-Menu img.transition {
+     opacity: 1;
+     z-index: 2;
+    }
 
-.toggle .bot_line {
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .Taco-Menu:hover img.transition {
+      opacity: 0;
+    }
 
-input:checked ~ .toggle .top_line {
-  left: 2px;
-  top: 14px;
-  width: 25px;
-  transform: rotate(45deg) translate(2px, 1px);
-}
+    .slide{
+      height: 100%;
+      width: 180px;
+      position: absolute;
+      background-color: #fff;
+      transition: 0.5s ease;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
 
-input:checked ~ .toggle .bot_line {
-  left: 2px;
-  top: 14px;
-  width: 25px;
-  transform: rotate(-45deg) translate(2px, -1px);
-}
 
-input:checked ~ .toggle .mid_line {
-  opacity: 0;
-}
+    .toggle {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+      cursor: pointer;
+      border-radius: 2px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+    }
+    .toggle .common{
+      position: absolute;
+      height: 2px;
+      width: 20px;
+      background-color: red;
+      border-radius: 50px;
+      transition: 0.3s ease;
 
-.sidebar {
-  position: fixed;
-  top: 100px;
-  right: 0;
-  height: 100vh;
-  width: 200px;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  transition: .3s ease;
-  transform: translateX(250px);
-}
+    }
+    .toggle .top_line {
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%,-50%)
+    }
+    .toggle .mid_line {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%)
+    }
+    .toggle .bot_line {
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%,-50%)
+    }
+    input:checked ~ .toggle .top_line {
+      left: 2px;
+      top: 14px;
+      width: 25px;
+      transform: rotate(45deg) translate(2px, 1px);
+    }
 
-input:checked ~ .sidebar {
-  transform: translateX(0px);
-  opacity: 1;
-}
+    input:checked ~ .toggle .bot_line {
+      left: 2px;
+      top: 14px;
+      width: 25px;
+      transform: rotate(-45deg) translate(2px, -1px);
+    }
+    input:checked ~ .toggle .mid_line {
+      opacity: 0;
+    }
 
-.sidebar li {
-  height: 50px;
-  list-style: none;
-  padding-top: 30px;
-}
+    .sidebar{
+      position:fixed;
+      top: 35;
+      right: 0;
+      height: 100vh;
+      width: 200px;
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      transition: .3s ease;
+      transform: translatex(250px);
+  
+    }
 
-.sidebar a {
-  position: relative;
-  background-color: transparent;
-  color: rgba(0, 0, 0, 0.50);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  border: none;
-  height: 36px;
-  width: auto;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin: 0 30px;
-  cursor: pointer;
-  text-decoration: none;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  white-space: nowrap;
-}
+      input:checked ~ .sidebar{
+      transform: translatex(0px);
+      opacity: 1;
+      }
 
-.sidebar a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.175rem;
-  left: 0;
-  bottom: 0;
-  background: #FFF568;
-  transform: scale(0, 1);
-}
+    .sidebar li{
+      height: 50px;
+      list-style: none;
+      padding-top: 30px;
+    }
 
-.sidebar a:hover {
-  color: rgba(0, 0, 0, 0.97);
-  font-size: 22px;
-  font-weight: bold;
-}
+    .sidebar a{
+     position: relative;
+     background-color: none;
+     color: rgba(0, 0, 0, 0.50);
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     border: none;
+     height: 36px;
+     width: 110px;
+     border-radius: 5px;
+     padding: 0 10px;
+     margin: 0 30px;
+     cursor: pointer;
+     text-decoration: none;
+     align-items: center;
+     align-content: center;
+     justify-content: center;
+    }
 
-.sidebar a:hover::after {
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
+    .sidebar a::after {
+     content:'';
+     position: absolute;
+     width:100%;
+     height: 0.175rem;
+     left:0;
+     bottom: 0;
+     background: #fff568;
+     transform: scale(0, 1);
 
-.sidebar a:active {
-  background-color: transparent;
-  font-size: 15px;
-}
+    }
 
-/* CRITICAL: Prevent "ABOUT COg." from wrapping */
-.sidebar p2 {
-  white-space: nowrap;
-}
+    .sidebar a:hover {
+     color: rgba(0, 0, 0, 0.97);
+     font-size: 22px;
+     font-weight: bold;
+    
+    }
 
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
+    .sidebar a:hover::after {
+     transform: scale(1, 1);
+     transition: transform 0.5s ease;
+   }
 
-h1 {
-  display: flex;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  color: rgba(0, 0, 0, 0.50);
-  justify-content: center;
-}
+    .sidebar a:active {
+     background-color: none;
+     font-size: 15px;
+   }
 
-h2 {
-  display: flex;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  color: whitesmoke;
-  justify-content: center;
-}
 
-h3 {
-  display: flex;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  color: rgba(0, 0, 0, 0.50);
-  justify-content: center;
-}
+    /* text*/
 
-P1 {
-  display: flex;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  color: rgba(0, 0, 0, 0.50);
-}
+    h1 {
+      display: flex;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      color:  rgba(0, 0, 0, 0.50);
 
-P2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.50);
-}
+    }
+    h2 {
+      display: flex;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      color: whitesmoke;
+    }
 
-p3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-align: justify;
-  color: rgba(0, 0, 0, 0.50);
-}
+    h3 {
+      display: flex;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      color: rgba(0, 0, 0, 0.50);
+    }
 
-p4 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-align: justify;
-  color: rgba(0, 0, 0, 0.50);
-}
 
-p5 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-align: justify;
-  color: rgba(0, 0, 0, 0.50);
-}
+    P1 {
+      display: flex;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      color:  rgba(0, 0, 0, 0.50);
+    }
 
-/* ============================================
-   WHAT WE ARE SECTION
-   ============================================ */
+    P2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      color:  rgba(0, 0, 0, 0.50);
+    }
 
-.whatWeAreTextSection {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  box-sizing: border-box;
-  text-align: justify;
-  text-justify: inter-word;
-  max-width: 800px;
-  line-height: 1.5;
-  margin: 0 auto;
-}
+    p3{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      text-align: justify;
+      color:  rgba(0, 0, 0, 0.50);
+    }
 
-/* ============================================
-   CONCEPT SECTION
-   ============================================ */
+    p4{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      text-align: justify;
+      color:  rgba(0, 0, 0, 0.50);
+    }
 
-.conceptSection {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
+    p5{
+      display: flex;
+      text-align: justify;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      color:  rgba(0, 0, 0, 0.50);
+    }
 
-.conceptImage {
-  width: 80%;
-  max-width: 1200px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
+    /* Start of the Body*/
 
-/* ============================================
-   BREAKDOWN CONCEPTS
-   ============================================ */
+    body {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex-wrap: nowrap;
+      min-height: 100vh;
+      margin: 0;
+      justify-content: flex-start;
+      background-color: whitesmoke;
+    
+    }
+    .main-content {
+      flex: 1;
+    }
+
+/* Start of the What we are Section*/
+    .whatWeAreTextSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1000px;
+      margin: 80px auto; 
+      padding: 20px;
+      line-height: 1.6;
+      
+    }
+
+/* Start of the Concept Section*/
+    .conceptSection{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 5px;
+      
+    }
+    .conceptSection h1 {
+      margin:10px 0 5px 10px;
+    }
+
+    .conceptImage {
+      display: flex;
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-bottom: 20px;
+    }
+/* Start of the Concept Breakdown Section*/
 
 .breakdownConcpets {
   display: flex;
-  flex-direction: column;
-  padding: 50px;
-  box-sizing: border-box;
+  flex-direction: column; /* stack rows vertically */
+  align-items: center;
+  gap: 100px; /* space between rows */
+  margin-top: 40px;
 }
 
+/* Each row (Idea, Validate, Pair, etc.) */
 .ideaRow,
 .validateRow,
 .pairRow,
@@ -483,11 +487,24 @@ p5 {
 .empowerRow,
 .elavRow {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
-  margin-bottom: 40px;
-  padding: 20px;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* Each image should take about half width */
+.ideaSection,
+.validateSection,
+.pairSection,
+.planSection,
+.ImplementSection,
+.empowerSection,
+.evalSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .ideaImage,
@@ -497,11 +514,12 @@ p5 {
 .implementImage,
 .empowerImage,
 .evalImage {
-  width: 150px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
-  flex-shrink: 0;
 }
 
+/* Text area beside each image */
 .ideaText,
 .validateText,
 .pairText,
@@ -509,30 +527,70 @@ p5 {
 .implementText,
 .empowerText,
 .evalText {
-  max-width: 600px;
-  line-height: 1.5;
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* ============================================
-   WHO WE ARE SECTION (TEAM)
-   ============================================ */
+/* Responsive behavior: stack vertically on small screens */
+@media (max-width: 800px) {
+  .ideaRow,
+  .validateRow,
+  .pairRow,
+  .planRow,
+  .implementRow,
+  .empowerRow,
+  .elavRow {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.whoWeAreSection {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  .ideaSection,
+  .validateSection,
+  .pairSection,
+  .planSection,
+  .ImplementSection,
+  .empowerSection,
+  .evalSection,
+  .ideaText,
+  .validateText,
+  .pairText,
+  .planText,
+  .implementText,
+  .empowerText,
+  .evalText {
+    width: 100%;
+  }
+
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    max-width: 300px;
+  }
 }
 
-.teamLogosSection {
-  display: flex;
-  flex-direction: row;
-}
 
-/* Scott Section */
+
+  /* Start of Meet the Team Section*/
+    .meetTeamSection{
+      display:flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center; 
+      align-items: center;
+    }
+
+    .teamLogosSection{
+      display: flex;
+      flex-direction: row;
+    }
+ /* Start of Scott Section*/
 .FounderSection {
   display: flex;
   align-items: flex-start;
@@ -550,7 +608,8 @@ p5 {
   border: 3px solid black;
   flex-shrink: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease; /* smooth animation */
+  
 }
 
 .scottgImage,
@@ -563,31 +622,35 @@ p5 {
   left: 0;
   transition: opacity 0.5s ease;
   cursor: pointer;
+  
 }
 
 .scottHoverImage {
-  opacity: 0;
+  opacity: 0; /* hidden initially */
 }
 
 .ScottImageframe:hover {
-  box-shadow: 0 0 25px 5px #45bc7a;
-  transform: scale(1.02);
+  box-shadow: 0 0 25px 5px #45bc7a; /* green glow */
+  transform: scale(1.02); /* optional: gentle zoom on hover */
 }
 
 .ScottImageframe:hover .scottHoverImage {
-  opacity: 1;
+  opacity: 1; /* fade in secondary image */
+
 }
 
 .ScottImageframe:hover .scottgImage {
-  opacity: 0;
+  opacity: 0; /* fade out primary image */
+ 
 }
 
 .FounderText {
-  max-width: 600px;
+  max-width: 600px; /* limits the width of the entire text block */
   text-align: justify;
   margin-left: 40px;
 }
 
+/* Hover text outside the image */
 .scottTransitionText {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -596,13 +659,32 @@ p5 {
   max-width: 400px;
   line-height: 1.5;
   min-height: 100px;
+
 }
 
 .ScottImageframe:hover ~ .FounderText .scottTransitionText {
-  opacity: 1;
+  opacity: 1; /* show text on hover of the image */
 }
 
-/* Amanda Section */
+/* Optional responsive */
+@media (max-width: 768px) {
+  .FounderSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ScottImageframe {
+    width: 200px;
+  }
+
+  .scottTransitionText {
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+ /* Start of Amanda Section*/
 .dirOfMarketingSection {
   display: flex;
   align-items: flex-start;
@@ -620,7 +702,8 @@ p5 {
   border: 3px solid black;
   flex-shrink: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease; /* smooth animation */
+  
 }
 
 .amandaImage,
@@ -633,31 +716,36 @@ p5 {
   left: 0;
   transition: opacity 0.5s ease;
   cursor: pointer;
+  
 }
 
 .amandaHoverImage {
-  opacity: 0;
+  opacity: 0; /* hidden initially */
 }
 
 .amandaImageframe:hover {
-  box-shadow: 0 0 25px 5px #D61834;
-  transform: scale(1.02);
+  box-shadow: 0 0 25px 5px red; /* red glow */
+  transform: scale(1.02); /* gentle zoom on hover */
 }
 
 .amandaImageframe:hover .amandaHoverImage {
-  opacity: 1;
+  opacity: 1; /* fade in secondary image */
+
 }
 
 .amandaImageframe:hover .amandaImage {
-  opacity: 0;
+  opacity: 0; /* fade out primary image */
+ 
 }
 
 .dirOfMarkText {
-  max-width: 600px;
+  max-width: 600px; /* limits the width of the entire text block */
   text-align: justify;
   margin-left: 40px;
 }
 
+
+/* Hover text outside the image */
 .amandaTransitionText {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -669,10 +757,23 @@ p5 {
 }
 
 .amandaImageframe:hover ~ .dirOfMarkText .amandaTransitionText {
-  opacity: 1;
+  opacity: 1; /* show text on hover of the image */
 }
 
-/* Catherine Section */
+/* Optional responsive */
+@media (max-width: 768px) {
+  .dirOfMarketingSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .amandaImageframe {
+    width: 200px;
+  }
+}
+
+ /* Start of Catherine Section*/
 .dirOfAMESection {
   display: flex;
   align-items: flex-start;
@@ -690,7 +791,8 @@ p5 {
   border: 3px solid black;
   flex-shrink: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease; /* smooth animation */
+  
 }
 
 .catherineImage,
@@ -703,31 +805,34 @@ p5 {
   left: 0;
   transition: opacity 0.5s ease;
   cursor: pointer;
+  
 }
 
 .catherineHoverImage {
-  opacity: 0;
+  opacity: 0; /* hidden initially */
 }
 
 .catherineImageframe:hover {
-  box-shadow: 0 0 25px 5px #29abe2;
-  transform: scale(1.02);
+  box-shadow: 0 0 25px 5px #29abe2; /* blue glow */
+  transform: scale(1.02); /* gentle zoom on hover */
 }
 
 .catherineImageframe:hover .catherineHoverImage {
-  opacity: 1;
+  opacity: 1; /* fade in secondary image */
+
 }
 
 .catherineImageframe:hover .catherineImage {
-  opacity: 0;
+  opacity: 0; /* fade out primary image */
+ 
 }
-
 .dirAMEText {
-  max-width: 600px;
+  max-width: 600px; /* limits the width of the entire text block */
   text-align: justify;
   margin-left: 40px;
 }
 
+/* Hover text outside the image */
 .catherineTransitionText {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -739,141 +844,165 @@ p5 {
 }
 
 .catherineImageframe:hover ~ .dirAMEText .catherineTransitionText {
-  opacity: 1;
+  opacity: 1; /* show text on hover of the image */
 }
 
-/* ============================================
-   FOOTER - DESKTOP
-   ============================================ */
+/* Optional responsive */
+@media (max-width: 768px) {
+  .dirOfAMESection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.footer-container {
-  width: 100%;
-  display: flex;
-  background-color: black;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-  margin-top: auto;
+  .catherineImageframe {
+    width: 200px;
+  }
 }
 
-.footer {
-  width: 80%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  padding: 20px 0;
-}
 
-.footer-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  color: whitesmoke;
-}
 
-.footer-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-right: 4rem;
-  margin-bottom: 2rem;
-}
+/* Start of Footer*/
 
-.footer-heading h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  color: whitesmoke;
-  margin-bottom: 10px;
-}
+    .footer-container {
+      width: 100%;
+      top: auto;
+      background-color: black;
+      padding: 0.5rem 0 1rem 0;
+      flex-shrink: 0;
+      margin-top: auto;
+ 
+    }
 
-.footer-heading a {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
+    .footer {
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
 
-.footer-heading a:hover {
-  color: #D61834;
-  transition: 0.3s ease-out;
-}
+    }
 
-.footer-email-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 15px;
-  padding: 20px;
-}
+    .footer-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      color: whitesmoke;
+      margin-bottom: 1rem;
+      
+    }
 
-.footer-email-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0;
-}
+    .footer-heading {
+      display: flex;
+      flex-direction: column;
+      margin-right: 4rem;
+      margin-bottom: 4rem;
 
-#footer-email {
-  width: 250px;
-  height: 50px;
-  border-radius: 25px 0 0 25px;
-  outline: none;
-  border: none;
-  padding-left: 20px;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    }
 
-#footer-email::placeholder {
-  color: #D61834;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    .footer-heading p1 {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+    }
 
-#footer-email-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #D61834;
-  outline: none;
-  border: none;
-  color: whitesmoke;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: -25px;
-}
+    .footer-heading a {
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      align-items: center;
+      align-content: center;
+    }
 
-#footer-email-btn:hover {
-  cursor: pointer;
-  background-color: #29abe2;
-  transition: all 0.4s ease-out;
-}
+    .footer-heading a:hover {
+      color: red;
+      transition: 0.3s ease-out;
 
-#footer-email-btn:active {
-  transform: scale(0.95);
-  background-color: #45bc7a;
-}
+    }
 
-/* =============================================
-   MOBILE RESPONSIVE STYLES
-   ============================================= */
+    .footer-email-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 15px;
+      padding: 40px;
+     
+    }
 
+    .footer-email-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+    }
+
+    #footer-email{
+      width: 250px;
+      height: 50px;
+      border-radius: 100px;
+      outline: none;
+      border: none;
+      padding-left: 0.5rem;
+      font-size: 0.6rem;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+
+    }
+
+    #footer-email::placeholder {
+      color: red;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #footer-email-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: red;
+      outline: none;
+      border: none;
+      color: whitesmoke;
+      font-size: 0.6rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #footer-email-btn:hover {
+      cursor: pointer;
+      background-color: #29abe2;
+      transition: all 0.4s ease-out;
+    }
+
+    #footer-email-btn:active {
+      transform:scale(-1.02);
+      background-color: #45bc7a;
+    }
+
+
+/* ============================================= */
+/* V6 MOBILE RESPONSIVE STYLES - FIXED          */
+/* ============================================= */
+
+/* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
   
   /* Prevent horizontal scroll */
-  html, body {
-    overflow-x: hidden;
-    max-width: 100vw;
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
   
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Remove problematic body styles */
   body {
     height: auto !important;
     min-height: 100vh;
@@ -886,330 +1015,153 @@ p5 {
     padding: 0 5px;
   }
   
+  /* === SHOW NAVIGATION BUTTONS ON MOBILE === */
+  .center-section {
+    display: flex !important;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Style nav buttons for mobile */
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 9px !important;
+    height: 26px !important;
+    padding: 0 8px !important;
+    margin: 0 2px !important;
+    min-width: auto !important;
+    width: auto !important;
+  }
+  
+  /* Remove hover underlines on mobile */
+  .create-button::after,
+  .volunteer-button::after,
+  .donate-button::after {
+    display: none !important;
+  }
+  
+  /* Logo scaling */
   .left-section {
     width: auto;
     margin-left: 5px;
-    flex-shrink: 0;
   }
   
   .COg-Logo {
     width: 50px;
   }
   
-  /* =============================================
-     SHOW NAV BUTTONS ON MOBILE
-     ============================================= */
-  .center-section {
-    display: flex !important;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-    padding: 0 5px;
-  }
-  
-  .center-section a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 9px !important;
-    height: 26px !important;
-    width: auto !important;
-    min-width: 55px;
-    padding: 0 8px !important;
-    margin: 0 2px !important;
-    border-radius: 3px;
-    white-space: nowrap;
-  }
-  
-  .create-button::after,
-  .volunteer-button::after,
-  .donate-button::after {
-    display: none;
-  }
-  
-  .right-section {
-    width: 50px;
-    flex-shrink: 0;
-  }
-  
+  /* Hamburger menu positioning */
   .toggle {
     top: 20px;
-    right: 10px;
+    right: 15px;
     height: 28px;
     width: 28px;
   }
   
+  /* Sidebar adjustments */
   .sidebar {
     top: 70px;
-    width: 220px;
   }
   
-  /* CRITICAL: Prevent "ABOUT COg." from wrapping */
   .sidebar li {
     white-space: nowrap;
   }
   
   .sidebar a {
     white-space: nowrap;
-    font-size: 18px;
-    margin: 0 20px;
   }
   
   .sidebar p2 {
     white-space: nowrap;
-    font-size: 18px;
   }
   
-  /* =============================================
-     FIRST PARAGRAPH CLOSER TO HEADER
-     ============================================= */
-  .whatWeAreTextSection {
-    padding: 10px 15px;
-    margin-top: 0;
-  }
-  
-  .whatWeAreTextSection p5 {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  /* Concept Section */
-  .conceptSection {
+  /* === TWO-COLUMN FOOTER LAYOUT === */
+  .footer-container {
     padding: 20px 10px;
   }
   
-  .conceptSection h1 {
-    font-size: 26px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .conceptImage {
-    width: 95%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  /* Breakdown Concepts */
-  .breakdownConcpets {
-    padding: 10px;
-  }
-  
-  .ideaRow,
-  .validateRow,
-  .pairRow,
-  .planRow,
-  .implementRow,
-  .empowerRow,
-  .elavRow {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 15px;
-  }
-  
-  /* =============================================
-     INDIVIDUAL CONCEPT IMAGES DOUBLED (200px)
-     ============================================= */
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
-    width: 200px !important;
-    max-width: 200px !important;
-    height: auto;
-    margin-bottom: 15px;
-  }
-  
-  /* =============================================
-     ALL TEXT CENTERED (consistent alignment)
-     ============================================= */
-  .ideaText,
-  .validateText,
-  .pairText,
-  .planText,
-  .implementText,
-  .empowerText,
-  .evalText {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .ideaText p5,
-  .validateText p5,
-  .pairText p5,
-  .planText p5,
-  .implementText p5,
-  .empowerText p5,
-  .evalText p5 {
-    font-size: 15px;
-    line-height: 1.5;
-    text-align: center;
-  }
-  
-  /* Who We Are Section */
-  .whoWeAreSection {
-    padding: 20px 15px;
-  }
-  
-  .whoWeAreSection h1 {
-    font-size: 26px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  /* =============================================
-     TEAM SECTIONS - ALL CENTERED (consistent)
-     ============================================= */
-  .FounderSection,
-  .dirOfMarketingSection,
-  .dirOfAMESection {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-    padding: 20px 10px;
-  }
-  
-  .ScottImageframe,
-  .amandaImageframe,
-  .catherineImageframe {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 20px;
-  }
-  
-  .scottgImage,
-  .scottHoverImage,
-  .amandaImage,
-  .amandaHoverImage,
-  .catherineImage,
-  .catherineHoverImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* TITLE AND BIO TEXT - ALL CENTERED */
-  .FounderText,
-  .dirOfMarkText,
-  .dirAMEText {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    margin-left: 0;
-  }
-  
-  .FounderText h3,
-  .dirOfMarkText h3,
-  .dirAMEText h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  /* Bio text always visible on mobile (no hover needed) */
-  .scottTransitionText,
-  .amandaTransitionText,
-  .catherineTransitionText {
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: center;
-    opacity: 1 !important;
-    max-width: 100%;
-  }
-  
-  /* =============================================
-     TWO-COLUMN FOOTER (matches homepage)
-     ============================================= */
   .footer {
-    width: 95%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 15px;
-    padding: 25px 15px;
+    width: 95% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 15px !important;
+    padding: 20px 10px !important;
   }
   
   .footer-heading {
-    margin-right: 0;
-    margin-bottom: 0;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
     text-align: left;
-    align-items: flex-start;
   }
   
   .footer-heading h2 {
     font-size: 16px;
-    margin-bottom: 8px;
-    padding-bottom: 0;
+    padding-bottom: 8px;
   }
   
   .footer-heading a {
     font-size: 13px;
-    min-height: 32px;
-    padding: 0.25rem 0;
-    justify-content: flex-start;
+    display: block;
+    padding: 4px 0;
   }
   
-  /* Newsletter form spans both columns */
+  /* Newsletter section spans both columns */
   .footer-email-form {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1 !important;
     width: 100%;
-    padding: 20px 0 10px 0;
-    margin-top: 10px;
+    padding: 15px 10px;
     border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 10px;
   }
   
-  .footer-email-form h2,
-  .footer-email-form .footer-title {
-    font-size: 18px;
-    margin-bottom: 15px;
+  .footer-title {
+    font-size: 18px !important;
   }
   
-  /* CIRCULAR NEWSLETTER BUTTON NEXT TO INPUT */
+  /* === CIRCULAR NEWSLETTER BUTTON === */
   .footer-email-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
+    flex-direction: row !important;
     width: 100%;
+    max-width: 300px;
+    gap: 0 !important;
+    justify-content: center;
+    margin: 0 auto;
   }
   
   #footer-email {
-    width: 200px;
-    max-width: 60%;
-    height: 44px;
-    border-radius: 22px 0 0 22px;
-    padding-left: 15px;
-    padding-right: 5px;
-    font-size: 13px;
+    width: 200px !important;
+    max-width: none !important;
+    height: 44px !important;
+    border-radius: 22px 0 0 22px !important;
+    padding-right: 25px !important;
   }
   
   #footer-email-btn {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    border-radius: 50%;
-    margin-left: -22px;
-    font-size: 18px;
-    font-weight: bold;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    margin-left: -22px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
   }
 }
 
 /* Mobile phones (480px and below) */
 @media screen and (max-width: 480px) {
+  
+  /* Smaller nav buttons for phones */
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 8px !important;
+    height: 24px !important;
+    padding: 0 6px !important;
+    margin: 0 1px !important;
+  }
   
   body {
     padding-top: 70px !important;
@@ -1220,28 +1172,18 @@ p5 {
   }
   
   .COg-Logo {
-    width: 40px;
-  }
-  
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 8px !important;
-    height: 24px !important;
-    min-width: 48px;
-    padding: 0 5px !important;
-    margin: 0 1px !important;
+    width: 45px;
   }
   
   .toggle {
-    height: 24px;
-    width: 24px;
-    top: 18px;
-    right: 8px;
+    height: 25px;
+    width: 25px;
+    top: 15px;
+    right: 10px;
   }
   
   .sidebar {
-    width: 200px;
+    width: 180px;
     top: 60px;
   }
   
@@ -1250,178 +1192,64 @@ p5 {
     margin: 0 15px;
   }
   
-  .sidebar p2 {
-    font-size: 16px;
-  }
-  
-  h1 {
-    font-size: 22px !important;
-    line-height: 1.3;
-  }
-  
-  h2 {
-    font-size: 18px;
-  }
-  
-  h3 {
-    font-size: 18px;
-  }
-  
-  .whatWeAreTextSection p5 {
-    font-size: 14px;
-  }
-  
-  /* Individual images - still doubled (180px at this breakpoint) */
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
-    width: 180px !important;
-    max-width: 180px !important;
-  }
-  
-  .ScottImageframe,
-  .amandaImageframe,
-  .catherineImageframe {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .scottTransitionText,
-  .amandaTransitionText,
-  .catherineTransitionText {
-    font-size: 13px;
-  }
-  
-  .footer {
-    gap: 15px 12px;
-    padding: 20px 12px;
-  }
-  
+  /* Footer adjustments */
   .footer-heading h2 {
     font-size: 14px;
   }
   
   .footer-heading a {
     font-size: 12px;
-    min-height: 28px;
   }
   
   #footer-email {
-    width: 160px;
-    height: 40px;
-    font-size: 12px;
+    width: 170px !important;
+    height: 40px !important;
   }
   
   #footer-email-btn {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    margin-left: -20px;
-    font-size: 16px;
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: -20px !important;
   }
 }
 
 /* Extra small devices (360px and below) */
 @media screen and (max-width: 360px) {
   
-  body {
-    padding-top: 65px !important;
-  }
-  
-  .Header {
-    height: 55px;
-  }
-  
-  .COg-Logo {
-    width: 35px;
-  }
-  
+  /* Even smaller nav buttons */
   .create-button,
   .volunteer-button,
   .donate-button {
     font-size: 7px !important;
     height: 22px !important;
-    min-width: 42px;
     padding: 0 4px !important;
   }
   
-  .toggle {
-    height: 22px;
-    width: 22px;
-    top: 16px;
+  body {
+    padding-top: 65px !important;
   }
   
-  h1 {
-    font-size: 18px !important;
-  }
-  
-  .whatWeAreTextSection p5 {
-    font-size: 13px;
+  .COg-Logo {
+    width: 40px;
   }
   
   .sidebar {
-    width: 180px;
-    top: 55px;
+    width: 160px;
   }
   
   .sidebar a {
     font-size: 14px;
-    margin: 0 12px;
   }
   
-  .sidebar p2 {
-    font-size: 14px;
-  }
-  
-  /* Individual images - still doubled (150px at this breakpoint) */
-  .ideaImage,
-  .validateImage,
-  .pairImage,
-  .planImage,
-  .implementImage,
-  .empowerImage,
-  .evalImage {
+  #footer-email {
     width: 150px !important;
-    max-width: 150px !important;
-  }
-  
-  .ScottImageframe,
-  .amandaImageframe,
-  .catherineImageframe {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .footer {
-    gap: 12px 10px;
-    padding: 18px 10px;
   }
   
   .footer-heading h2 {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .footer-heading a {
     font-size: 11px;
-    min-height: 26px;
-  }
-  
-  #footer-email {
-    width: 140px;
-    height: 36px;
-    font-size: 11px;
-    padding-left: 12px;
-  }
-  
-  #footer-email-btn {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    margin-left: -18px;
-    font-size: 14px;
   }
 }
