@@ -890,37 +890,55 @@ Add this to the END of ATyphoidTale-Working.css
 /* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
   
+  /* Prevent horizontal scroll */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
   /* Remove problematic body styles */
   body {
     height: auto !important;
     min-height: 100vh;
     padding-top: 80px !important;
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-  
-  html {
-    overflow-x: hidden;
   }
   
   /* Header adjustments */
   .Header {
     height: 70px;
+    padding: 0 5px;
   }
   
-  /* Show navigation buttons */
+  /* === SHOW NAVIGATION BUTTONS ON MOBILE === */
   .center-section {
-    display: flex;
+    display: flex !important;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
   
+  /* Style nav buttons for mobile */
   .create-button,
   .volunteer-button,
   .donate-button {
-    font-size: 9px;
-    height: 24px;
-    width: auto;
-    padding: 0 6px;
-    margin: 0 2px;
+    font-size: 9px !important;
+    height: 26px !important;
+    padding: 0 8px !important;
+    margin: 0 2px !important;
+    min-width: auto !important;
+    width: auto !important;
+  }
+  
+  /* Remove hover underlines on mobile */
+  .create-button::after,
+  .volunteer-button::after,
+  .donate-button::after {
+    display: none !important;
   }
   
   /* Logo scaling */
@@ -1108,81 +1126,133 @@ Add this to the END of ATyphoidTale-Working.css
     height: auto;
   }
   
-  /* Product images - horizontal scroll or grid */
+  /* === FIXED MERCH SECTION - Proper container/image handling === */
   .productSection {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
     gap: 15px;
+    padding: 10px;
   }
   
+  /* Product CONTAINER divs - use div selector to avoid img conflict */
   .ShirtMerch,
-  .beanieMerch,
-  .soapMerch {
-    width: calc(50% - 10px);
-    max-width: 150px;
+  div.beanieMerch,
+  div.soapMerch {
+    width: calc(50% - 10px) !important;
+    max-width: 150px !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: none !important;
+    position: static !important;
   }
   
+  /* Product IMAGES - use img selector */
   .shirtMerch,
-  .beanieMerch,
-  .soapMerch {
-    width: 100%;
-    height: auto;
+  img.beanieMerch,
+  img.soapMerch {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 150px !important;
     border-radius: 10px;
+    object-fit: contain !important;
+    position: static !important;
   }
   
-  /* Two-column footer */
+  /* === TWO-COLUMN FOOTER LAYOUT === */
   .footer {
-    width: 95%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 20px 15px;
+    width: 95% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 15px !important;
+    padding: 20px 10px !important;
   }
   
   .footer-heading {
-    margin-right: 0;
-    margin-bottom: 0;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
     text-align: left;
   }
   
   .footer-heading h2 {
-    font-size: 20px;
+    font-size: 16px;
+    padding-bottom: 8px;
   }
   
   .footer-heading a {
-    font-size: 16px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 13px;
+    display: block;
+    padding: 4px 0;
+    min-height: auto;
   }
   
+  /* Newsletter section spans both columns */
   .footer-email-form {
+    grid-column: 1 / -1 !important;
     width: 100%;
-    padding: 20px 10px;
+    padding: 15px 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 10px;
   }
   
+  /* === CIRCULAR NEWSLETTER BUTTON === */
   .footer-email-row {
-    flex-direction: column;
+    flex-direction: row !important;
     width: 100%;
-    gap: 10px;
+    max-width: 300px;
+    gap: 0 !important;
+    justify-content: center;
+    margin: 0 auto;
   }
   
   #footer-email {
-    width: 100%;
-    max-width: 300px;
+    width: 200px !important;
+    max-width: none !important;
+    height: 44px !important;
+    border-radius: 22px 0 0 22px !important;
+    padding-right: 25px !important;
   }
   
   #footer-email-btn {
-    width: 100%;
-    max-width: 300px;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    margin-left: -22px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+  }
+  
+  /* Sidebar text no-wrap */
+  .sidebar li {
+    white-space: nowrap;
+  }
+  
+  .sidebar a {
+    white-space: nowrap;
+  }
+  
+  .sidebar p2 {
+    white-space: nowrap;
   }
 }
 
 /* Mobile phones (480px and below) */
 @media screen and (max-width: 480px) {
+  
+  /* Smaller nav buttons for phones */
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 8px !important;
+    height: 24px !important;
+    padding: 0 6px !important;
+    margin: 0 1px !important;
+  }
   
   body {
     padding-top: 70px !important;
@@ -1226,6 +1296,26 @@ Add this to the END of ATyphoidTale-Working.css
   /* ATT Logo smaller */
   .aTTLogo {
     max-width: 300px;
+  }
+  
+  /* Footer smaller */
+  .footer-heading h2 {
+    font-size: 14px;
+  }
+  
+  .footer-heading a {
+    font-size: 12px;
+  }
+  
+  #footer-email {
+    width: 170px !important;
+    height: 40px !important;
+  }
+  
+  #footer-email-btn {
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: -20px !important;
   }
   
   /* StoryMap taller on phones for better viewing */
@@ -1294,6 +1384,15 @@ Add this to the END of ATyphoidTale-Working.css
 /* Extra small devices (360px and below) */
 @media screen and (max-width: 360px) {
   
+  /* Even smaller nav buttons */
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 7px !important;
+    height: 22px !important;
+    padding: 0 4px !important;
+  }
+  
   body {
     padding-top: 65px !important;
   }
@@ -1307,7 +1406,7 @@ Add this to the END of ATyphoidTale-Working.css
   }
   
   .COg-Logo {
-    width: 45px;
+    width: 40px;
   }
   
   .sidebar {
@@ -1339,10 +1438,23 @@ Add this to the END of ATyphoidTale-Working.css
     width: 60px;
   }
   
-  .ShirtMerch,
-  .beanieMerch,
-  .soapMerch {
-    width: 100%;
-    max-width: 120px;
+  /* Merch containers */
+  div.ShirtMerch,
+  div.beanieMerch,
+  div.soapMerch {
+    width: 100% !important;
+    max-width: 120px !important;
+  }
+  
+  #footer-email {
+    width: 150px !important;
+  }
+  
+  .footer-heading h2 {
+    font-size: 13px;
+  }
+  
+  .footer-heading a {
+    font-size: 11px;
   }
 }
