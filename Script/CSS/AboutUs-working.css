@@ -1078,6 +1078,20 @@
     white-space: nowrap;
   }
   
+  /* Fix text justify spacing on mobile */
+  p3, p4, p5 {
+    text-align: left !important;
+  }
+  
+  .whatWeAreTextSection p3,
+  .whatWeDoTextSection p3,
+  .whereSection p3,
+  .whatWeAreTextSection,
+  .whatWeDoTextSection,
+  .whereSection {
+    text-align: left !important;
+  }
+  
   /* === TWO-COLUMN FOOTER LAYOUT === */
   .footer-container {
     padding: 20px 10px;

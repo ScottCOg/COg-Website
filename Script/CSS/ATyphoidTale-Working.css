@@ -1094,6 +1094,22 @@ Add this to the END of ATyphoidTale-Working.css
     font-size: 18px;
     margin-top: 20px;
     min-width: 200px;
+    max-width: 280px !important;
+    height: auto !important;
+    width: auto !important;
+  }
+  
+  /* Fix donate section overflow */
+  .donate-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  .donate-content h1,
+  .donate-content p3 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
   }
   
   /* Merch Section - Stack vertically */
