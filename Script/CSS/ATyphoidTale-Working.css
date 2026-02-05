@@ -953,9 +953,22 @@ Add this to the END of ATyphoidTale-Working.css
     right: 10px;
   }
   
-  /* Sidebar adjustments */
+  /* Sidebar adjustments - CENTERED */
   .sidebar {
     top: 70px;
+    align-items: center !important;
+    text-align: center;
+  }
+  
+  .sidebar li {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .sidebar a {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
   }
   
   /* Main content area */
@@ -1138,16 +1151,19 @@ Add this to the END of ATyphoidTale-Working.css
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 10px;
+    text-align: center !important;
   }
   
   .merchTextSection h1 {
     font-size: 22px;
     margin-bottom: 15px;
     word-wrap: break-word !important;
+    text-align: center !important;
   }
   
   .merchTextSection p1 {
     font-size: 16px;
+    text-align: center !important;
   }
   
   .LilgImage {

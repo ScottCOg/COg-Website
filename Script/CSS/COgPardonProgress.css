@@ -640,17 +640,24 @@ html, body{
     width: 28px;
   }
   
-  /* Sidebar adjustments */
+  /* Sidebar adjustments - CENTERED */
   .sidebar {
     top: 70px;
+    align-items: center !important;
+    text-align: center;
   }
   
   .sidebar li {
     white-space: nowrap;
+    text-align: center;
+    width: 100%;
   }
   
   .sidebar a {
     white-space: nowrap;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
   }
   
   .sidebar p2 {
