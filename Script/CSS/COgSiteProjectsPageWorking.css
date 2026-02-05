@@ -656,7 +656,7 @@ Add this to the END of COgSiteProjectsPageWorking.css
   /* Hamburger menu positioning */
   .toggle {
     top: 20px;
-    right: 15px;
+    right: 10px;
     height: 28px;
     width: 28px;
   }
