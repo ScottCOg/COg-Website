@@ -600,28 +600,9 @@ Used by: swag.html, ideas.html, volunteer.html, create.html
     height: 70px;
   }
   
-  /* SHOW navigation buttons on mobile */
+  /* Hide desktop navigation buttons */
   .center-section {
-    display: flex !important;
-    flex: 1;
-    justify-content: center;
-    gap: 5px;
-  }
-  
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 10px !important;
-    height: 28px !important;
-    width: auto !important;
-    padding: 0 8px !important;
-    margin: 0 3px !important;
-  }
-  
-  .create-button::after,
-  .volunteer-button::after,
-  .donate-button::after {
-    display: none !important;
+    display: none;
   }
   
   /* Logo scaling */
@@ -673,60 +654,52 @@ Used by: swag.html, ideas.html, volunteer.html, create.html
     height: auto;
   }
   
-  /* Two-column footer layout */
+  /* Footer stacking */
   .footer {
     width: 95%;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 20px 15px;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
   }
   
   .footer-heading {
     margin-right: 0;
-    margin-bottom: 0;
-    text-align: left;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
   }
   
   .footer-heading h2 {
-    font-size: 16px;
-    padding-bottom: 5px;
+    font-size: 20px;
   }
   
   .footer-heading a {
-    font-size: 13px;
-    min-height: auto;
-    display: block;
-    padding: 3px 0;
+    font-size: 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .footer-email-form {
-    grid-column: 1 / -1;
     width: 100%;
-    padding: 15px 10px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 20px 10px;
   }
   
   .footer-email-row {
-    flex-direction: row !important;
+    flex-direction: column;
     width: 100%;
-    max-width: 280px;
-    gap: 0;
-    margin: 0 auto;
+    gap: 10px;
   }
   
   #footer-email {
-    width: 200px;
-    max-width: none;
-    height: 40px;
-    border-radius: 20px 0 0 20px;
+    width: 100%;
+    max-width: 300px;
   }
   
   #footer-email-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: -20px;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -816,5 +789,194 @@ Used by: swag.html, ideas.html, volunteer.html, create.html
   
   .constructionImage {
     max-width: 250px;
+  }
+}
+
+
+/*
+===============================================
+COg Creations - Mobile Override CSS
+Add this file AFTER all other CSS files
+===============================================
+*/
+
+/* ============================================= */
+/* 768px - Tablet Breakpoint                     */
+/* ============================================= */
+@media screen and (max-width: 768px) {
+  
+  /* === FIX: Show Navigation Buttons === */
+  .center-section {
+    display: flex !important;
+    flex: 1 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    display: inline-block !important;
+    visibility: visible !important;
+    font-size: 10px !important;
+    height: 28px !important;
+    width: auto !important;
+    min-width: 50px !important;
+    padding: 0 8px !important;
+    margin: 0 3px !important;
+  }
+  
+  /* Remove hover underlines on mobile */
+  .create-button::after,
+  .volunteer-button::after,
+  .donate-button::after {
+    display: none !important;
+  }
+  
+  /* === FIX: Text Justification (causes weird spacing on mobile) === */
+  p3, p4, p5,
+  .whatWeAreTextSection p3,
+  .whatWeDoTextSection p3,
+  .whereSection p3 {
+    text-align: left !important;
+  }
+  
+  /* === FIX: Two-Column Footer Layout === */
+  .footer {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    width: 95% !important;
+    padding: 20px 15px !important;
+    flex-direction: unset !important;
+  }
+  
+  .footer-heading {
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+    width: auto !important;
+  }
+  
+  .footer-heading h2 {
+    font-size: 16px !important;
+    padding-bottom: 5px !important;
+  }
+  
+  .footer-heading a {
+    font-size: 13px !important;
+    display: block !important;
+    padding: 3px 0 !important;
+    min-height: auto !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* Newsletter spans both columns */
+  .footer-email-form {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    padding: 15px 10px !important;
+    border-top: 1px solid rgba(255,255,255,0.2) !important;
+  }
+  
+  /* === FIX: Circular Newsletter Button === */
+  .footer-email-row {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    gap: 0 !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+  }
+  
+  #footer-email {
+    width: 200px !important;
+    max-width: none !important;
+    height: 40px !important;
+    border-radius: 20px 0 0 20px !important;
+    flex: none !important;
+  }
+  
+  #footer-email-btn {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    margin-left: -20px !important;
+    flex: none !important;
+    max-width: none !important;
+  }
+  
+  /* === FIX: Sidebar text wrapping === */
+  .sidebar li,
+  .sidebar a,
+  .sidebar p2 {
+    white-space: nowrap !important;
+  }
+}
+
+/* ============================================= */
+/* 480px - Phone Breakpoint                      */
+/* ============================================= */
+@media screen and (max-width: 480px) {
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 8px !important;
+    height: 24px !important;
+    padding: 0 5px !important;
+    margin: 0 2px !important;
+    min-width: 40px !important;
+  }
+  
+  .footer-heading h2 {
+    font-size: 14px !important;
+  }
+  
+  .footer-heading a {
+    font-size: 12px !important;
+  }
+  
+  #footer-email {
+    width: 160px !important;
+    height: 36px !important;
+    border-radius: 18px 0 0 18px !important;
+  }
+  
+  #footer-email-btn {
+    width: 36px !important;
+    height: 36px !important;
+    margin-left: -18px !important;
+  }
+}
+
+/* ============================================= */
+/* 360px - Small Phone Breakpoint                */
+/* ============================================= */
+@media screen and (max-width: 360px) {
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 7px !important;
+    height: 22px !important;
+    padding: 0 4px !important;
+    min-width: 35px !important;
+  }
+  
+  .footer-heading h2 {
+    font-size: 13px !important;
+  }
+  
+  .footer-heading a {
+    font-size: 11px !important;
+  }
+  
+  #footer-email {
+    width: 140px !important;
   }
 }
