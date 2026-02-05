@@ -615,12 +615,12 @@ Add this to the END of COgSiteProjectsPageWorking.css
     padding: 0 5px;
   }
   
-  /* === SHOW NAVIGATION BUTTONS ON MOBILE === */
+  /* === SHOW NAVIGATION BUTTONS ON MOBILE - CENTERED === */
   .center-section {
     display: flex !important;
     flex: 1;
-    justify-content: center;
-    align-items: center;
+    justify-content: center !important;
+    align-items: center !important;
     gap: 5px;
   }
   
@@ -665,20 +665,18 @@ Add this to the END of COgSiteProjectsPageWorking.css
   .sidebar {
     top: 70px;
     align-items: center !important;
-    text-align: center;
   }
   
   .sidebar li {
     white-space: nowrap;
-    text-align: center;
     width: 100%;
+    text-align: center !important;
   }
   
   .sidebar a {
     white-space: nowrap;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
   
   .sidebar p2 {
@@ -832,11 +830,13 @@ Add this to the END of COgSiteProjectsPageWorking.css
   .sidebar {
     width: 180px;
     top: 60px;
+    align-items: center !important;
   }
   
   .sidebar a {
     font-size: 16px;
-    margin: 0 15px;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
   
   /* Typography scaling */
