@@ -557,28 +557,24 @@ main {
 /* Tablet and below (768px) */
 @media screen and (max-width: 768px) {
   
-  /* === SHOW NAVIGATION BUTTONS ON MOBILE === */
+  /* SHOW navigation buttons on mobile */
   .center-section {
     display: flex !important;
     flex: 1;
     justify-content: center;
-    align-items: center;
     gap: 5px;
   }
   
-  /* Style nav buttons for mobile */
   .create-button,
   .volunteer-button,
   .donate-button {
-    font-size: 9px !important;
-    height: 26px !important;
-    padding: 0 8px !important;
-    margin: 0 2px !important;
-    min-width: auto !important;
+    font-size: 10px !important;
+    height: 28px !important;
     width: auto !important;
+    padding: 0 8px !important;
+    margin: 0 3px !important;
   }
   
-  /* Remove hover underlines on mobile */
   .create-button::after,
   .volunteer-button::after,
   .donate-button::after {
@@ -603,35 +599,6 @@ main {
   /* Adjust main content spacing */
   main {
     margin-top: 80px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  
-  /* Center all sections */
-  .missionSection,
-  .conceptSection,
-  .featuredProjectSection {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    box-sizing: border-box;
-  }
-  
-  /* Prevent horizontal overflow */
-  html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-  }
-  
-  *, *::before, *::after {
-    box-sizing: border-box;
   }
   
   /* Typography adjustments */
@@ -669,13 +636,13 @@ main {
     justify-content: center;
   }
   
-  /* === TWO-COLUMN FOOTER LAYOUT === */
+  /* Two-column footer layout */
   .footer {
-    width: 95% !important;
+    width: 95%;
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 20px 15px !important;
-    padding: 20px 10px !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px 15px;
   }
   
   .footer-heading {
@@ -686,76 +653,47 @@ main {
   
   .footer-heading h2 {
     font-size: 16px;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
   }
   
   .footer-heading a {
     font-size: 13px;
     display: block;
-    padding: 4px 0;
+    padding: 3px 0;
   }
   
-  /* Newsletter section spans both columns */
   .footer-email-form {
-    grid-column: 1 / -1 !important;
+    grid-column: 1 / -1;
     width: 100%;
     padding: 15px 10px;
     border-top: 1px solid rgba(255,255,255,0.2);
-    margin-top: 10px;
   }
   
-  /* === CIRCULAR NEWSLETTER BUTTON === */
   .footer-email-row {
     flex-direction: row !important;
     width: 100%;
-    max-width: 300px;
-    gap: 0 !important;
-    justify-content: center;
+    max-width: 280px;
+    gap: 0;
     margin: 0 auto;
   }
   
   #footer-email {
-    width: 200px !important;
-    max-width: none !important;
-    height: 44px !important;
-    border-radius: 22px 0 0 22px !important;
-    padding-right: 25px !important;
+    width: 200px;
+    max-width: none;
+    height: 40px;
+    border-radius: 20px 0 0 20px;
   }
   
   #footer-email-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    margin-left: -22px !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: -20px;
   }
-  
-  /* Sidebar text no-wrap */
-  .sidebar li {
-    white-space: nowrap;
-  }
-  
-  .sidebar a {
-    white-space: nowrap;
-  }
-  
-  .sidebar p2 {
-    white-space: nowrap;
-  }
+}
 
 /* Mobile phones (480px and below) */
 @media screen and (max-width: 480px) {
-  
-  /* Smaller nav buttons for phones */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 8px !important;
-    height: 24px !important;
-    padding: 0 6px !important;
-    margin: 0 1px !important;
-  }
   
   h1 {
     font-size: 24px;
@@ -805,32 +743,22 @@ main {
   }
   
   .footer-heading a {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   #footer-email {
-    width: 170px !important;
-    height: 40px !important;
+    width: 85%;
+    height: 45px;
   }
   
   #footer-email-btn {
-    width: 40px !important;
-    height: 40px !important;
-    margin-left: -20px !important;
+    width: 45px;
+    height: 45px;
   }
 }
 
 /* Extra small devices (360px and below) */
 @media screen and (max-width: 360px) {
-  
-  /* Even smaller nav buttons */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 7px !important;
-    height: 22px !important;
-    padding: 0 4px !important;
-  }
   
   h1 {
     font-size: 20px;
@@ -841,7 +769,374 @@ main {
   }
   
   .COg-Logo {
-    width: 40px;
+    width: 45px;
+  }
+  
+  .sidebar {
+    width: 160px;
+  }
+  
+  .sidebar a {
+    font-size: 14px;
+  }
+}
+
+
+/* 
+===============================================
+COg Creations - About Us Page Mobile CSS
+Add this to the END of AboutUs-working.css
+===============================================
+*/
+
+/* ============================================= */
+/* MOBILE RESPONSIVE STYLES                      */
+/* ============================================= */
+
+/* Tablets and small laptops (768px and below) */
+@media screen and (max-width: 768px) {
+  
+  /* Remove problematic body styles - add this to body selector or override */
+  body {
+    height: auto !important;
+    min-height: 100vh;
+    padding-top: 80px !important;
+  }
+  
+  /* Header adjustments */
+  .Header {
+    height: 70px;
+  }
+  
+  /* Hide desktop navigation buttons */
+  .center-section {
+    display: none;
+  }
+  
+  /* Logo scaling */
+  .COg-Logo {
+    width: 60px;
+  }
+  
+  /* Hamburger menu positioning */
+  .toggle {
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Sidebar adjustments */
+  .sidebar {
+    top: 70px;
+  }
+  
+  /* Main content area */
+  main {
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+  
+  /* What We Are Section */
+  .whatWeAreTextSection {
+    padding: 20px 15px;
+  }
+  
+  .whatWeAreTextSection p5 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Concept Section */
+  .conceptSection {
+    padding: 20px 10px;
+  }
+  
+  .conceptSection h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .conceptImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Breakdown Concepts - Stack vertically */
+  .breakdownConcpets {
+    padding: 10px;
+  }
+  
+  /* All concept rows - stack vertically */
+  .ideaRow,
+  .validateRow,
+  .pairRow,
+  .planRow,
+  .implementRow,
+  .empowerRow,
+  .elavRow {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+  
+  /* All concept images */
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  /* All concept text sections */
+  .ideaText,
+  .validateText,
+  .pairText,
+  .planText,
+  .implementText,
+  .empowerText,
+  .evalText {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .ideaText p5,
+  .validateText p5,
+  .pairText p5,
+  .planText p5,
+  .implementText p5,
+  .empowerText p5,
+  .evalText p5 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Who We Are / Meet the Crew Section */
+  .whoWeAreSection {
+    padding: 20px 15px;
+  }
+  
+  .whoWeAreSection h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  /* Team member sections - stack vertically */
+  .FounderSection,
+  .dirOfMarketingSection,
+  .dirOfAMESection {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px 10px;
+  }
+  
+  /* Team member images */
+  .ScottImageframe,
+  .amandaImageframe,
+  .catherineImageframe {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .scottgImage,
+  .scottHoverImage,
+  .amandaImage,
+  .amandaHoverImage,
+  .catherineImage,
+  .catherineHoverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Team member text */
+  .FounderText,
+  .dirOfMarkText,
+  .dirAMEText {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .FounderText h3,
+  .dirOfMarkText h3,
+  .dirAMEText h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .scottTransitionText,
+  .amandaTransitionText,
+  .catherineTransitionText {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* Footer stacking */
+  .footer {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+  }
+  
+  .footer-heading {
+    margin-right: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .footer-heading h2 {
+    font-size: 20px;
+  }
+  
+  .footer-heading a {
+    font-size: 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-email-form {
+    width: 100%;
+    padding: 20px 10px;
+  }
+  
+  .footer-email-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  #footer-email {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  #footer-email-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media screen and (max-width: 480px) {
+  
+  body {
+    padding-top: 70px !important;
+  }
+  
+  .Header {
+    height: 60px;
+  }
+  
+  .COg-Logo {
+    width: 50px;
+  }
+  
+  .toggle {
+    height: 25px;
+    width: 25px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .sidebar {
+    width: 180px;
+    top: 60px;
+  }
+  
+  .sidebar a {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+  
+  /* Typography scaling */
+  h1 {
+    font-size: 24px !important;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  .whatWeAreTextSection p5 {
+    font-size: 16px;
+  }
+  
+  /* Concept images smaller on phones */
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    width: 60%;
+    max-width: 150px;
+  }
+  
+  /* Team member images smaller */
+  .ScottImageframe,
+  .amandaImageframe,
+  .catherineImageframe {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .scottTransitionText,
+  .amandaTransitionText,
+  .catherineTransitionText {
+    font-size: 14px;
+  }
+  
+  /* Footer adjustments */
+  .footer-heading a {
+    font-size: 14px;
+  }
+  
+  #footer-email {
+    height: 45px;
+  }
+  
+  #footer-email-btn {
+    height: 45px;
+  }
+}
+
+/* Extra small devices (360px and below) */
+@media screen and (max-width: 360px) {
+  
+  body {
+    padding-top: 65px !important;
+  }
+  
+  h1 {
+    font-size: 20px !important;
+  }
+  
+  .whatWeAreTextSection p5 {
+    font-size: 14px;
+  }
+  
+  .COg-Logo {
+    width: 45px;
   }
   
   .sidebar {
@@ -852,15 +1147,22 @@ main {
     font-size: 14px;
   }
   
-  #footer-email {
-    width: 150px !important;
+  /* Even smaller images */
+  .ideaImage,
+  .validateImage,
+  .pairImage,
+  .planImage,
+  .implementImage,
+  .empowerImage,
+  .evalImage {
+    width: 50%;
+    max-width: 120px;
   }
   
-  .footer-heading h2 {
-    font-size: 14px;
-  }
-  
-  .footer-heading a {
-    font-size: 11px;
+  .ScottImageframe,
+  .amandaImageframe,
+  .catherineImageframe {
+    width: 120px;
+    height: 120px;
   }
 }

@@ -592,16 +592,6 @@ Add this to the END of COgSiteProjectsPageWorking.css
 /* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
   
-  /* Prevent horizontal scroll */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-  }
-  
   /* Remove problematic body styles */
   body {
     height: auto !important;
@@ -612,31 +602,26 @@ Add this to the END of COgSiteProjectsPageWorking.css
   /* Header adjustments */
   .Header {
     height: 70px;
-    padding: 0 5px;
   }
   
-  /* === SHOW NAVIGATION BUTTONS ON MOBILE === */
+  /* SHOW navigation buttons on mobile */
   .center-section {
     display: flex !important;
     flex: 1;
     justify-content: center;
-    align-items: center;
     gap: 5px;
   }
   
-  /* Style nav buttons for mobile */
   .create-button,
   .volunteer-button,
   .donate-button {
-    font-size: 9px !important;
-    height: 26px !important;
-    padding: 0 8px !important;
-    margin: 0 2px !important;
-    min-width: auto !important;
+    font-size: 10px !important;
+    height: 28px !important;
     width: auto !important;
+    padding: 0 8px !important;
+    margin: 0 3px !important;
   }
   
-  /* Remove hover underlines on mobile */
   .create-button::after,
   .volunteer-button::after,
   .donate-button::after {
@@ -644,38 +629,19 @@ Add this to the END of COgSiteProjectsPageWorking.css
   }
   
   /* Logo scaling */
-  .left-section {
-    width: auto;
-    margin-left: 5px;
-  }
-  
   .COg-Logo {
-    width: 50px;
+    width: 60px;
   }
   
   /* Hamburger menu positioning */
   .toggle {
     top: 20px;
-    right: 15px;
-    height: 28px;
-    width: 28px;
+    right: 20px;
   }
   
   /* Sidebar adjustments */
   .sidebar {
     top: 70px;
-  }
-  
-  .sidebar li {
-    white-space: nowrap;
-  }
-  
-  .sidebar a {
-    white-space: nowrap;
-  }
-  
-  .sidebar p2 {
-    white-space: nowrap;
   }
   
   /* Main content area */
@@ -717,91 +683,65 @@ Add this to the END of COgSiteProjectsPageWorking.css
     margin-bottom: 20px;
   }
   
-  /* === TWO-COLUMN FOOTER LAYOUT === */
-  .footer-container {
-    padding: 20px 10px;
-  }
-  
+  /* Two-column footer layout */
   .footer {
-    width: 95% !important;
-    height: auto !important;
+    width: 95%;
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 20px 15px !important;
-    padding: 20px 10px !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px 15px;
   }
   
   .footer-heading {
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
+    margin-right: 0;
+    margin-bottom: 0;
     text-align: left;
   }
   
   .footer-heading h2 {
     font-size: 16px;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
   }
   
   .footer-heading a {
     font-size: 13px;
-    display: block;
-    padding: 4px 0;
     min-height: auto;
+    display: block;
+    padding: 3px 0;
   }
   
-  /* Newsletter section spans both columns */
   .footer-email-form {
-    grid-column: 1 / -1 !important;
+    grid-column: 1 / -1;
     width: 100%;
     padding: 15px 10px;
     border-top: 1px solid rgba(255,255,255,0.2);
-    margin-top: 10px;
   }
   
-  .footer-title {
-    font-size: 18px !important;
-  }
-  
-  /* === CIRCULAR NEWSLETTER BUTTON === */
   .footer-email-row {
     flex-direction: row !important;
     width: 100%;
-    max-width: 300px;
-    gap: 0 !important;
-    justify-content: center;
+    max-width: 280px;
+    gap: 0;
     margin: 0 auto;
   }
   
   #footer-email {
-    width: 200px !important;
-    max-width: none !important;
-    height: 44px !important;
-    border-radius: 22px 0 0 22px !important;
-    padding-right: 25px !important;
+    width: 200px;
+    max-width: none;
+    height: 40px;
+    border-radius: 20px 0 0 20px;
   }
   
   #footer-email-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    margin-left: -22px !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: -20px;
   }
 }
 
 /* Mobile phones (480px and below) */
 @media screen and (max-width: 480px) {
-  
-  /* Smaller nav buttons for phones */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 8px !important;
-    height: 24px !important;
-    padding: 0 6px !important;
-    margin: 0 1px !important;
-  }
   
   body {
     padding-top: 70px !important;
@@ -812,14 +752,14 @@ Add this to the END of COgSiteProjectsPageWorking.css
   }
   
   .COg-Logo {
-    width: 45px;
+    width: 50px;
   }
   
   .toggle {
     height: 25px;
     width: 25px;
     top: 15px;
-    right: 10px;
+    right: 15px;
   }
   
   .sidebar {
@@ -840,26 +780,6 @@ Add this to the END of COgSiteProjectsPageWorking.css
   
   .planningProjectsSection h1 {
     font-size: 22px;
-  }
-  
-  /* Footer adjustments */
-  .footer-heading h2 {
-    font-size: 14px;
-  }
-  
-  .footer-heading a {
-    font-size: 12px;
-  }
-  
-  #footer-email {
-    width: 170px !important;
-    height: 40px !important;
-  }
-  
-  #footer-email-btn {
-    width: 40px !important;
-    height: 40px !important;
-    margin-left: -20px !important;
   }
   
   /* Project images */
@@ -890,15 +810,6 @@ Add this to the END of COgSiteProjectsPageWorking.css
 /* Extra small devices (360px and below) */
 @media screen and (max-width: 360px) {
   
-  /* Even smaller nav buttons */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 7px !important;
-    height: 22px !important;
-    padding: 0 4px !important;
-  }
-  
   body {
     padding-top: 65px !important;
   }
@@ -912,7 +823,7 @@ Add this to the END of COgSiteProjectsPageWorking.css
   }
   
   .COg-Logo {
-    width: 40px;
+    width: 45px;
   }
   
   .sidebar {
@@ -926,18 +837,6 @@ Add this to the END of COgSiteProjectsPageWorking.css
   .projImage-box {
     border-width: 6px;
     border-radius: 20px;
-  }
-  
-  #footer-email {
-    width: 150px !important;
-  }
-  
-  .footer-heading h2 {
-    font-size: 13px;
-  }
-  
-  .footer-heading a {
-    font-size: 11px;
   }
 }
  
