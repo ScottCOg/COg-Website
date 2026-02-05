@@ -593,6 +593,12 @@ Used by: swag.html, ideas.html, volunteer.html, create.html
     height: auto !important;
     min-height: 100vh;
     padding-top: 80px !important;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  html {
+    overflow-x: hidden;
   }
   
   /* Header adjustments */
@@ -603,6 +609,16 @@ Used by: swag.html, ideas.html, volunteer.html, create.html
   /* Show navigation buttons on mobile */
   .center-section {
     display: flex;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 9px;
+    height: 24px;
+    width: auto;
+    padding: 0 6px;
+    margin: 0 2px;
   }
   
   /* Logo scaling */

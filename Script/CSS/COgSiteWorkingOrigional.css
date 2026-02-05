@@ -557,9 +557,25 @@ main {
 /* Tablet and below (768px) */
 @media screen and (max-width: 768px) {
   
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
   /* Show navigation buttons on mobile */
   .center-section {
     display: flex;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 9px;
+    height: 24px;
+    width: auto;
+    padding: 0 6px;
+    margin: 0 2px;
   }
   
   /* Adjust header for mobile */
@@ -766,6 +782,16 @@ Add this to the END of AboutUs-working.css
   /* Show navigation buttons */
   .center-section {
     display: flex;
+  }
+  
+  .create-button,
+  .volunteer-button,
+  .donate-button {
+    font-size: 9px;
+    height: 24px;
+    width: auto;
+    padding: 0 6px;
+    margin: 0 2px;
   }
   
   /* Logo scaling */
