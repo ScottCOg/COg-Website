@@ -550,42 +550,40 @@ main {
   background-color: #45bc7a;
 }
 
-/* ============================================
-   MOBILE RESPONSIVE - MEDIA QUERIES
-   V3 - All Issues Fixed
-   ============================================ */
 
-/* Tablet and below (768px) */
+
+/* ============================================= */
+/* V3 MOBILE RESPONSIVE STYLES - ALL FIXES      */
+/* Standardized to match About Us page          */
+/* ============================================= */
+
+/* Tablets and small laptops (768px and below) */
 @media screen and (max-width: 768px) {
   
-  /* Prevent horizontal overflow */
+  /* Prevent horizontal scroll */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
   
-  *, *::before, *::after {
-    box-sizing: border-box;
+  /* Remove problematic body styles */
+  body {
+    height: auto !important;
+    min-height: 100vh;
+    padding-top: 80px !important;
   }
   
-  /* === HEADER - CENTERED BUTTONS === */
+  /* Header adjustments */
   .Header {
     height: 70px;
-    justify-content: space-between;
     padding: 0 5px;
   }
   
-  .left-section {
-    width: auto;
-    margin-left: 10px;
-    flex-shrink: 0;
-  }
-  
-  .COg-Logo {
-    width: 50px;
-  }
-  
-  /* CENTER the navigation buttons */
+  /* === SHOW NAVIGATION BUTTONS ON MOBILE - CENTERED === */
   .center-section {
     display: flex !important;
     flex: 1;
@@ -613,10 +611,14 @@ main {
     display: none !important;
   }
   
-  .right-section {
-    flex-shrink: 0;
+  /* Logo scaling */
+  .left-section {
     width: auto;
-    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  .COg-Logo {
+    width: 50px;
   }
   
   /* Hamburger menu positioning */
@@ -626,68 +628,6 @@ main {
     right: auto;
     height: 28px;
     width: 28px;
-  }
-  
-  /* Adjust main content spacing */
-  main {
-    margin-top: 80px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  
-  /* Center all sections */
-  .missionSection,
-  .conceptSection,
-  .featuredProjectSection {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    box-sizing: border-box;
-  }
-  
-  /* Typography adjustments */
-  h1 {
-    font-size: 32px;
-    padding: 0 15px;
-  }
-  
-  .mission-description {
-    font-size: 20px;
-    padding: 0 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-  }
-  
-  /* Image responsiveness */
-  .mission-image {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* === FIX: A Typhoid Tale button CENTERED === */
-  .attTale {
-    padding: 10px;
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
-  }
-  
-  /* Projects section */
-  .projImage-box {
-    width: 90%;
-    height: auto;
-    max-width: 500px;
-    border-width: 10px;
-    margin: 0 auto;
   }
   
   /* === SIDEBAR - "About COg." on ONE LINE === */
@@ -700,36 +640,109 @@ main {
     white-space: nowrap !important;
     width: 100%;
     text-align: center !important;
-    padding-top: 20px;
   }
   
   .sidebar a {
     white-space: nowrap !important;
     text-align: center !important;
     margin: 0 auto !important;
-    display: inline-block;
   }
   
   .sidebar p2 {
     white-space: nowrap !important;
   }
-
+  
+  /* Main content area */
+  main {
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+  
+  /* Mission section */
+  .missionSection {
+    padding: 20px 15px;
+  }
+  
+  .missionSection h1 {
+    font-size: 28px;
+    line-height: 1.3;
+    justify-content: center;
+  }
+  
+  /* Concept section */
+  .conceptSection {
+    padding: 20px 10px;
+  }
+  
+  .conceptSection h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  
+  .conceptSection p1 {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 15px;
+  }
+  
+  /* Concept image - CENTERED */
+  .conceptImage {
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Featured Projects section */
+  .featuredProjectSection {
+    padding: 30px 15px;
+  }
+  
+  .featuredProjectSection h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  /* === A TYPHOID TALE BUTTON - CENTERED === */
+  .attTale {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .attTale a {
+    display: block;
+    width: 90%;
+    max-width: 350px;
+  }
+  
+  .attTale img,
+  .attTaleImage {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
   /* === TWO-COLUMN FOOTER LAYOUT === */
   .footer-container {
-    padding: 15px 10px;
+    padding: 20px 10px;
   }
   
   .footer {
     width: 95% !important;
+    height: auto !important;
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 15px 15px !important;
-    padding: 15px 10px !important;
+    gap: 20px 15px !important;
+    padding: 20px 10px !important;
   }
   
   .footer-heading {
-    margin-right: 0;
-    margin-bottom: 0;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
     text-align: left;
   }
   
@@ -742,7 +755,6 @@ main {
     font-size: 13px;
     display: block;
     padding: 4px 0;
-    min-height: auto;
   }
   
   /* Newsletter section spans both columns */
@@ -755,37 +767,34 @@ main {
   }
   
   .footer-title {
-    font-size: 16px !important;
+    font-size: 18px !important;
   }
   
-  /* === CIRCULAR NEWSLETTER BUTTON NEXT TO INPUT === */
+  /* === CIRCULAR NEWSLETTER BUTTON === */
   .footer-email-row {
     flex-direction: row !important;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     gap: 0 !important;
     justify-content: center;
     margin: 0 auto;
   }
   
   #footer-email {
-    width: 190px !important;
+    width: 200px !important;
     max-width: none !important;
     height: 44px !important;
     border-radius: 22px 0 0 22px !important;
-    padding-right: 20px !important;
-    font-size: 12px !important;
+    padding-right: 25px !important;
   }
   
   #footer-email-btn {
     width: 44px !important;
     height: 44px !important;
-    min-width: 44px !important;
     border-radius: 50% !important;
     margin-left: -22px !important;
-    font-size: 10px !important;
+    font-size: 18px !important;
     font-weight: bold !important;
-    flex-shrink: 0;
   }
 }
 
@@ -802,13 +811,8 @@ main {
     margin: 0 1px !important;
   }
   
-  h1 {
-    font-size: 24px;
-    line-height: 1.3;
-  }
-  
-  .mission-description {
-    font-size: 16px;
+  body {
+    padding-top: 70px !important;
   }
   
   .Header {
@@ -817,10 +821,6 @@ main {
   
   .COg-Logo {
     width: 45px;
-  }
-  
-  main {
-    margin-top: 70px;
   }
   
   .toggle {
@@ -840,14 +840,14 @@ main {
     text-align: center !important;
   }
   
-  .projImage-box {
-    width: 95%;
-    border-width: 8px;
-    border-radius: 25px;
+  /* Typography */
+  h1 {
+    font-size: 24px !important;
   }
   
-  h2 {
-    font-size: 20px;
+  /* Footer adjustments */
+  .footer-heading h2 {
+    font-size: 14px;
   }
   
   .footer-heading a {
@@ -855,14 +855,13 @@ main {
   }
   
   #footer-email {
-    width: 160px !important;
+    width: 170px !important;
     height: 40px !important;
   }
   
   #footer-email-btn {
     width: 40px !important;
     height: 40px !important;
-    min-width: 40px !important;
     margin-left: -20px !important;
   }
 }
@@ -879,12 +878,8 @@ main {
     padding: 0 4px !important;
   }
   
-  h1 {
-    font-size: 20px;
-  }
-  
-  .mission-description {
-    font-size: 14px;
+  body {
+    padding-top: 65px !important;
   }
   
   .COg-Logo {
@@ -899,12 +894,16 @@ main {
     font-size: 14px;
   }
   
+  h1 {
+    font-size: 20px !important;
+  }
+  
   #footer-email {
-    width: 140px !important;
+    width: 150px !important;
   }
   
   .footer-heading h2 {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .footer-heading a {
