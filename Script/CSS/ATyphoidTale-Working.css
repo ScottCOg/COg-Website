@@ -1,890 +1,878 @@
-  html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .Header {
-    height: 100px;
-    border-style: solid;
-    border-width: .5px;
-    background-color: white;
-    border-color: grey;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 1000;
-  }
+/* 
+Document: COg. A Typhoid Tale Page CSS - MOBILE OPTIMIZED
+Author: Scott Polley (Optimized by Andy Albertsberg - Double-A Solutions)
+Version: V3 - Mobile Responsive - All Issues Fixed
+Date: 2025
+*/
 
-   .left-section {
-     background-color: white;
-     width: 200px;
-     margin-left: 10px;
-     display: felx;
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-    }
+.Header {
+  height: 100px;
+  border-style: solid;
+  border-width: .5px;
+  background-color: white;
+  border-color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+}
 
-    .COg-Logo {
-     width: 100px;
-    }
+.left-section {
+  background-color: white;
+  width: 200px;
+  margin-left: 10px;
+  display: flex;
+}
 
-    .center-section {
-     background-color: white;
-     flex: 1;
-     display: flex;
-     justify-content: end;
+.COg-Logo {
+  width: 100px;
+}
 
-    }
+.center-section {
+  background-color: white;
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
 
-    .create-button {
-     position: relative;
-     background-color:white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 100px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
+.create-button {
+  position: relative;
+  background-color:white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 100px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
 
-    }
+.create-button::after {
+  content: '';
+  position: absolute;
+  width:110px;
+  height: 0.175rem;
+  left:0;
+  bottom: 0;
+  background: red;
+  transform: scale(0, 1);
+}
 
-    .create-button::after {
-     content: '';
-     position: absolute;
-     width:110px;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: red;
-     transform: scale(0, 1);
+.create-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    }
+.create-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
 
-   .create-button:hover {
-      color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-   }
-   .create-button:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
+.create-button:active {
+  background-color: none;
+  font-size: 15px;
+}
 
-   }
+.volunteer-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 155px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
 
-    .create-button:active {
-     background-color: none;
-     font-size: 15px;
-    }
+.volunteer-button::after {
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 0.175rem;
+  left:0;
+  bottom: 0;
+  background: #45bc7a;
+  transform: scale(0, 1);
+}
 
+.volunteer-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    .volunteer-button {
-     position: relative;
-     background-color: white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 155px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
+.volunteer-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
 
-    }
+.volunteer-button:active {
+  background-color: none;
+  font-size: 15px;
+}
 
-    .volunteer-button::after {
-     content: '';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #45bc7a;
-     transform: scale(0, 1);
+.donate-button {
+  position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 110px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+}
 
-    }
+.donate-button::after {
+  content:'';
+  position: absolute;
+  width:100%;
+  height: 0.175rem;
+  left:0;
+  bottom: 0;
+  background: #29abe2;
+  transform: scale(0, 1);
+}
 
-    .volunteer-button:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
+.donate-button:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    .volunteer-button:hover::after {
-      transform: scale(1, 1);
-      transition: transform 0.5s ease;
-    }
+.donate-button:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
 
-    .volunteer-button:active {
-     background-color: none;
-     font-size: 15px;
-    }
+.donate-button:active {
+  background-color: none;
+  font-size: 15px;
+}
 
+.right-section {
+  background-color: white;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+}
 
-    .donate-button {
-     position: relative;
-     background-color: white;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 110px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-    }
+.Taco-Menu {
+  position: relative;
+  width: 25px;
+  height:25px;
+  overflow: hidden;
+  cursor: pointer;
+}
 
-    .donate-button::after {
-     content:'';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #29abe2;
-     transform: scale(0, 1);
+.Taco-Menu img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
 
-    }
+.Taco-Menu img.transition {
+  opacity: 1;
+  z-index: 2;
+}
 
-    .donate-button:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
+.Taco-Menu:hover img.transition {
+  opacity: 0;
+}
 
-    .donate-button:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-   }
+.slide{
+  height: 100%;
+  width: 180px;
+  position: absolute;
+  background-color: #fff;
+  transition: 0.5s ease;
+}
 
-    .donate-button:active {
-     background-color: none;
-     font-size: 15px;
-   }
+input[type="checkbox"] {
+  display: none;
+}
 
-    .right-section {
-     background-color: white;
-     width: 75px;
-     display: flex;
-     justify-content: center;
+.toggle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+}
 
-    }
+.toggle .common{
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
 
-    .Taco-Menu {
-     position: relative;
-     width: 25px;
-     height:25px;
-     overflow: hidden;
-     cursor: pointer;
-    }
-    
-    .Taco-Menu img {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      object-fit: cover;
-      transition: opacity 0.5s ease-in-out;
-    }
+.toggle .top_line {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
 
-    .Taco-Menu img.transition {
-     opacity: 1;
-     z-index: 2;
-    }
+.toggle .mid_line {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
 
-    .Taco-Menu:hover img.transition {
-      opacity: 0;
-    }
+.toggle .bot_line {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
 
-    .slide{
-      height: 100%;
-      width: 180px;
-      position: absolute;
-      background-color: #fff;
-      transition: 0.5s ease;
-    }
-    input[type="checkbox"] {
-      display: none;
-    }
+input:checked ~ .toggle .top_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg) translate(2px, 1px);
+}
 
+input:checked ~ .toggle .bot_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg) translate(2px, -1px);
+}
 
-    .toggle {
-      position: absolute;
-      height: 30px;
-      width: 30px;
-      top: 20px;
-      right: 20px;
-      z-index: 1;
-      cursor: pointer;
-      border-radius: 2px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-    }
-    .toggle .common{
-      position: absolute;
-      height: 2px;
-      width: 20px;
-      background-color: red;
-      border-radius: 50px;
-      transition: 0.3s ease;
+input:checked ~ .toggle .mid_line {
+  opacity: 0;
+}
 
-    }
-    .toggle .top_line {
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    .toggle .mid_line {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    .toggle .bot_line {
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
-    input:checked ~ .toggle .top_line {
-      left: 2px;
-      top: 14px;
-      width: 25px;
-      transform: rotate(45deg) translate(2px, 1px);
-    }
+.sidebar{
+  position:fixed;
+  top: 35;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: .3s ease;
+  transform: translatex(250px);
+}
 
-    input:checked ~ .toggle .bot_line {
-      left: 2px;
-      top: 14px;
-      width: 25px;
-      transform: rotate(-45deg) translate(2px, -1px);
-    }
-    input:checked ~ .toggle .mid_line {
-      opacity: 0;
-    }
+input:checked ~ .sidebar{
+  transform: translatex(0px);
+  opacity: 1;
+}
 
-    .sidebar{
-      position:fixed;
-      top: 35;
-      right: 0;
-      height: 100vh;
-      width: 200px;
-      z-index: 999;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      transition: .3s ease;
-      transform: translatex(250px);
-  
-    }
+.sidebar li{
+  height: 50px;
+  list-style: none;
+  padding-top: 30px;
+}
 
-      input:checked ~ .sidebar{
-      transform: translatex(0px);
-      opacity: 1;
-      }
+.sidebar a{
+  position: relative;
+  background-color: none;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  height: 36px;
+  width: 110px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 30px;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
 
-    .sidebar li{
-      height: 50px;
-      list-style: none;
-      padding-top: 30px;
-    }
+.sidebar a::after {
+  content:'';
+  position: absolute;
+  width:100%;
+  height: 0.175rem;
+  left:0;
+  bottom: 0;
+  background: #fff568;
+  transform: scale(0, 1);
+}
 
-    .sidebar a{
-     position: relative;
-     background-color: none;
-     color: rgba(0, 0, 0, 0.50);
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 20px;
-     border: none;
-     height: 36px;
-     width: 110px;
-     border-radius: 5px;
-     padding: 0 10px;
-     margin: 0 30px;
-     cursor: pointer;
-     text-decoration: none;
-     align-items: center;
-     align-content: center;
-     justify-content: center;
-    }
+.sidebar a:hover {
+  color: rgba(0, 0, 0, 0.97);
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    .sidebar a::after {
-     content:'';
-     position: absolute;
-     width:100%;
-     height: 0.175rem;
-     left:0;
-     bottom: 0;
-     background: #fff568;
-     transform: scale(0, 1);
+.sidebar a:hover::after {
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
 
-    }
+.sidebar a:active {
+  background-color: none;
+  font-size: 15px;
+}
 
-    .sidebar a:hover {
-     color: rgba(0, 0, 0, 0.97);
-     font-size: 22px;
-     font-weight: bold;
-    
-    }
+/* text*/
 
-    .sidebar a:hover::after {
-     transform: scale(1, 1);
-     transition: transform 0.5s ease;
-   }
+h1 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.50);
+}
 
-    .sidebar a:active {
-     background-color: none;
-     font-size: 15px;
-   }
+h2 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: whitesmoke;
+}
 
+P1 {
+  display: flex;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.50);
+}
 
-    /* text*/
+P2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.50);
+}
 
-    h1 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 50px;
-      color:  rgba(0, 0, 0, 0.50);
+p3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.50);
+}
 
-    }
-    h2 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 50px;
-      color: whitesmoke;
-    }
+/* Start of the Body*/
 
-    P1 {
-      display: flex;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  margin: 0;
+  justify-content: flex-start;
+  background-color: whitesmoke;
+}
 
-    P2 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      color:  rgba(0, 0, 0, 0.50);
-    }
+.main-content {
+  flex: 1;
+}
 
-    p3{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      text-align: justify;
-      color:  rgba(0, 0, 0, 0.50);
-    }
+.attTaleLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
 
-    /* Start of the Body*/
-
-    body {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      flex-wrap: nowrap;
-      min-height: 100vh;
-      margin: 0;
-      justify-content: flex-start;
-      background-color: whitesmoke;
-    
-    }
-    .main-content {
-      flex: 1;
-    }
-
-    .attTaleLogo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 20px 0;
-    }
-
-    .aTTLogo {
-      width: 800px;
-      max-width: 90%;
-      height: auto;
-      display: block;
-    }
+.aTTLogo {
+  width: 800px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+}
 
 /* start of storyMap*/
-    .storymap-section {
-      width: 100%;
-      background-color: whitesmoke;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px 0;
-      border:#29abe2;
-    }
+.storymap-section {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  border:#29abe2;
+}
 
-    .storymap-section h1 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 40px;
-      color: rgba(0, 0, 0, 0.7);
-      margin-bottom: 20px;
-      text-align: center;
-    }
+.storymap-section h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-    .storymap-container {
-      width: 90vw;
-      max-width: 1800px; /* Optional: limits on huge monitors */
-      height: 85vh; /* Takes up most of the screen height */
-      display: flex;
-      justify-content: center;
-      
-    }
+.storymap-container {
+  width: 90vw;
+  max-width: 1800px;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+}
 
-    .storymap-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
+.storymap-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
 
 /* Start of Support Section*/
-    .supportSection {
-      flex-direction: row;
-      justify-content: flex-start;
-      width: 100vw;
+.supportSection {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100vw;
+}
 
-    }
+.Donate-Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  width: 100%;
+  height: 500px;
+  padding: 40px 20px;
+  background-color: #29abe2;
+  color: whitesmoke;
+  border-top:2px solid black;
+  border-bottom: 2px solid black;
+}
 
-    .Donate-Section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: justify;
-      width: 100%;
-      height: 500px;
-      padding: 40px 20px;
-      background-color: #29abe2;
-      color: whitesmoke;
-      border-top:2px solid black;
-      border-bottom: 2px solid black;
-    
-    }
-    .donate-content{
-      display:flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      padding-right: 50px;
-      text-align: justify;
+.donate-content{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  padding-right: 50px;
+  text-align: justify;
+}
 
-    }
-    .donate-content p{
-      flex: 1 1 40%;
-      max-width: 100px;
-      padding: 20px;
-      order: 2;
-      text-align: left;
-  
-    }
+.donate-content p{
+  flex: 1 1 40%;
+  max-width: 100px;
+  padding: 20px;
+  order: 2;
+  text-align: left;
+}
 
-    .attDonate-Button {
-      flex: 0 1 400px;
-      order: 1;
-      background-color: red;
-      color: whitesmoke;
-      height: 100px;
-      max-width: 400px;
-      border: solid whitesmoke;
-      border-radius: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+.donate-content p3 {
+  color: whitesmoke;
+}
 
-    .attDonate-Button:hover {
-      background-color: whitesmoke;
-      color: #29abe2;;
-      border: solid black;
-    }
-    .attDonate-Button:active {
-      background-color: #45bc7a;
-      color: whitesmoke;
-      transform: scale(0.90);
-    }
+.attDonate-Button {
+  flex: 0 1 400px;
+  order: 1;
+  background-color: red;
+  color: whitesmoke;
+  height: 100px;
+  max-width: 400px;
+  border: solid whitesmoke;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    @media (max-width: 900px) {
+.attDonate-Button:hover {
+  background-color: whitesmoke;
+  color: #29abe2;;
+  border: solid black;
+}
+
+.attDonate-Button:active {
+  background-color: #45bc7a;
+  color: whitesmoke;
+  transform: scale(0.90);
+}
+
+@media (max-width: 900px) {
   .donate-content {
     flex-direction: column;
   }
   .donate-content p, .attDonate-Button {
     max-width: 100%;
   }
-  }
-  /* Start of Meet the Team Section*/
-    .meetTeamSection{
-      display:flex;
-      flex-direction: column;
-      gap: 50px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-      justify-content: center; 
-      align-items: center;
-    }
+}
 
-    .teamLogosSection{
-      display: flex;
-      flex-direction: row;
-    }
- /* Start of Ferg Section*/
-    .drFergSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: justify;
-      padding: 50px;
-      padding-left: 20px;
-    }
-    .DrFergImageframe{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid black;
-    }
-    .DrFergImage{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+/* Start of Meet the Team Section*/
+.meetTeamSection{
+  display:flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+}
 
-    .DrFergText {
-      max-width: 400px;
-      line-height: 1.5;
-    }
-  /* Start of Cut the Mustard Section*/
+.teamLogosSection{
+  display: flex;
+  flex-direction: row;
+}
 
-    .cutTheMustardSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: justify;
-      padding: 50px;
-    }
-    .cutTheMustardImageFrame{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid black;
-      background-color: white;
-    }
-    .cutTheMustardImage{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+/* Start of Ferg Section*/
+.drFergSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: justify;
+  padding: 50px;
+  padding-left: 20px;
+}
 
-    .cutTheMustardText {
-      max-width: 400px;
-      line-height: 1.5;
-    }
-  /* Start of Lucky Half Speed Section*/
+.DrFergImageframe{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+}
 
-    .luckyHalfSpeedSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: justify;
-      padding: 50px;
-      padding-right:20px;
-    
-    }
-    .luckyhalfSpeedImageFrame{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid black;
-      background-color: red;
-    }
-    .luckyHalfSpeedImaget{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.DrFergImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .luckyHalfSpeedText {
-      max-width: 400px;
-      line-height: 1.5;
-    }
+.DrFergText {
+  max-width: 400px;
+  line-height: 1.5;
+}
 
-  /* Start of Merch Section*/
+/* Start of Cut the Mustard Section*/
+.cutTheMustardSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: justify;
+  padding: 50px;
+}
 
-    .Merch{
-      display:flex;
-      flex-direction: row;
-      gap: 50px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .merchInfo {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;               /* spacing between text and small logo */
-      max-width: 40%;
-      margin-left: 80px;
-    }
-    .merchTextSection{
-      display:flex;
-      flex-direction: column;
-      padding:20px;
-      box-sizing: border-box;
-      
-    }
-    .LilgImage{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.cutTheMustardImageFrame{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  background-color: white;
+}
 
-    .Lilg{
-      width: 200px;
-      max-width: 200px;
-      height: auto;
-      display: block;
-      justify-content: center;
-    }
-    /* RightColumn:Products */
+.cutTheMustardImage{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-    .productSection {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      flex: 1 1 50%;
-      
-    }
-    
-    .shirtMerch {
-      width: 400px;
-      height: 400px;
-      flex: 0 1 400px;
-      max-width: 400px;
-      min-width: 200px;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
+.cutTheMustardText {
+  max-width: 400px;
+  line-height: 1.5;
+}
 
-     .beanieMerch {
-      width: 400px;
-      height: 400px;
-      flex: 0 1 400px;
-      max-width: 400px;
-      min-width: 200px;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
+/* Start of Lucky Half Speed Section*/
+.luckyHalfSpeedSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: justify;
+  padding: 50px;
+  padding-right:20px;
+}
 
-     .soapMerch {
-      width: 400px;
-      height: 400px;
-      flex: 0 1 400px;
-      max-width: 400px;
-      min-width: 200px;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
-  /* Responsive: stack products and left column on narrow screens */
-  @media (max-width: 900px) {
-   .Merch {
-     flex-direction: column;     /* stack left and right columns */
-     align-items: center;
-   }
+.luckyhalfSpeedImageFrame{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  background-color: red;
+}
 
-    .merchInfo, .productSection {
-     max-width: 100%;
-   }
+.luckyHalfSpeedImaget{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .productSection {
-     flex-direction: column;     /* products stack vertically */
-     align-items: center;
-   }
+.luckyHalfSpeedText {
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Start of Merch Section*/
+.Merch{
+  display:flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.merchInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 40%;
+  margin-left: 80px;
+}
+
+.merchTextSection{
+  display:flex;
+  flex-direction: column;
+  padding:20px;
+  box-sizing: border-box;
+}
+
+.LilgImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Lilg{
+  width: 200px;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  justify-content: center;
+}
+
+/* Right Column: Products */
+.productSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  flex: 1 1 50%;
+}
+
+.shirtMerch {
+  width: 400px;
+  height: 400px;
+  flex: 0 1 400px;
+  max-width: 400px;
+  min-width: 200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.beanieMerch {
+  width: 400px;
+  height: 400px;
+  flex: 0 1 400px;
+  max-width: 400px;
+  min-width: 200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.soapMerch {
+  width: 400px;
+  height: 400px;
+  flex: 0 1 400px;
+  max-width: 400px;
+  min-width: 200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* Responsive: stack products and left column on narrow screens */
+@media (max-width: 900px) {
+  .Merch {
+    flex-direction: column;
+    align-items: center;
   }
 
+  .merchInfo, .productSection {
+    max-width: 100%;
+  }
+
+  .productSection {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /* Start of Footer*/
+.footer-container {
+  width: 100%;
+  top: auto;
+  background-color: black;
+  padding: 0.5rem 0 1rem 0;
+  flex-shrink: 0;
+  margin-top: auto;
+}
 
-    .footer-container {
-      width: 100%;
-      top: auto;
-      background-color: black;
-      padding: 0.5rem 0 1rem 0;
-      flex-shrink: 0;
-      margin-top: auto;
- 
-    }
+.footer {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
 
-    .footer {
-      width: 100%;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
+.footer-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
 
-    }
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+}
 
-    .footer-title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 30px;
-      color: whitesmoke;
-      margin-bottom: 1rem;
-      
-    }
+.footer-heading p1 {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
 
-    .footer-heading {
-      display: flex;
-      flex-direction: column;
-      margin-right: 4rem;
-      margin-bottom: 4rem;
+.footer-heading a {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  align-content: center;
+}
 
-    }
+.footer-heading a:hover {
+  color: red;
+  transition: 0.3s ease-out;
+}
 
-    .footer-heading p1 {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-    }
+.footer-email-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  padding: 40px;
+}
 
-    .footer-heading a {
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      align-items: center;
-      align-content: center;
-    }
+.footer-email-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
 
-    .footer-heading a:hover {
-      color: red;
-      transition: 0.3s ease-out;
+#footer-email{
+  width: 250px;
+  height: 50px;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  padding-left: 0.5rem;
+  font-size: 0.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
 
-    }
+#footer-email::placeholder {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    .footer-email-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 15px;
-      padding: 40px;
-     
-    }
+#footer-email-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  outline: none;
+  border: none;
+  color: whitesmoke;
+  font-size: 0.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .footer-email-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
+#footer-email-btn:hover {
+  cursor: pointer;
+  background-color: #29abe2;
+  transition: all 0.4s ease-out;
+}
 
-    }
+#footer-email-btn:active {
+  transform:scale(-1.02);
+  background-color: #45bc7a;
+}
 
-    #footer-email{
-      width: 250px;
-      height: 50px;
-      border-radius: 100px;
-      outline: none;
-      border: none;
-      padding-left: 0.5rem;
-      font-size: 0.6rem;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-
-    }
-
-    #footer-email::placeholder {
-      color: red;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #footer-email-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: red;
-      outline: none;
-      border: none;
-      color: whitesmoke;
-      font-size: 0.6rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    #footer-email-btn:hover {
-      cursor: pointer;
-      background-color: #29abe2;
-      transition: all 0.4s ease-out;
-    }
-
-    #footer-email-btn:active {
-      transform:scale(-1.02);
-      background-color: #45bc7a;
-    }
-
-
-    /* 
-===============================================
-COg Creations - A Typhoid Tale Mobile CSS
-Add this to the END of ATyphoidTale-Working.css
-===============================================
-*/
 
 /* ============================================= */
-/* MOBILE RESPONSIVE STYLES                      */
+/* V3 MOBILE RESPONSIVE STYLES - ALL FIXES      */
 /* ============================================= */
 
 /* Tablets and small laptops (768px and below) */
@@ -942,30 +930,44 @@ Add this to the END of ATyphoidTale-Working.css
   }
   
   /* Logo scaling */
+  .left-section {
+    width: auto;
+    margin-left: 5px;
+  }
+  
   .COg-Logo {
     width: 60px;
   }
   
   /* Hamburger menu positioning */
   .toggle {
-    top: 20px;
-    right: 10px;
+    position: relative;
+    top: auto;
+    right: auto;
+    height: 28px;
+    width: 28px;
   }
   
-  /* Sidebar adjustments - CENTERED */
+  /* === SIDEBAR - "About COg." on ONE LINE === */
   .sidebar {
     top: 70px;
     align-items: center !important;
   }
   
   .sidebar li {
+    white-space: nowrap !important;
     width: 100%;
     text-align: center !important;
   }
   
   .sidebar a {
+    white-space: nowrap !important;
     text-align: center !important;
     margin: 0 auto !important;
+  }
+  
+  .sidebar p2 {
+    white-space: nowrap !important;
   }
   
   /* Main content area */
@@ -987,17 +989,23 @@ Add this to the END of ATyphoidTale-Working.css
     height: auto;
   }
   
-  /* StoryMap Section - Responsive iframe */
+  /* === FIX: StoryMap Section - CENTERED (not offset right) === */
   .storymap-section {
     padding: 15px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .storymap-container {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     position: relative;
     padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
     height: 0;
     overflow: hidden;
+    margin: 0 auto;
   }
   
   .storymap-container iframe {
@@ -1018,6 +1026,7 @@ Add this to the END of ATyphoidTale-Working.css
   .meetTeamSection h1 {
     font-size: 28px;
     margin-bottom: 15px;
+    justify-content: center;
   }
   
   .meetTeamSection p1 {
@@ -1044,6 +1053,12 @@ Add this to the END of ATyphoidTale-Working.css
     padding: 20px 15px;
   }
   
+  /* === FIX: Lucky Halfspeed bio NOT overlapping Support section === */
+  .luckyHalfSpeedSection {
+    margin-bottom: 60px !important;
+    padding-bottom: 30px !important;
+  }
+  
   /* Team member images */
   .DrFergImageframe,
   .cutTheMustardImageFrame,
@@ -1052,7 +1067,7 @@ Add this to the END of ATyphoidTale-Working.css
     height: 150px;
     margin: 0 auto 15px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 50%;
   }
   
   .DrFergImage,
@@ -1069,6 +1084,7 @@ Add this to the END of ATyphoidTale-Working.css
   .luckyHalfSpeedSection h1 {
     font-size: 20px;
     margin-bottom: 10px;
+    justify-content: center;
   }
   
   /* Team member text */
@@ -1077,34 +1093,59 @@ Add this to the END of ATyphoidTale-Working.css
   .luckyHalfSpeedText p3 {
     font-size: 14px;
     line-height: 1.5;
+    text-align: center;
   }
   
-  /* Donate Section */
+  /* === FIX: Donate Section - Blue box text contained === */
   .Donate-Section {
     padding: 30px 15px;
     text-align: center;
+    height: auto !important;
+    min-height: auto;
+    overflow: hidden;
   }
   
   .Donate-Section h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .donate-content {
     padding: 20px 15px;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .donate-content p3 {
     font-size: 16px;
     line-height: 1.6;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
   
+  /* === FIX: Donate button properly styled === */
   .attDonate-Button {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 18px;
+    display: inline-block !important;
+    padding: 15px 40px !important;
+    font-size: 18px !important;
     margin-top: 20px;
     min-width: 200px;
+    width: auto !important;
+    height: auto !important;
+    max-width: 280px;
+    border-radius: 50px;
+    background-color: #D61834;
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 2px solid whitesmoke;
   }
   
   /* Merch Section - Stack vertically - CENTERED */
@@ -1118,6 +1159,8 @@ Add this to the END of ATyphoidTale-Working.css
     width: 100%;
     text-align: center !important;
     margin-bottom: 30px;
+    margin-left: 0 !important;
+    max-width: 100%;
   }
   
   .merchTextSection {
@@ -1129,6 +1172,7 @@ Add this to the END of ATyphoidTale-Working.css
     font-size: 24px;
     margin-bottom: 15px;
     text-align: center !important;
+    justify-content: center;
   }
   
   .merchTextSection p1 {
@@ -1145,7 +1189,7 @@ Add this to the END of ATyphoidTale-Working.css
     height: auto;
   }
   
-  /* === FIXED MERCH SECTION - Proper container/image handling === */
+  /* Product section */
   .productSection {
     width: 100%;
     display: flex !important;
@@ -1157,7 +1201,7 @@ Add this to the END of ATyphoidTale-Working.css
     padding: 10px;
   }
   
-  /* Product CONTAINER divs - use div selector to avoid img conflict */
+  /* Product containers */
   .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
@@ -1171,7 +1215,7 @@ Add this to the END of ATyphoidTale-Working.css
     position: static !important;
   }
   
-  /* Product IMAGES - use img selector */
+  /* Product images */
   .shirtMerch,
   img.beanieMerch,
   img.soapMerch {
@@ -1184,6 +1228,10 @@ Add this to the END of ATyphoidTale-Working.css
   }
   
   /* === TWO-COLUMN FOOTER LAYOUT === */
+  .footer-container {
+    padding: 15px 10px;
+  }
+  
   .footer {
     width: 95% !important;
     display: grid !important;
@@ -1219,6 +1267,10 @@ Add this to the END of ATyphoidTale-Working.css
     margin-top: 10px;
   }
   
+  .footer-title {
+    font-size: 16px !important;
+  }
+  
   /* === CIRCULAR NEWSLETTER BUTTON === */
   .footer-email-row {
     flex-direction: row !important;
@@ -1244,19 +1296,6 @@ Add this to the END of ATyphoidTale-Working.css
     margin-left: -22px !important;
     font-size: 18px !important;
     font-weight: bold !important;
-  }
-  
-  /* Sidebar text no-wrap */
-  .sidebar li {
-    white-space: nowrap;
-  }
-  
-  .sidebar a {
-    white-space: nowrap;
-  }
-  
-  .sidebar p2 {
-    white-space: nowrap;
   }
 }
 
@@ -1288,8 +1327,6 @@ Add this to the END of ATyphoidTale-Working.css
   .toggle {
     height: 25px;
     width: 25px;
-    top: 15px;
-    right: 10px;
   }
   
   .sidebar {
@@ -1341,7 +1378,7 @@ Add this to the END of ATyphoidTale-Working.css
   
   /* StoryMap taller on phones for better viewing */
   .storymap-container {
-    padding-bottom: 100%; /* 1:1 aspect ratio */
+    padding-bottom: 100%;
   }
   
   /* Team section adjustments */
@@ -1372,8 +1409,8 @@ Add this to the END of ATyphoidTale-Working.css
   }
   
   .attDonate-Button {
-    padding: 12px 30px;
-    font-size: 16px;
+    padding: 12px 30px !important;
+    font-size: 16px !important;
   }
   
   /* Merch section */
@@ -1382,23 +1419,10 @@ Add this to the END of ATyphoidTale-Working.css
   }
   
   .ShirtMerch,
-  .beanieMerch,
-  .soapMerch {
+  div.beanieMerch,
+  div.soapMerch {
     width: calc(50% - 8px);
     max-width: 130px;
-  }
-  
-  /* Footer adjustments */
-  .footer-heading a {
-    font-size: 14px;
-  }
-  
-  #footer-email {
-    height: 45px;
-  }
-  
-  #footer-email-btn {
-    height: 45px;
   }
 }
 

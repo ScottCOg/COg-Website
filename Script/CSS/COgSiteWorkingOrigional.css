@@ -1,19 +1,45 @@
 /* 
-Document: COg. Home page CSS - MOBILE OPTIMIZED
-Author: Scott Polley (Optimized by Andy Albertsberg - Double-A Solutions)
-Version: V2 - Mobile Responsive
-Date: 2025
+===============================================
+COg. Home Page CSS - MOBILE OPTIMIZED
+===============================================
+Author: Scott Polley 
+Mobile Optimization: Andy Albertsberg - Double-A Solutions
+Version: FINAL - Clean Build
+Date: February 2026
+
+DESIGN GUIDE COMPLIANCE:
+- Colors: Red #D61834, Blue #29abe2, Green #45bc7a, Yellow #FFF568
+- Font: Arial, Helvetica, sans-serif
+- Text: rgba(0, 0, 0, 0.50)
+- Header: 100px height, white, fixed
+- Footer: Black background, whitesmoke text
+- Sidebar: Slides from right with blur backdrop
+===============================================
 */
 
 /* ============================================
-   BASE STYLES (Desktop First)
+   RESET & BASE STYLES
    ============================================ */
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+/* ============================================
+   HEADER - Per Design Guide
+   ============================================ */
 
 .Header {
   height: 100px;
@@ -42,6 +68,10 @@ html, body {
   width: 100px;
 }
 
+/* ============================================
+   DESKTOP NAVIGATION BUTTONS
+   ============================================ */
+
 .center-section {
   background-color: white;
   flex: 1;
@@ -49,9 +79,10 @@ html, body {
   justify-content: end;
 }
 
+/* CREATE Button - Red underline */
 .create-button {
   position: relative;
-  background-color:white;
+  background-color: white;
   color: rgba(0, 0, 0, 0.50);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -67,11 +98,11 @@ html, body {
 .create-button::after {
   content: '';
   position: absolute;
-  width:110px;
+  width: 110px;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
-  background: red;
+  background: #D61834;
   transform: scale(0, 1);
 }
 
@@ -91,6 +122,7 @@ html, body {
   font-size: 15px;
 }
 
+/* VOLUNTEER Button - Green underline */
 .volunteer-button {
   position: relative;
   background-color: white;
@@ -109,9 +141,9 @@ html, body {
 .volunteer-button::after {
   content: '';
   position: absolute;
-  width:100%;
+  width: 100%;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
   background: #45bc7a;
   transform: scale(0, 1);
@@ -133,6 +165,7 @@ html, body {
   font-size: 15px;
 }
 
+/* DONATE Button - Blue underline */
 .donate-button {
   position: relative;
   background-color: white;
@@ -149,11 +182,11 @@ html, body {
 }
 
 .donate-button::after {
-  content:'';
+  content: '';
   position: absolute;
-  width:100%;
+  width: 100%;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
   background: #29abe2;
   transform: scale(0, 1);
@@ -175,6 +208,11 @@ html, body {
   font-size: 15px;
 }
 
+/* ============================================
+   HAMBURGER MENU & SIDEBAR
+   Per Design Guide: Slides from right with blur
+   ============================================ */
+
 .right-section {
   background-color: white;
   width: 75px;
@@ -182,28 +220,35 @@ html, body {
   justify-content: center;
 }
 
+/* Hide the checkbox */
 input[type="checkbox"] {
   display: none;
 }
 
+/* Hamburger Toggle Button */
 .toggle {
   position: absolute;
   height: 30px;
   width: 30px;
-  top: 20px;
+  top: 35px;
   right: 20px;
-  z-index: 1;
+  z-index: 1001;
   cursor: pointer;
   border-radius: 2px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.toggle .common{
+/* Hamburger Lines */
+.toggle .common {
   position: absolute;
   height: 2px;
   width: 20px;
-  background-color: red;
+  background-color: #D61834;
   border-radius: 50px;
   transition: 0.3s ease;
 }
@@ -211,21 +256,22 @@ input[type="checkbox"] {
 .toggle .top_line {
   top: 30%;
   left: 50%;
-  transform: translate(-50%,-50%)
+  transform: translate(-50%, -50%);
 }
 
 .toggle .mid_line {
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%)
+  transform: translate(-50%, -50%);
 }
 
 .toggle .bot_line {
   top: 70%;
   left: 50%;
-  transform: translate(-50%,-50%)
+  transform: translate(-50%, -50%);
 }
 
+/* X Animation when checked */
 input:checked ~ .toggle .top_line {
   left: 2px;
   top: 14px;
@@ -244,38 +290,43 @@ input:checked ~ .toggle .mid_line {
   opacity: 0;
 }
 
-.sidebar{
-  position:fixed;
-  top: 35;
+/* Sidebar - Hidden off-screen by default */
+.sidebar {
+  position: fixed;
+  top: 100px;
   right: 0;
   height: 100vh;
   width: 200px;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.50);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  transition: .3s ease;
-  transform: translatex(250px);
+  transition: 0.3s ease;
+  transform: translateX(250px);
 }
 
-input:checked ~ .sidebar{
-  transform: translatex(0px);
+/* Sidebar slides in when checkbox is checked */
+input:checked ~ .sidebar {
+  transform: translateX(0px);
   opacity: 1;
 }
 
-.sidebar li{
+/* Sidebar List Items */
+.sidebar li {
   height: 50px;
   list-style: none;
   padding-top: 30px;
 }
 
-.sidebar a{
+/* Sidebar Links - Yellow underline on hover per Design Guide */
+.sidebar a {
   position: relative;
-  background-color: none;
+  background-color: transparent;
   color: rgba(0, 0, 0, 0.50);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -287,19 +338,19 @@ input:checked ~ .sidebar{
   margin: 0 30px;
   cursor: pointer;
   text-decoration: none;
+  display: flex;
   align-items: center;
-  align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .sidebar a::after {
-  content:'';
+  content: '';
   position: absolute;
-  width:100%;
+  width: 100%;
   height: 0.175rem;
-  left:0;
+  left: 0;
   bottom: 0;
-  background: #fff568;
+  background: #FFF568;
   transform: scale(0, 1);
 }
 
@@ -315,12 +366,12 @@ input:checked ~ .sidebar{
 }
 
 .sidebar a:active {
-  background-color: none;
+  background-color: transparent;
   font-size: 15px;
 }
 
 /* ============================================
-   TYPOGRAPHY
+   TYPOGRAPHY - Per Design Guide
    ============================================ */
 
 h1 {
@@ -356,14 +407,6 @@ h2 {
 /* ============================================
    MAIN CONTENT
    ============================================ */
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  background-color: whitesmoke;
-}
 
 main {
   flex: 1;
@@ -428,7 +471,7 @@ main {
 .projImage-box:hover {
   border-color: #45bc7a;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.50);
-  transform:scale(1.02);
+  transform: scale(1.02);
 }
 
 .attTale {
@@ -438,7 +481,8 @@ main {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - Per Design Guide
+   Black background, whitesmoke text
    ============================================ */
 
 .footer-container {
@@ -462,126 +506,75 @@ main {
 
 .footer-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: whitesmoke;
-  margin-bottom: 1rem;
 }
 
 .footer-heading {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin-right: 4rem;
-  margin-bottom: 2rem;
 }
 
 .footer-heading a {
-  color: white;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
+  color: white;
+  padding: 0.5rem 0;
 }
 
 .footer-heading a:hover {
-  color: red;
-  transition: 0.3s ease-out;
+  color: #D61834;
 }
 
 .footer-email-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 15px;
-  padding: 20px;
 }
 
 .footer-email-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
 }
 
-#footer-email{
-  width: 250px;
-  height: 50px;
-  border-radius: 100px;
-  outline: none;
+#footer-email {
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
   border: none;
-  padding-left: 0.5rem;
-  font-size: 0.6rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#footer-email::placeholder {
-  color: red;
-  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  font-size: 16px;
 }
 
 #footer-email-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: red;
-  outline: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
   border: none;
+  background-color: #D61834;
   color: whitesmoke;
-  font-size: 0.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  margin-left: -30px;
 }
 
 #footer-email-btn:hover {
-  cursor: pointer;
-  background-color: #29abe2;
-  transition: all 0.4s ease-out;
-}
-
-#footer-email-btn:active {
-  transform:scale(-1.02);
   background-color: #45bc7a;
 }
 
 /* ============================================
-   MOBILE RESPONSIVE - MEDIA QUERIES
+   MOBILE RESPONSIVE - 768px (Tablets)
    ============================================ */
 
-/* Tablet and below (768px) */
 @media screen and (max-width: 768px) {
   
-  /* === SHOW NAVIGATION BUTTONS ON MOBILE - CENTERED === */
+  /* Hide desktop navigation buttons */
   .center-section {
-    display: flex !important;
-    flex: 1;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 5px;
-  }
-  
-  /* Style nav buttons for mobile */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 9px !important;
-    height: 26px !important;
-    padding: 0 8px !important;
-    margin: 0 2px !important;
-    min-width: auto !important;
-    width: auto !important;
-  }
-  
-  /* Remove hover underlines on mobile */
-  .create-button::after,
-  .volunteer-button::after,
-  .donate-button::after {
     display: none !important;
   }
   
@@ -600,44 +593,21 @@ main {
     width: 60px;
   }
   
-  /* Hamburger menu positioning */
+  /* Hamburger toggle position for mobile header */
   .toggle {
     top: 20px;
-    right: 10px;
+    right: 20px;
+  }
+  
+  /* Sidebar position below mobile header */
+  .sidebar {
+    top: 70px;
   }
   
   /* Adjust main content spacing */
   main {
     margin-top: 80px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  
-  /* Center all sections */
-  .missionSection,
-  .conceptSection,
-  .featuredProjectSection {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    box-sizing: border-box;
-  }
-  
-  /* Prevent horizontal overflow */
-  html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-  }
-  
-  *, *::before, *::after {
-    box-sizing: border-box;
+    padding: 0 15px;
   }
   
   /* Typography adjustments */
@@ -675,101 +645,65 @@ main {
     justify-content: center;
   }
   
-  /* === TWO-COLUMN FOOTER LAYOUT === */
+  /* Footer stacking */
   .footer {
-    width: 95% !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 20px 15px !important;
-    padding: 20px 10px !important;
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
   }
   
   .footer-heading {
     margin-right: 0;
-    margin-bottom: 0;
-    text-align: left;
+    margin-bottom: 25px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
   }
   
   .footer-heading h2 {
-    font-size: 16px;
-    padding-bottom: 8px;
+    font-size: 20px;
   }
   
   .footer-heading a {
-    font-size: 13px;
-    display: block;
-    padding: 4px 0;
-  }
-  
-  /* Newsletter section spans both columns */
-  .footer-email-form {
-    grid-column: 1 / -1 !important;
-    width: 100%;
-    padding: 15px 10px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    margin-top: 10px;
-  }
-  
-  /* === CIRCULAR NEWSLETTER BUTTON === */
-  .footer-email-row {
-    flex-direction: row !important;
-    width: 100%;
-    max-width: 300px;
-    gap: 0 !important;
+    font-size: 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin: 0 auto;
+  }
+  
+  .footer-email-form {
+    width: 100%;
+    padding: 20px 10px;
+  }
+  
+  .footer-email-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
   }
   
   #footer-email {
-    width: 200px !important;
-    max-width: none !important;
-    height: 44px !important;
-    border-radius: 22px 0 0 22px !important;
-    padding-right: 25px !important;
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    border-radius: 25px;
   }
   
   #footer-email-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    margin-left: -22px !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
-  }
-  
-  /* Sidebar - CENTERED */
-  .sidebar {
-    align-items: center !important;
-  }
-  
-  .sidebar li {
-    white-space: nowrap;
     width: 100%;
-    text-align: center !important;
+    max-width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 0;
   }
-  
-  .sidebar a {
-    white-space: nowrap;
-    text-align: center !important;
-    margin: 0 auto !important;
-  }
-  
-  .sidebar p2 {
-    white-space: nowrap;
-  }
+}
 
-/* Mobile phones (480px and below) */
+/* ============================================
+   MOBILE RESPONSIVE - 480px (Phones)
+   ============================================ */
+
 @media screen and (max-width: 480px) {
-  
-  /* Smaller nav buttons for phones */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 8px !important;
-    height: 24px !important;
-    padding: 0 6px !important;
-    margin: 0 1px !important;
-  }
   
   h1 {
     font-size: 24px;
@@ -795,19 +729,22 @@ main {
   .toggle {
     height: 25px;
     width: 25px;
-    top: 15px;
-    right: 10px;
+    top: 17px;
+    right: 15px;
+  }
+  
+  .toggle .common {
+    width: 16px;
   }
   
   .sidebar {
     width: 180px;
-    align-items: center !important;
+    top: 60px;
   }
   
   .sidebar a {
     font-size: 16px;
-    margin: 0 auto !important;
-    text-align: center !important;
+    margin: 0 15px;
   }
   
   .projImage-box {
@@ -821,32 +758,23 @@ main {
   }
   
   .footer-heading a {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   #footer-email {
-    width: 170px !important;
-    height: 40px !important;
+    height: 45px;
   }
   
   #footer-email-btn {
-    width: 40px !important;
-    height: 40px !important;
-    margin-left: -20px !important;
+    height: 45px;
   }
 }
 
-/* Extra small devices (360px and below) */
+/* ============================================
+   MOBILE RESPONSIVE - 360px (Small Phones)
+   ============================================ */
+
 @media screen and (max-width: 360px) {
-  
-  /* Even smaller nav buttons */
-  .create-button,
-  .volunteer-button,
-  .donate-button {
-    font-size: 7px !important;
-    height: 22px !important;
-    padding: 0 4px !important;
-  }
   
   h1 {
     font-size: 20px;
@@ -857,7 +785,7 @@ main {
   }
   
   .COg-Logo {
-    width: 40px;
+    width: 45px;
   }
   
   .sidebar {
@@ -866,17 +794,5 @@ main {
   
   .sidebar a {
     font-size: 14px;
-  }
-  
-  #footer-email {
-    width: 150px !important;
-  }
-  
-  .footer-heading h2 {
-    font-size: 14px;
-  }
-  
-  .footer-heading a {
-    font-size: 11px;
   }
 }
