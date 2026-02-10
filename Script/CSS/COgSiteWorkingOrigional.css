@@ -524,19 +524,21 @@ main {
 }
 
 #footer-email-btn {
-  width: 50px;
+  width: 80px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 25px;
   background-color: red;
   outline: none;
   border: none;
   color: whitesmoke;
-  font-size: 0.6rem;
+  font-size: 12px;
+  font-weight: bold;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #footer-email-btn:hover {
@@ -789,11 +791,11 @@ main {
   }
   
   #footer-email-btn {
-    width: 44px !important;
+    width: 70px !important;
     height: 44px !important;
-    border-radius: 50% !important;
-    margin-left: -22px !important;
-    font-size: 18px !important;
+    border-radius: 22px !important;
+    margin-left: -10px !important;
+    font-size: 11px !important;
     font-weight: bold !important;
   }
 }
@@ -860,9 +862,10 @@ main {
   }
   
   #footer-email-btn {
-    width: 40px !important;
+    width: 65px !important;
     height: 40px !important;
-    margin-left: -20px !important;
+    margin-left: -8px !important;
+    font-size: 10px !important;
   }
 }
 
@@ -900,6 +903,11 @@ main {
   
   #footer-email {
     width: 150px !important;
+  }
+  
+  #footer-email-btn {
+    width: 60px !important;
+    font-size: 9px !important;
   }
   
   .footer-heading h2 {
