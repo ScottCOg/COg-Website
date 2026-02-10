@@ -411,6 +411,7 @@ body {
   border-radius: 45px;
   overflow: hidden;
   transition: border-color .3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
 }
 
 .projImage-box:hover {
@@ -424,6 +425,7 @@ body {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 20px;
 }

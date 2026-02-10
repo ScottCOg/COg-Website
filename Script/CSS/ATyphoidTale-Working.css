@@ -536,9 +536,16 @@ body {
 @media (max-width: 900px) {
   .donate-content {
     flex-direction: column;
+    align-items: center;
   }
-  .donate-content p, .attDonate-Button {
+  .donate-content p {
     max-width: 100%;
+  }
+  .attDonate-Button {
+    width: auto !important;
+    max-width: 280px !important;
+    height: 50px !important;
+    flex: none !important;
   }
 }
 
@@ -1143,15 +1150,16 @@ body {
     margin-top: 20px;
     min-width: 200px;
     width: auto !important;
-    height: auto !important;
-    max-width: 280px;
-    border-radius: 50px;
+    height: 50px !important;
+    max-width: 280px !important;
+    border-radius: 30px;
     background-color: #D61834;
     color: whitesmoke;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     border: 2px solid whitesmoke;
+    flex: none !important;
   }
   
   /* Merch Section - Stack vertically - CENTERED */
@@ -1423,6 +1431,8 @@ body {
   .attDonate-Button {
     padding: 12px 30px !important;
     font-size: 16px !important;
+    height: 45px !important;
+    max-width: 250px !important;
   }
   
   /* Merch section */
