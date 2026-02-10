@@ -443,21 +443,20 @@ main {
 
 .footer-container {
   width: 100%;
-  display: flex;
+  top: auto;
   background-color: black;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding: 0.5rem 0 1rem 0;
+  flex-shrink: 0;
   margin-top: auto;
 }
 
 .footer {
-  width: 80%;
+  width: 100%;
   background-color: black;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 20px 0;
 }
 
 .footer-title {
@@ -471,7 +470,12 @@ main {
   display: flex;
   flex-direction: column;
   margin-right: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-heading p1 {
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .footer-heading a {
@@ -479,9 +483,8 @@ main {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   margin-bottom: 0.5rem;
-  min-height: 44px;
-  display: flex;
   align-items: center;
+  align-content: center;
 }
 
 .footer-heading a:hover {
@@ -524,14 +527,14 @@ main {
 }
 
 #footer-email-btn {
-  width: 80px;
+  width: 50px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 50%;
   background-color: red;
   outline: none;
   border: none;
   color: whitesmoke;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -539,6 +542,8 @@ main {
   justify-content: center;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.1;
+  padding: 5px;
 }
 
 #footer-email-btn:hover {
@@ -791,12 +796,14 @@ main {
   }
   
   #footer-email-btn {
-    width: 70px !important;
-    height: 44px !important;
-    border-radius: 22px !important;
-    margin-left: -10px !important;
-    font-size: 11px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    margin-left: -25px !important;
+    font-size: 9px !important;
     font-weight: bold !important;
+    line-height: 1.1 !important;
+    padding: 5px !important;
   }
 }
 
@@ -862,10 +869,13 @@ main {
   }
   
   #footer-email-btn {
-    width: 65px !important;
-    height: 40px !important;
-    margin-left: -8px !important;
-    font-size: 10px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    margin-left: -22px !important;
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+    padding: 4px !important;
   }
 }
 
@@ -906,8 +916,11 @@ main {
   }
   
   #footer-email-btn {
-    width: 60px !important;
-    font-size: 9px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    margin-left: -20px !important;
+    font-size: 7px !important;
   }
   
   .footer-heading h2 {
