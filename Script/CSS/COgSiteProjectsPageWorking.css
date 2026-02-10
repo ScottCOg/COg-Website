@@ -727,7 +727,9 @@ body {
     padding: 15px;
     display: flex !important;
     justify-content: center !important;
+    align-items: center !important;
     width: 100%;
+    margin: 0 auto;
   }
   
   .projImage-box {
@@ -735,7 +737,8 @@ body {
     max-width: 500px;
     height: auto;
     border-width: 10px;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    display: block;
   }
   
   /* Planning projects section - CENTERED */
@@ -908,6 +911,7 @@ body {
     width: 95%;
     border-width: 8px;
     border-radius: 25px;
+    margin: 0 auto !important;
   }
 }
 
@@ -950,6 +954,7 @@ body {
   .projImage-box {
     border-width: 6px;
     border-radius: 20px;
+    margin: 0 auto !important;
   }
   
   #footer-email {

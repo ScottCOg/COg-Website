@@ -1015,7 +1015,7 @@ body {
     width: 100% !important;
     max-width: 100% !important;
     position: relative;
-    padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
+    padding-bottom: 120%; /* Taller aspect ratio for mobile */
     height: 0;
     overflow: hidden;
     margin: 0 auto;
@@ -1398,7 +1398,7 @@ body {
   
   /* StoryMap taller on phones for better viewing */
   .storymap-container {
-    padding-bottom: 100%;
+    padding-bottom: 140%;
   }
   
   /* Team section adjustments */
