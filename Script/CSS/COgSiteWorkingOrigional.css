@@ -931,3 +931,31 @@ main {
     font-size: 11px;
   }
 }
+
+/* ============================================
+   SAFARI-SPECIFIC FIXES
+   ============================================ */
+
+.mission-image-container {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  text-align: center;
+}
+
+.mission-image {
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translateZ(0);
+}
+
+@media screen and (max-width: 768px) {
+  .mission-image-container {
+    display: block !important;
+    text-align: center !important;
+  }
+  
+  .mission-image {
+    display: block !important;
+    margin: 0 auto !important;
+  }
+}
