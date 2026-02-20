@@ -1230,12 +1230,14 @@ body {
   }
   
   /* Product containers - fixed width for horizontal scroll */
+  .productSection > div,
   .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
     flex: 0 0 70vw !important;
     max-width: 280px !important;
     min-width: 200px !important;
+    width: 70vw !important;
     height: auto !important;
     scroll-snap-align: center;
     display: flex !important;
@@ -1243,13 +1245,14 @@ body {
     align-items: center !important;
   }
   
-  /* Product images */
+  /* Product images - ALL same size */
+  .productSection img,
   .shirtMerch,
   img.beanieMerch,
   img.soapMerch {
     width: 100% !important;
     height: auto !important;
-    max-width: 100% !important;
+    max-width: 280px !important;
     border-radius: 15px;
     object-fit: contain !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1454,12 +1457,18 @@ body {
     font-size: 20px;
   }
   
+  .productSection > div,
   .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
     flex: 0 0 75vw !important;
     max-width: 250px !important;
     min-width: 180px !important;
+    width: 75vw !important;
+  }
+  
+  .productSection img {
+    max-width: 250px !important;
   }
 }
 
@@ -1521,12 +1530,18 @@ body {
   }
   
   /* Merch containers - horizontal scroll sizing */
+  .productSection > div,
   .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
     flex: 0 0 80vw !important;
     max-width: 220px !important;
     min-width: 160px !important;
+    width: 80vw !important;
+  }
+  
+  .productSection img {
+    max-width: 220px !important;
   }
   
   #footer-email {
