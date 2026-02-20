@@ -969,3 +969,59 @@ body {
     font-size: 11px;
   }
 }
+/* ============================================
+   FOOTER CREDIT LINE
+   Add this to the END of each CSS file:
+   - COgSiteWorkingOrigional.css
+   - AboutUs-working.css
+   - COgSiteProjectsPageWorking.css
+   - COgPardonProgress.css
+   ============================================ */
+.footer-credit {
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+}
+
+.footer-credit p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.footer-credit a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.footer-credit a:hover {
+  color: #29abe2;
+}
+
+.footer-credit-logo {
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-credit p {
+    font-size: 9px;
+  }
+  
+  .footer-credit-logo {
+    height: 12px;
+  }
+}
+
