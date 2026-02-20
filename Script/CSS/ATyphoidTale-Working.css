@@ -1203,30 +1203,44 @@ body {
     height: auto;
   }
   
-  /* Product section */
+  /* === HORIZONTAL SCROLLING PRODUCT GALLERY === */
   .productSection {
-    width: 100%;
+    width: 100% !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    gap: 15px;
-    padding: 10px;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px !important;
+    padding: 20px 15px !important;
+    scroll-padding: 15px;
+    justify-content: flex-start !important;
   }
   
-  /* Product containers */
+  /* Hide scrollbar but keep functionality */
+  .productSection::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .productSection {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Product containers - fixed width for horizontal scroll */
   .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
-    width: calc(50% - 10px) !important;
-    max-width: 150px !important;
+    flex: 0 0 70vw !important;
+    max-width: 280px !important;
+    min-width: 200px !important;
     height: auto !important;
+    scroll-snap-align: center;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    flex: none !important;
-    position: static !important;
   }
   
   /* Product images */
@@ -1235,10 +1249,10 @@ body {
   img.soapMerch {
     width: 100% !important;
     height: auto !important;
-    max-width: 150px !important;
-    border-radius: 10px;
+    max-width: 100% !important;
+    border-radius: 15px;
     object-fit: contain !important;
-    position: static !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
   
   /* === TWO-COLUMN FOOTER LAYOUT === */
@@ -1435,7 +1449,7 @@ body {
     max-width: 250px !important;
   }
   
-  /* Merch section */
+  /* Merch section - horizontal scroll sizing */
   .merchTextSection h1 {
     font-size: 20px;
   }
@@ -1443,8 +1457,9 @@ body {
   .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
-    width: calc(50% - 8px);
-    max-width: 130px;
+    flex: 0 0 75vw !important;
+    max-width: 250px !important;
+    min-width: 180px !important;
   }
 }
 
@@ -1505,12 +1520,13 @@ body {
     width: 60px;
   }
   
-  /* Merch containers */
-  div.ShirtMerch,
+  /* Merch containers - horizontal scroll sizing */
+  .ShirtMerch,
   div.beanieMerch,
   div.soapMerch {
-    width: 100% !important;
-    max-width: 120px !important;
+    flex: 0 0 80vw !important;
+    max-width: 220px !important;
+    min-width: 160px !important;
   }
   
   #footer-email {
